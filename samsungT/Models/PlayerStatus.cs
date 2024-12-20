@@ -20,5 +20,20 @@ namespace samsungT.Models
         public int FreeThrowA { get; set; }
         public int TwoPoints { get; set; }  
         public int TwoPointsA { get; set; }
+
+        public decimal Get3PointPercentage()
+        {
+            return ThreePointsA > 0 ? (decimal)ThreePoints / ThreePointsA * 100 : 0;
+        }
+
+        public decimal GetFreeThrowPercentage()
+        {
+            return FreeThrowA > 0 ? (decimal)FreeThrow / FreeThrowA * 100 : 0;
+        }
+
+        public decimal Get2PointPercentage()
+        {
+            return TwoPointsA > 0 ? (decimal)TwoPoints / TwoPointsA * 100 : 0;
+        }
     }
 }

@@ -145,5 +145,35 @@ namespace samsungT.Models
             return winRate;
         }
 
+        public List<Player> GetPlayers() 
+        {
+            List<Player> players = new List<Player>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string q = "SELECT * FROM Players";
+                SqlCommand cmd = new SqlCommand(q, connection);
+
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Player player = new Player
+                    {
+                        PlayerID = (int)reader["PlayerID"],
+                        PlayerName = reader["PlayerName"].ToString(),
+                        Position = reader["Position"].ToString(),
+                        Height = (int)reader["Height"]
+                    };
+
+                    players.Add(player);
+                }
+            }
+
+            return players;
+        }
+
+
+
     }
 }

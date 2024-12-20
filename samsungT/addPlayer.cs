@@ -50,6 +50,9 @@ namespace samsungT
                 playerId.Clear();
                 playerPosition.Clear();
                 playerHeight.Clear();
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {

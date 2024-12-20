@@ -173,6 +173,44 @@ namespace samsungT.Models
             return players;
         }
 
+        public List<PlayerStatus> GetPlayersStatus()
+        {
+            List<PlayerStatus> playerStatus = new List<PlayerStatus>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string q = "SELECT * FROM PlayerStatus";
+                SqlCommand cmd = new SqlCommand(q, connection);
+
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    PlayerStatus status = new PlayerStatus
+                    {
+                        StatID = (int)reader["StatID"],
+                        GameID = (int)reader["GameID"],
+                        PlayerID = (int)reader["PlayerID"],
+                        Points = (int)reader["Points"],
+                        Rebounds = (int)reader["Rebounds"],
+                        Assists = (int)reader["Assists"],
+                        ThreePoints = (int)reader["ThreePoints"],
+                        ThreePointsA = (int)reader["ThreePointsA"],
+                        FreeThrow = (int)reader["FreeThrow"],
+                        FreeThrowA = (int)reader["FreeThrowA"],
+                        TwoPoints = (int)reader["TwoPoints"],
+                        TwoPointsA = (int)reader["TwoPointsA"]
+                    };
+
+                    decimal threePointPer = status.Get3PointPercentage();
+                    decimal freeThrowPer = status.GetFreeThrowPercentage();
+                    decimal twoPointper = status.Get2PointPercentage();
+
+                    playerStatus.Add(status);
+                }
+            }
+            return playerStatus;
+        }
 
 
     }

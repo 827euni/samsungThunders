@@ -30,6 +30,15 @@
         {
             this.resisterPlayer = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
+            this.listPlayers = new System.Windows.Forms.ListView();
+            this.playerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.playerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Position = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ThreePoints = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FreeThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TwoThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rebounds = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // resisterPlayer
@@ -52,11 +61,63 @@
             this.resisterTeam.UseVisualStyleBackColor = true;
             this.resisterTeam.Click += new System.EventHandler(this.resisterTeam_Click);
             // 
+            // listPlayers
+            // 
+            this.listPlayers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.playerID,
+            this.playerName,
+            this.Position,
+            this.Height,
+            this.ThreePoints,
+            this.FreeThrows,
+            this.TwoThrows,
+            this.Rebounds});
+            this.listPlayers.HideSelection = false;
+            this.listPlayers.Location = new System.Drawing.Point(152, 12);
+            this.listPlayers.Name = "listPlayers";
+            this.listPlayers.Size = new System.Drawing.Size(497, 181);
+            this.listPlayers.TabIndex = 2;
+            this.listPlayers.UseCompatibleStateImageBehavior = false;
+            this.listPlayers.View = System.Windows.Forms.View.Details;
+            // 
+            // playerID
+            // 
+            this.playerID.Text = "playerID";
+            // 
+            // playerName
+            // 
+            this.playerName.Text = "playerName";
+            // 
+            // Position
+            // 
+            this.Position.Text = "Position";
+            // 
+            // Height
+            // 
+            this.Height.Text = "Height";
+            // 
+            // ThreePoints
+            // 
+            this.ThreePoints.Text = "ThreePoints";
+            // 
+            // FreeThrows
+            // 
+            this.FreeThrows.Text = "FreeThrows";
+            // 
+            // TwoThrows
+            // 
+            this.TwoThrows.Text = "TwoThrows";
+            // 
+            // Rebounds
+            // 
+            this.Rebounds.Text = "Rebounds";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listPlayers);
             this.Controls.Add(this.resisterTeam);
             this.Controls.Add(this.resisterPlayer);
             this.Name = "mainForm";
@@ -69,6 +130,15 @@
 
         private System.Windows.Forms.Button resisterPlayer;
         private System.Windows.Forms.Button resisterTeam;
+        private System.Windows.Forms.ListView listPlayers;
+        private System.Windows.Forms.ColumnHeader playerID;
+        private System.Windows.Forms.ColumnHeader playerName;
+        private System.Windows.Forms.ColumnHeader Position;
+        private System.Windows.Forms.ColumnHeader Height;
+        private System.Windows.Forms.ColumnHeader ThreePoints;
+        private System.Windows.Forms.ColumnHeader FreeThrows;
+        private System.Windows.Forms.ColumnHeader TwoThrows;
+        private System.Windows.Forms.ColumnHeader Rebounds;
     }
 }
 

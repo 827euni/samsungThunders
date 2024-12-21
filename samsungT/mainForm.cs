@@ -22,23 +22,6 @@ namespace samsungT
             loadPlayers();
         }
 
-        private void resisterPlayer_Click(object sender, EventArgs e)
-        {
-            addPlayer addPlayer = new addPlayer();
-            addPlayer.ShowDialog();
-        }
-
-        private void resisterTeam_Click(object sender, EventArgs e)
-        {
-            addTeam addTeam = new addTeam();
-            addTeam.ShowDialog();
-
-            if (addTeam.ShowDialog() == DialogResult.OK) 
-            {
-                loadPlayers();
-            }
-        }
-
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
         {
@@ -81,6 +64,30 @@ namespace samsungT
 
                 listPlayers.Items.Add(item);
             }
+        }
+
+        private void resisterPlayer_Click(object sender, EventArgs e)
+        {
+            addPlayer addPlayer = new addPlayer();
+            addPlayer.ShowDialog();
+        }
+
+        private void resisterTeam_Click(object sender, EventArgs e)
+        {
+            addTeam addTeam = new addTeam();
+            addTeam.ShowDialog();
+
+            if (addTeam.ShowDialog() == DialogResult.OK) 
+            {
+                loadPlayers();
+            }
+        }
+
+        private void resisterGame_Click(object sender, EventArgs e)
+        {
+            addGame addGame = new addGame();
+            addGame.ShowDialog();
+
         }
     }
 }

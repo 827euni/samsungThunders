@@ -39,6 +39,7 @@
             this.FreeThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TwoThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Rebounds = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.resisterGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // resisterPlayer
@@ -53,7 +54,7 @@
             // 
             // resisterTeam
             // 
-            this.resisterTeam.Location = new System.Drawing.Point(0, 67);
+            this.resisterTeam.Location = new System.Drawing.Point(0, 39);
             this.resisterTeam.Name = "resisterTeam";
             this.resisterTeam.Size = new System.Drawing.Size(117, 33);
             this.resisterTeam.TabIndex = 1;
@@ -75,7 +76,7 @@
             this.listPlayers.HideSelection = false;
             this.listPlayers.Location = new System.Drawing.Point(152, 12);
             this.listPlayers.Name = "listPlayers";
-            this.listPlayers.Size = new System.Drawing.Size(497, 181);
+            this.listPlayers.Size = new System.Drawing.Size(553, 219);
             this.listPlayers.TabIndex = 2;
             this.listPlayers.UseCompatibleStateImageBehavior = false;
             this.listPlayers.View = System.Windows.Forms.View.Details;
@@ -112,11 +113,22 @@
             // 
             this.Rebounds.Text = "Rebounds";
             // 
+            // resisterGame
+            // 
+            this.resisterGame.Location = new System.Drawing.Point(0, 78);
+            this.resisterGame.Name = "resisterGame";
+            this.resisterGame.Size = new System.Drawing.Size(117, 33);
+            this.resisterGame.TabIndex = 3;
+            this.resisterGame.Text = "경기 등록";
+            this.resisterGame.UseVisualStyleBackColor = true;
+            this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.resisterGame);
             this.Controls.Add(this.listPlayers);
             this.Controls.Add(this.resisterTeam);
             this.Controls.Add(this.resisterPlayer);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.ColumnHeader FreeThrows;
         private System.Windows.Forms.ColumnHeader TwoThrows;
         private System.Windows.Forms.ColumnHeader Rebounds;
+        private System.Windows.Forms.Button resisterGame;
     }
 }
 

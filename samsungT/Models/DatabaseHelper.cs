@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace samsungT.Models
 {
@@ -145,7 +146,7 @@ namespace samsungT.Models
             return winRate;
         }
 
-        public List<Player> GetPlayers() 
+        public List<Player> GetPlayers()
         {
             List<Player> players = new List<Player>();
 
@@ -212,6 +213,40 @@ namespace samsungT.Models
             return playerStatus;
         }
 
+        public List<Team> GetTeams()
+        {
+            List<Team> teams = new List<Team>();
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT TeamID, TeamName FROM Teams";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Team team = new Team
+                        {
+                            TeamID = (int)reader["TeamID"],
+                            TeamName = reader["TeamName"].ToString()
+                        };
+
+                        teams.Add(team);
+                    }
+                }
+            }
+
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"팀 정보를 가져오는 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return teams;
+
+        }
     }
 }

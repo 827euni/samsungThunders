@@ -68,13 +68,13 @@ namespace samsungT
 
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
-            addPlayer addPlayer = new addPlayer();
+            addPlayerForm addPlayer = new addPlayerForm();
             addPlayer.ShowDialog();
         }
 
         private void resisterTeam_Click(object sender, EventArgs e)
         {
-            addTeam addTeam = new addTeam();
+            addTeamForm addTeam = new addTeamForm();
             addTeam.ShowDialog();
 
             if (addTeam.ShowDialog() == DialogResult.OK) 
@@ -85,7 +85,7 @@ namespace samsungT
 
         private void resisterGame_Click(object sender, EventArgs e)
         {
-            addGame addGame = new addGame();
+            addGameForm addGame = new addGameForm();
             addGame.ShowDialog();
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace samsungT
 {
-    partial class addTeam
+    partial class addTeamForm
     {
         /// <summary>
         /// Required designer variable.

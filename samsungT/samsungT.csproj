@@ -46,28 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addGame.cs">
+    <Compile Include="Views\addGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addGame.Designer.cs">
-      <DependentUpon>addGame.cs</DependentUpon>
+    <Compile Include="Views\addGameForm.Designer.cs">
+      <DependentUpon>addGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="addPlayer.cs">
+    <Compile Include="Views\addPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addPlayer.Designer.cs">
-      <DependentUpon>addPlayer.cs</DependentUpon>
+    <Compile Include="Views\addPlayerForm.Designer.cs">
+      <DependentUpon>addPlayerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="addTeam.cs">
+    <Compile Include="Views\addTeamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addTeam.Designer.cs">
-      <DependentUpon>addTeam.cs</DependentUpon>
+    <Compile Include="Views\addTeamForm.Designer.cs">
+      <DependentUpon>addTeamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainForm.cs">
+    <Compile Include="Views\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForm.Designer.cs">
+    <Compile Include="Views\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Game.cs" />
@@ -78,16 +78,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\DatabaseHelper.cs" />
-    <EmbeddedResource Include="addGame.resx">
-      <DependentUpon>addGame.cs</DependentUpon>
+    <EmbeddedResource Include="Views\addGameForm.resx">
+      <DependentUpon>addGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addPlayer.resx">
-      <DependentUpon>addPlayer.cs</DependentUpon>
+    <EmbeddedResource Include="Views\addPlayerForm.resx">
+      <DependentUpon>addPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addTeam.resx">
-      <DependentUpon>addTeam.cs</DependentUpon>
+    <EmbeddedResource Include="Views\addTeamForm.resx">
+      <DependentUpon>addTeamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainForm.resx">
+    <EmbeddedResource Include="Views\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

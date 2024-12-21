@@ -11,10 +11,10 @@ using samsungT.Models;
 
 namespace samsungT
 {
-    public partial class addPlayer : Form
+    public partial class addPlayerForm : Form
     {
         private DatabaseHelper db;
-        public addPlayer()
+        public addPlayerForm()
         {
             InitializeComponent();
             db = new DatabaseHelper();

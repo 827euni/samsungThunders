@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -146,6 +147,30 @@ namespace samsungT.Models
             return winRate;
         }
 
+        public void UpdateTeamWin(int teamID, bool IsWin)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string q;
+
+                if (IsWin)
+                {
+                    q = "UPDATE Teams SET Wins = Wins + 1 WHERE TeamID = @TeamID";
+                }
+                else
+                {
+                    q = "UPDATE Teams SET Losses = Losses + 1 WHERE TeamID = @TeamID";
+                }
+
+                SqlCommand command = new SqlCommand(q, connection);
+                command.Parameters.AddWithValue("@TeamID", teamID);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+
         public List<Player> GetPlayers()
         {
             List<Player> players = new List<Player>();
@@ -221,7 +246,7 @@ namespace samsungT.Models
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string q = "SELECT TeamID, TeamName FROM Teams";
+                    string q = "SELECT TeamID, TeamName, Wins, Losses FROM Teams";
                     SqlCommand cmd = new SqlCommand(q, connection);
 
                     connection.Open();
@@ -232,7 +257,9 @@ namespace samsungT.Models
                         Team team = new Team
                         {
                             TeamID = (int)reader["TeamID"],
-                            TeamName = reader["TeamName"].ToString()
+                            TeamName = reader["TeamName"].ToString(),
+                            Wins = reader["Wins"] != DBNull.Value ? (int)reader["Wins"] : 0,
+                            Losses = reader["Losses"] != DBNull.Value ? (int)reader["Losses"] : 0
                         };
 
                         teams.Add(team);

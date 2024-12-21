@@ -70,7 +70,17 @@ namespace samsungT
 
                 db.AddGame(game);
                 MessageBox.Show("경기가 추가되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                
+                if (homescore > awayscore)
+                {
+                    db.UpdateTeamWin(homeTeam, true);
+                    db.UpdateTeamWin(awayTeam, false);
+                }
+                else
+                {
+                    db.UpdateTeamWin(awayTeam, true);
+                    db.UpdateTeamWin(homeTeam, false);
+                }
                 homeScore.Clear();
                 awayScore.Clear();
             }

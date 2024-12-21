@@ -11,5 +11,7 @@ namespace samsungT.Models
         public int TeamID { get; set; }
         public string TeamName { get; set; }
         public string City { get; set; }
+        public int Wins { get; set; } = 0;
+        public int Losses { get; set; } = 0;
     }
 }

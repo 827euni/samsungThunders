@@ -1,6 +1,6 @@
 ﻿namespace samsungT
 {
-    partial class addPlayer
+    partial class addPlayerForm
     {
         /// <summary>
         /// Required designer variable.

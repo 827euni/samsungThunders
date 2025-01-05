@@ -44,7 +44,7 @@
             // 
             // resisterPlayer
             // 
-            this.resisterPlayer.Location = new System.Drawing.Point(0, 0);
+            this.resisterPlayer.Location = new System.Drawing.Point(12, 12);
             this.resisterPlayer.Name = "resisterPlayer";
             this.resisterPlayer.Size = new System.Drawing.Size(117, 33);
             this.resisterPlayer.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // resisterTeam
             // 
-            this.resisterTeam.Location = new System.Drawing.Point(0, 39);
+            this.resisterTeam.Location = new System.Drawing.Point(12, 51);
             this.resisterTeam.Name = "resisterTeam";
             this.resisterTeam.Size = new System.Drawing.Size(117, 33);
             this.resisterTeam.TabIndex = 1;
@@ -115,7 +115,7 @@
             // 
             // resisterGame
             // 
-            this.resisterGame.Location = new System.Drawing.Point(0, 78);
+            this.resisterGame.Location = new System.Drawing.Point(12, 90);
             this.resisterGame.Name = "resisterGame";
             this.resisterGame.Size = new System.Drawing.Size(117, 33);
             this.resisterGame.TabIndex = 3;

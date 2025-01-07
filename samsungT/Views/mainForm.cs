@@ -71,20 +71,20 @@ namespace samsungT
                     var status = playerStats[player.PlayerID];
                     decimal gameCount = status.GameCount;
 
-                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((double)(status.ThreePoint/status.ThreePointA) * 100).ToString("F2") : "0"); // 여기 좀 이상함 ㅎ
-                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((status.FreeThrow/status.FreeThrowA)).ToString("F2") : "0"); // 여기 좀 이상함 ㅎ
-                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((status.FieldGoal/status.FieldGoalA)).ToString("F2") : "0"); // 여기 좀 이상함 ㅎ
+                    item.SubItems.Add(gameCount > 0 ? (status.Score / gameCount).ToString("F2") : "0");
+                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0"); //뭔가 굉장히 이상함
                     item.SubItems.Add(gameCount > 0 ? (status.Rebound / gameCount).ToString("F2") : "0"); 
                     item.SubItems.Add(gameCount > 0 ? (status.Assist / gameCount).ToString("F2") : "0");
-                    item.SubItems.Add(gameCount > 0 ? (status.Score / gameCount).ToString("F2") : "0");
                 }
 
                 else
                 {
                     item.SubItems.Add("0");
-                    item.SubItems.Add("0");
-                    item.SubItems.Add("0");
-                    item.SubItems.Add("0");
+                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0%");
                     item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }

@@ -239,6 +239,7 @@
             this.resisterPlayerStatus.TabIndex = 23;
             this.resisterPlayerStatus.Text = "선수 기록 등록";
             this.resisterPlayerStatus.UseVisualStyleBackColor = true;
+            this.resisterPlayerStatus.Click += new System.EventHandler(this.resisterPlayerStatus_Click);
             // 
             // addPlayerStatusForm
             // 

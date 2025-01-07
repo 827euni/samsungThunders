@@ -74,12 +74,12 @@ namespace samsungT.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = @"
-            INSERT INTO PlayerStatus (GameID, PlayerID, Points, Rebounds, Assists, 
+            INSERT INTO PlayerStatus (GameID, PlayerID, Rebound,
                                       ThreePoints, ThreePointsA, 
                                       FreeThrow, FreeThrowA, 
                                       FieldGoal, FieldGoalA, 
                                       Assist, Score)
-            VALUES (@GameID, @PlayerID, @Points, @Rebounds, @Assists, 
+            VALUES (@GameID, @PlayerID, @Rebound,
                     @ThreePoints, @ThreePointsA, 
                     @FreeThrow, @FreeThrowA, 
                     @FieldGoal, @FieldGoalA, 
@@ -88,9 +88,7 @@ namespace samsungT.Models
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@GameID", playerStat.GameID);
                 command.Parameters.AddWithValue("@PlayerID", playerStat.PlayerID);
-                command.Parameters.AddWithValue("@Points", playerStat.Points);
-                command.Parameters.AddWithValue("@Rebounds", playerStat.Rebounds);
-                command.Parameters.AddWithValue("@Assists", playerStat.Assists);
+                command.Parameters.AddWithValue("@Rebounds", playerStat.Rebound);
                 command.Parameters.AddWithValue("@ThreePoints", playerStat.ThreePoints);
                 command.Parameters.AddWithValue("@ThreePointsA", playerStat.ThreePointsA);
                 command.Parameters.AddWithValue("@FreeThrow", playerStat.FreeThrow);
@@ -99,25 +97,6 @@ namespace samsungT.Models
                 command.Parameters.AddWithValue("@FieldGoalA", playerStat.FieldGoalA);
                 command.Parameters.AddWithValue("@Assist", playerStat.Assist);
                 command.Parameters.AddWithValue("@Score", playerStat.Score);
-
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
-
-
-        // 팀 스테이터스 추가
-        public void AddTeamStat(TeamStatus teamStat)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "INSERT INTO TeamStats (TeamID, GameID, Wins, Losses, WinRate) VALUES (@TeamID, @GameID, @Wins, @Losses, @WinRate)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@TeamID", teamStat.TeamID);
-                command.Parameters.AddWithValue("@GameID", teamStat.GameID);
-                command.Parameters.AddWithValue("@Wins", teamStat.Wins);
-                command.Parameters.AddWithValue("@Losses", teamStat.Losses);
-                command.Parameters.AddWithValue("@WinRate", teamStat.WinRate);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -194,9 +173,7 @@ namespace samsungT.Models
                         StatID = (int)reader["StatID"],
                         GameID = (int)reader["GameID"],
                         PlayerID = (int)reader["PlayerID"],
-                        Points = (int)reader["Points"],
-                        Rebounds = (int)reader["Rebounds"],
-                        Assists = (int)reader["Assists"],
+                        Rebound = (int)reader["Rebound"],
                         ThreePoints = (int)reader["ThreePoints"],
                         ThreePointsA = (int)reader["ThreePointsA"],
                         FreeThrow = (int)reader["FreeThrow"],

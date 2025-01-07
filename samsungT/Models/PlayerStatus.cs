@@ -11,9 +11,7 @@ namespace samsungT.Models
         public int StatID { get; set; }
         public int GameID { get; set; }
         public int PlayerID { get; set; }
-        public int Points { get; set; }
-        public int Rebounds { get; set; }
-        public int Assists { get; set; }
+        public int Rebound { get; set; }
         public int ThreePoints { get; set; }
         public int ThreePointsA { get; set; }
         public int FreeThrow { get; set; }

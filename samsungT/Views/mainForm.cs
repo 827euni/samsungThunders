@@ -52,8 +52,8 @@ namespace samsungT
                     item.SubItems.Add(status.Get3PointPercentage().ToString("F2") + "%");
                     item.SubItems.Add(status.GetFreeThrowPercentage().ToString("F2") + "%");
                     item.SubItems.Add(status.GetFieldGoalPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.Rebounds.ToString());
-                    item.SubItems.Add(status.Assists.ToString());
+                    item.SubItems.Add(status.Rebound.ToString());
+                    item.SubItems.Add(status.Assist.ToString());
                 }
                 else
                 {

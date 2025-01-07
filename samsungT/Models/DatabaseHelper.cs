@@ -38,12 +38,11 @@ namespace samsungT.Models
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-              string query = @"SET IDENTITY_INSERT Players ON;
-            INSERT INTO Players (PlayerID, PlayerName, TeamID, Position, Height)
-            VALUES (@PlayerID, @PlayerName, @TeamID, @Position, @Height);
+            string q = @"SET IDENTITY_INSERT Players ON;
+            INSERT INTO Players (PlayerID, PlayerName, TeamID, Position, Height) VALUES (@PlayerID, @PlayerName, @TeamID, @Position, @Height);
             SET IDENTITY_INSERT Players OFF;";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(q, connection))
                 {
                     command.Parameters.AddWithValue("@PlayerID", player.PlayerID);
                     command.Parameters.AddWithValue("@PlayerName", player.PlayerName);

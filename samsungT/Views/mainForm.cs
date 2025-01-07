@@ -33,32 +33,52 @@ namespace samsungT
             var players = db.GetPlayers();
             var playerStatus = db.GetPlayersStatus();
 
+            var playerStats = new Dictionary<int, PlayerStatus>();
+
+            foreach (var status in playerStatus)
+            {
+                if (!playerStats.ContainsKey(status.PlayerID))
+                {
+                    playerStats[status.PlayerID] = new PlayerStatus
+                    {
+                        PlayerID = status.PlayerID,
+                        GameCount = 0
+                    };
+                }
+
+                var current = playerStats[status.PlayerID];
+
+                current.Rebound += status.Rebound;
+                current.ThreePoint += status.ThreePoint;
+                current.ThreePointA += status.ThreePointA;
+                current.FreeThrow += status.FreeThrow;
+                current.FreeThrowA += status.FreeThrowA;
+                current.FieldGoal += status.FieldGoal;
+                current.FieldGoalA += status.FieldGoalA;
+                current.Assist += status.Assist;
+                current.Score += status.Score;
+                current.GameCount++;
+            }
+
             foreach (var player in players)
             {
                 var item = new ListViewItem(player.PlayerID.ToString());
                 item.SubItems.Add(player.PlayerName);
                 item.SubItems.Add(player.Position);
 
-                PlayerStatus status = null;
-
-                foreach (var st in playerStatus)
+                if (playerStats.ContainsKey(player.PlayerID))
                 {
-                    if (st.PlayerID == player.PlayerID)
-                    {
-                        status = st;
-                        break;
-                    }
+                    var status = playerStats[player.PlayerID];
+                    decimal gameCount = status.GameCount;
+
+                    item.SubItems.Add(gameCount > 0 ? (status.Score / gameCount).ToString("F2") : "0");
+                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0"); //뭔가 굉장히 이상함
+                    item.SubItems.Add(gameCount > 0 ? (status.Rebound / gameCount).ToString("F2") : "0"); 
+                    item.SubItems.Add(gameCount > 0 ? (status.Assist / gameCount).ToString("F2") : "0");
                 }
 
-                if (status != null)
-                {
-                    item.SubItems.Add(status.Score.ToString());
-                    item.SubItems.Add(status.Get3PointPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.GetFreeThrowPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.GetFieldGoalPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.Rebound.ToString());
-                    item.SubItems.Add(status.Assist.ToString());
-                }
                 else
                 {
                     item.SubItems.Add("0");

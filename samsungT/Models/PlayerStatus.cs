@@ -29,5 +29,7 @@
         {
             return FieldGoalA > 0 ? (decimal)FieldGoal / FieldGoalA * 100 : 0;
         }
+
+        public int GameCount { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
+using samsungT.Views;
 
 namespace samsungT
 {
@@ -91,6 +92,12 @@ namespace samsungT
             addGameForm addGame = new addGameForm();
             addGame.ShowDialog();
 
+        }
+
+        private void resisterGamePlayer_Click(object sender, EventArgs e)
+        {
+            addPlayerStatusForm addPlayerStatus = new addPlayerStatusForm();
+            addPlayerStatus.ShowDialog();
         }
     }
 }

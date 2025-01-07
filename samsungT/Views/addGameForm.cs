@@ -27,8 +27,8 @@ namespace samsungT
 
             foreach (Team team in teams)
             {
-                HomePick.Items.Add(new { Text = team.TeamName, Value = team.TeamID });
-                AwayPick.Items.Add(new { Text = team.TeamName, Value = team.TeamID });
+                HomePick.Items.Add(new {Text = team.TeamName, Value = team.TeamID });
+                AwayPick.Items.Add(new {Text = team.TeamName, Value = team.TeamID });
             }
 
             HomePick.DisplayMember = "Text";

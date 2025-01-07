@@ -149,7 +149,7 @@ namespace samsungT
             MOBISButton.BackColor = SystemColors.ButtonHighlight;
 
 
-            button.BackColor = Color.LightBlue;
+            button.BackColor = Color.AliceBlue;
         }
 
         private void DBButton_Click(object sender, EventArgs e)

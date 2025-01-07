@@ -190,7 +190,7 @@
             this.winRateChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.winRateChart.Legends.Add(legend2);
-            this.winRateChart.Location = new System.Drawing.Point(903, 12);
+            this.winRateChart.Location = new System.Drawing.Point(903, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series2.ChartArea = "ChartArea1";
@@ -199,7 +199,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.winRateChart.Series.Add(series2);
-            this.winRateChart.Size = new System.Drawing.Size(317, 254);
+            this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
             // 
@@ -324,10 +324,10 @@
             // 
             this.winRateText.AutoSize = true;
             this.winRateText.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.winRateText.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.winRateText.Location = new System.Drawing.Point(1095, 220);
+            this.winRateText.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winRateText.Location = new System.Drawing.Point(1099, 225);
             this.winRateText.Name = "winRateText";
-            this.winRateText.Size = new System.Drawing.Size(90, 36);
+            this.winRateText.Size = new System.Drawing.Size(78, 31);
             this.winRateText.TabIndex = 19;
             this.winRateText.Text = "100%";
             // 

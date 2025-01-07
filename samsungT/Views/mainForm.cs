@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
 using samsungT.Views;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
 
 namespace samsungT
 {
@@ -16,6 +17,7 @@ namespace samsungT
     {
 
         private Models.DatabaseHelper db;
+        public Button lastButton = null;
         public mainForm()
         {
             InitializeComponent();
@@ -149,61 +151,86 @@ namespace samsungT
             MOBISButton.BackColor = SystemColors.ButtonHighlight;
 
 
-            button.BackColor = Color.AliceBlue;
+            if (button != null)
+            {
+                button.BackColor = Color.AliceBlue;
+            }
         }
+
+        private void ResetButtonColor(Button button)
+        {
+
+            if (button != null)
+            {
+                button.BackColor = SystemColors.ButtonHighlight;
+            }
+        }
+
+        private void oneMoreClickButton(Button clickButton, int chartType)
+        {
+            if (lastButton == clickButton)
+            {
+                ResetButtonColor(lastButton);
+                lastButton = null;
+                loadWinRateChart(1);
+            }
+            else
+            {
+                if (lastButton != null)
+                {
+                    ResetButtonColor(lastButton);
+                }
+
+                setButtonColor(clickButton);
+                lastButton = clickButton;
+                loadWinRateChart(chartType);
+            }
+        }
+
 
         private void DBButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(DBButton);
-            loadWinRateChart(2);
+            oneMoreClickButton(DBButton, 2);
         }
 
         private void SONOButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(SONOButton);
-            loadWinRateChart(3);
+            oneMoreClickButton(SONOButton, 3);
         }
 
         private void SKButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(SKButton);
-            loadWinRateChart(4);
+            oneMoreClickButton(SKButton, 4);
         }
 
         private void LGButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(LGButton);
-            loadWinRateChart(5);
+            oneMoreClickButton(LGButton, 5);
         }
 
         private void KGCButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(KGCButton);
-            loadWinRateChart(6);
+            oneMoreClickButton(KGCButton, 6);
         }
 
         private void KCCButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(KCCButton);
-            loadWinRateChart(7);
+            oneMoreClickButton(KCCButton, 7);
         }
 
         private void KTButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(KTButton);
-            loadWinRateChart(8);
+            oneMoreClickButton(KTButton, 8);
         }
 
         private void KOGASButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(KOGASButton);
-            loadWinRateChart(9);
+            oneMoreClickButton(KOGASButton, 9);
         }
 
         private void MOBISButton_Click(object sender, EventArgs e)
         {
-            setButtonColor(MOBISButton);
-            loadWinRateChart(10);
+            oneMoreClickButton(MOBISButton, 10);
         }
     }
 }

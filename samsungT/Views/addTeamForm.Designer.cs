@@ -41,7 +41,7 @@
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
             this.resister.TabIndex = 17;
-            this.resister.Text = "선수등록";
+            this.resister.Text = "팀 등록";
             this.resister.UseVisualStyleBackColor = true;
             this.resister.Click += new System.EventHandler(this.resister_Click);
             // 
@@ -77,7 +77,7 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "팀 이름";
             // 
-            // addTeam
+            // addTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.teamName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "addTeam";
+            this.Name = "addTeamForm";
             this.Text = "addTeam";
             this.ResumeLayout(false);
             this.PerformLayout();

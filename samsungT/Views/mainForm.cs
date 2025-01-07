@@ -34,7 +34,6 @@ namespace samsungT
                 var item = new ListViewItem(player.PlayerID.ToString());
                 item.SubItems.Add(player.PlayerName);
                 item.SubItems.Add(player.Position);
-                item.SubItems.Add(player.Height.ToString());
 
                 PlayerStatus status = null;
 
@@ -49,16 +48,20 @@ namespace samsungT
 
                 if (status != null)
                 {
+                    item.SubItems.Add(status.Score.ToString());
                     item.SubItems.Add(status.Get3PointPercentage().ToString("F2") + "%");
                     item.SubItems.Add(status.GetFreeThrowPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.Get2PointPercentage().ToString("F2") + "%");
-                    item.SubItems.Add(status.Rebounds.ToString());
+                    item.SubItems.Add(status.GetFieldGoalPercentage().ToString("F2") + "%");
+                    item.SubItems.Add(status.Rebound.ToString());
+                    item.SubItems.Add(status.Assist.ToString());
                 }
                 else
                 {
+                    item.SubItems.Add("0");
                     item.SubItems.Add("0%");
                     item.SubItems.Add("0%");
                     item.SubItems.Add("0%");
+                    item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }
 

@@ -161,6 +161,7 @@
             this.resisterGamePlayer.TabIndex = 5;
             this.resisterGamePlayer.Text = "경기기록 등록";
             this.resisterGamePlayer.UseVisualStyleBackColor = true;
+            this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
             // 
             // button1
             // 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace samsungT.Models
+﻿namespace samsungT.Models
 {
     internal class PlayerStatus
     {
@@ -12,8 +6,8 @@ namespace samsungT.Models
         public int GameID { get; set; }
         public int PlayerID { get; set; }
         public int Rebound { get; set; }
-        public int ThreePoints { get; set; }
-        public int ThreePointsA { get; set; }
+        public int ThreePoint { get; set; }
+        public int ThreePointA { get; set; }
         public int FreeThrow { get; set; }
         public int FreeThrowA { get; set; }
         public int FieldGoal { get; set; }
@@ -23,7 +17,7 @@ namespace samsungT.Models
 
         public decimal Get3PointPercentage()
         {
-            return ThreePointsA > 0 ? (decimal)ThreePoints / ThreePointsA * 100 : 0;
+            return ThreePointA > 0 ? (decimal)ThreePoint / ThreePointA * 100 : 0;
         }
 
         public decimal GetFreeThrowPercentage()

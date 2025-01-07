@@ -75,12 +75,12 @@ namespace samsungT.Models
             {
                 string query = @"
             INSERT INTO PlayerStatus (GameID, PlayerID, Rebound,
-                                      ThreePoints, ThreePointsA, 
+                                      ThreePoint, ThreePointA, 
                                       FreeThrow, FreeThrowA, 
                                       FieldGoal, FieldGoalA, 
                                       Assist, Score)
             VALUES (@GameID, @PlayerID, @Rebound,
-                    @ThreePoints, @ThreePointsA, 
+                    @ThreePoint, @ThreePointA, 
                     @FreeThrow, @FreeThrowA, 
                     @FieldGoal, @FieldGoalA, 
                     @Assist, @Score)";
@@ -88,9 +88,9 @@ namespace samsungT.Models
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@GameID", playerStat.GameID);
                 command.Parameters.AddWithValue("@PlayerID", playerStat.PlayerID);
-                command.Parameters.AddWithValue("@Rebounds", playerStat.Rebound);
-                command.Parameters.AddWithValue("@ThreePoints", playerStat.ThreePoints);
-                command.Parameters.AddWithValue("@ThreePointsA", playerStat.ThreePointsA);
+                command.Parameters.AddWithValue("@Rebound", playerStat.Rebound);
+                command.Parameters.AddWithValue("@ThreePoint", playerStat.ThreePoint);
+                command.Parameters.AddWithValue("@ThreePointA", playerStat.ThreePointA);
                 command.Parameters.AddWithValue("@FreeThrow", playerStat.FreeThrow);
                 command.Parameters.AddWithValue("@FreeThrowA", playerStat.FreeThrowA);
                 command.Parameters.AddWithValue("@FieldGoal", playerStat.FieldGoal);
@@ -174,8 +174,8 @@ namespace samsungT.Models
                         GameID = (int)reader["GameID"],
                         PlayerID = (int)reader["PlayerID"],
                         Rebound = (int)reader["Rebound"],
-                        ThreePoints = (int)reader["ThreePoints"],
-                        ThreePointsA = (int)reader["ThreePointsA"],
+                        ThreePoint = (int)reader["ThreePoint"],
+                        ThreePointA = (int)reader["ThreePointA"],
                         FreeThrow = (int)reader["FreeThrow"],
                         FreeThrowA = (int)reader["FreeThrowA"],
                         FieldGoal = (int)reader["FieldGoal"],
@@ -230,6 +230,104 @@ namespace samsungT.Models
 
             return teams;
 
+        }
+
+        public List<Game> GetGames()
+        {
+            List<Game> games = new List<Game>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT GameID, Date, HomeTeamID, AwayTeamID, HomeScore, AwayScore FROM Games";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read()) 
+                    {
+                        Game game = new Game
+                        {
+                            GameID = (int)reader["GameID"],
+                            Date = (DateTime)reader["Date"],
+                            HomeTeamID = (int)reader["HomeTeamID"],
+                            AwayTeamID = (int)reader["AwayTeamID"],
+                            HomeScore = (int)reader["HomeScore"],
+                            AwayScore = (int)reader["AwayScore"]
+                        };
+
+                        games.Add(game);
+                    }
+
+                }
+            }
+
+            catch (Exception e) 
+            {
+                MessageBox.Show($"게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return games;
+        }
+
+        public string GetTeamName(int teamID)
+        {
+            string teamName = "";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT TeamName FROM Teams WHERE TeamID = @TeamID";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+                    cmd.Parameters.AddWithValue("@TeamID", teamID);
+
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        teamName = result.ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"팀 이름을 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return teamName;
+        }
+
+        public string GetPlayerName(int playerID)
+        {
+            string Name = "";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT PlayerName FROM Players WHERE PlayerID = @PlayerID";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+                    cmd.Parameters.AddWithValue("@PlayerID", playerID);
+
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        Name = result.ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"선수 이름을 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return Name;
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterPlayer = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
@@ -41,7 +41,7 @@
             this.ThreePoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FreeThrow = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FieldGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Rebounds = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rebound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Assist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterGamePlayer = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             this.ThreePoint,
             this.FreeThrow,
             this.FieldGoal,
-            this.Rebounds,
+            this.Rebound,
             this.Assist});
             this.listPlayers.HideSelection = false;
             this.listPlayers.Location = new System.Drawing.Point(527, 272);
@@ -104,10 +104,12 @@
             // playerID
             // 
             this.playerID.Text = "playerID";
+            this.playerID.Width = 50;
             // 
             // playerName
             // 
             this.playerName.Text = "playerName";
+            this.playerName.Width = 112;
             // 
             // Position
             // 
@@ -122,21 +124,25 @@
             // 
             this.ThreePoint.DisplayIndex = 3;
             this.ThreePoint.Text = "ThreePoint";
+            this.ThreePoint.Width = 81;
             // 
             // FreeThrow
             // 
             this.FreeThrow.DisplayIndex = 4;
             this.FreeThrow.Text = "FreeThrow";
+            this.FreeThrow.Width = 81;
             // 
             // FieldGoal
             // 
             this.FieldGoal.DisplayIndex = 5;
             this.FieldGoal.Text = "FieldGoal";
+            this.FieldGoal.Width = 81;
             // 
-            // Rebounds
+            // Rebound
             // 
-            this.Rebounds.DisplayIndex = 6;
-            this.Rebounds.Text = "Rebound";
+            this.Rebound.DisplayIndex = 6;
+            this.Rebound.Text = "Rebound";
+            this.Rebound.Width = 87;
             // 
             // Assist
             // 
@@ -174,16 +180,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea14.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chart1.Legends.Add(legend14);
             this.chart1.Location = new System.Drawing.Point(903, 12);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chart1.Series.Add(series14);
             this.chart1.Size = new System.Drawing.Size(317, 254);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
@@ -328,7 +334,7 @@
         private System.Windows.Forms.ColumnHeader ThreePoint;
         private System.Windows.Forms.ColumnHeader FreeThrow;
         private System.Windows.Forms.ColumnHeader FieldGoal;
-        private System.Windows.Forms.ColumnHeader Rebounds;
+        private System.Windows.Forms.ColumnHeader Rebound;
         private System.Windows.Forms.Button resisterGame;
         private System.Windows.Forms.ColumnHeader Score;
         private System.Windows.Forms.ColumnHeader Assist;

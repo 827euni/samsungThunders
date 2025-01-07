@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
 using samsungT.Views;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
 
 namespace samsungT
 {
@@ -16,11 +17,13 @@ namespace samsungT
     {
 
         private Models.DatabaseHelper db;
+        public Button lastButton = null;
         public mainForm()
         {
             InitializeComponent();
             db = new Models.DatabaseHelper();
             loadPlayers();
+            loadWinRateChart();
         }
 
         // 리스트 뷰에 선수들을 나타내게 하는 함수
@@ -70,6 +73,39 @@ namespace samsungT
             }
         }
 
+        private void loadWinRateChart(int teamID = 1)
+        {
+            winRateChart.Series[0].Points.Clear();
+
+            List<Team> teams = db.GetTeams();
+
+            Team TeamID = null;
+
+            foreach (Team team in teams)
+            {
+                if (team.TeamID == teamID)
+                {
+                    TeamID = team;
+                    break;
+                };
+            }
+
+            if (TeamID != null)
+            {
+                int totalGames = TeamID.Wins + TeamID.Losses;
+                double winRate = totalGames > 0 ? (double)TeamID.Wins / totalGames * 100 : 0;
+
+                winRateChart.Series[0].Points.AddXY("승리",TeamID.Wins);
+                winRateChart.Series[0].Points.AddXY("패배",TeamID.Losses);
+
+                string WinRateText = $"{winRate:F2}%";
+                winRateText.Text = WinRateText; 
+            }
+            else
+            {
+                winRateText.Text = $"팀 ID가 {TeamID}인 팀을 찾을 수 없습니다.";
+            }
+        }
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
             addPlayerForm addPlayer = new addPlayerForm();
@@ -98,6 +134,103 @@ namespace samsungT
         {
             addPlayerStatusForm addPlayerStatus = new addPlayerStatusForm();
             addPlayerStatus.ShowDialog();
+        }
+
+        // 승률 버튼
+
+        private void setButtonColor(Button button)
+        {
+            DBButton.BackColor = SystemColors.ButtonHighlight;
+            SONOButton.BackColor = SystemColors.ButtonHighlight;
+            SKButton.BackColor = SystemColors.ButtonHighlight;
+            LGButton.BackColor = SystemColors.ButtonHighlight;
+            KGCButton.BackColor = SystemColors.ButtonHighlight;
+            KCCButton.BackColor = SystemColors.ButtonHighlight;
+            KTButton.BackColor = SystemColors.ButtonHighlight;
+            KOGASButton.BackColor = SystemColors.ButtonHighlight;
+            MOBISButton.BackColor = SystemColors.ButtonHighlight;
+
+
+            if (button != null)
+            {
+                button.BackColor = Color.AliceBlue;
+            }
+        }
+
+        private void ResetButtonColor(Button button)
+        {
+
+            if (button != null)
+            {
+                button.BackColor = SystemColors.ButtonHighlight;
+            }
+        }
+
+        private void oneMoreClickButton(Button clickButton, int chartType)
+        {
+            if (lastButton == clickButton)
+            {
+                ResetButtonColor(lastButton);
+                lastButton = null;
+                loadWinRateChart(1);
+            }
+            else
+            {
+                if (lastButton != null)
+                {
+                    ResetButtonColor(lastButton);
+                }
+
+                setButtonColor(clickButton);
+                lastButton = clickButton;
+                loadWinRateChart(chartType);
+            }
+        }
+
+
+        private void DBButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(DBButton, 2);
+        }
+
+        private void SONOButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(SONOButton, 3);
+        }
+
+        private void SKButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(SKButton, 4);
+        }
+
+        private void LGButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(LGButton, 5);
+        }
+
+        private void KGCButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(KGCButton, 6);
+        }
+
+        private void KCCButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(KCCButton, 7);
+        }
+
+        private void KTButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(KTButton, 8);
+        }
+
+        private void KOGASButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(KOGASButton, 9);
+        }
+
+        private void MOBISButton_Click(object sender, EventArgs e)
+        {
+            oneMoreClickButton(MOBISButton, 10);
         }
     }
 }

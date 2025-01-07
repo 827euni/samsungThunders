@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using samsungT.Models;
+using System.Runtime.CompilerServices;
 
 namespace samsungT.ViewModels
 {
     internal class addPlayerViewModel:INotifyPropertyChanged
     {
         private string playerName;
-        private string playerId;
+        private string playerID;
         private string playerPosition; // 프로퍼티임으로 구분해야함.
         private string playerHeight;
         private DatabaseHelper db;
@@ -33,11 +36,11 @@ namespace samsungT.ViewModels
         {
             get
             {
-                return playerId;
+                return playerID;
             }
             set
             {
-                playerId = value;
+                playerID = value;
                 OnPropertyChanged("PlayerID");
             }
         }
@@ -51,7 +54,7 @@ namespace samsungT.ViewModels
             set
             {
                 playerPosition = value;
-                OnPropertyChanged("PlayerPosition"); // 명시적으로 속성 이름 전달
+                OnPropertyChanged("PlayerPosition"); 
             }
         }
 
@@ -64,11 +67,11 @@ namespace samsungT.ViewModels
             set
             {
                 playerHeight = value;
-                OnPropertyChanged("PlayerHeight"); // 명시적으로 속성 이름 전달
+                OnPropertyChanged("PlayerHeight"); 
             }
         }
 
-        public PlayerViewModel()
+        public addPlayerViewModel()
         {
             db = new DatabaseHelper();
         }
@@ -85,7 +88,7 @@ namespace samsungT.ViewModels
 
             try
             {
-                Player newPlayer = new Player
+                Player player = new Player
                 {
                     PlayerName = PlayerName,
                     TeamID = 1,
@@ -94,7 +97,7 @@ namespace samsungT.ViewModels
                     Height = int.Parse(PlayerHeight),
                 };
 
-                db.AddPlayer(newPlayer);
+                db.AddPlayer(player);
             }
             catch (Exception ex)
             {
@@ -107,5 +110,4 @@ namespace samsungT.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-}
 }

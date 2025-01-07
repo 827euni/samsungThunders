@@ -59,9 +59,5 @@ namespace samsungT
                 MessageBox.Show($"선수 추가 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
     }
 }

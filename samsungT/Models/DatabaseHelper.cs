@@ -75,12 +75,12 @@ namespace samsungT.Models
             {
                 string query = @"
             INSERT INTO PlayerStatus (GameID, PlayerID, Rebound,
-                                      ThreePoints, ThreePointsA, 
+                                      ThreePoint, ThreePointA, 
                                       FreeThrow, FreeThrowA, 
                                       FieldGoal, FieldGoalA, 
                                       Assist, Score)
             VALUES (@GameID, @PlayerID, @Rebound,
-                    @ThreePoints, @ThreePointsA, 
+                    @ThreePoint, @ThreePointA, 
                     @FreeThrow, @FreeThrowA, 
                     @FieldGoal, @FieldGoalA, 
                     @Assist, @Score)";
@@ -88,9 +88,9 @@ namespace samsungT.Models
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@GameID", playerStat.GameID);
                 command.Parameters.AddWithValue("@PlayerID", playerStat.PlayerID);
-                command.Parameters.AddWithValue("@Rebounds", playerStat.Rebound);
-                command.Parameters.AddWithValue("@ThreePoints", playerStat.ThreePoints);
-                command.Parameters.AddWithValue("@ThreePointsA", playerStat.ThreePointsA);
+                command.Parameters.AddWithValue("@Rebound", playerStat.Rebound);
+                command.Parameters.AddWithValue("@ThreePoint", playerStat.ThreePoint);
+                command.Parameters.AddWithValue("@ThreePointA", playerStat.ThreePointA);
                 command.Parameters.AddWithValue("@FreeThrow", playerStat.FreeThrow);
                 command.Parameters.AddWithValue("@FreeThrowA", playerStat.FreeThrowA);
                 command.Parameters.AddWithValue("@FieldGoal", playerStat.FieldGoal);
@@ -174,8 +174,8 @@ namespace samsungT.Models
                         GameID = (int)reader["GameID"],
                         PlayerID = (int)reader["PlayerID"],
                         Rebound = (int)reader["Rebound"],
-                        ThreePoints = (int)reader["ThreePoints"],
-                        ThreePointsA = (int)reader["ThreePointsA"],
+                        ThreePoint = (int)reader["ThreePoint"],
+                        ThreePointA = (int)reader["ThreePointA"],
                         FreeThrow = (int)reader["FreeThrow"],
                         FreeThrowA = (int)reader["FreeThrowA"],
                         FieldGoal = (int)reader["FieldGoal"],

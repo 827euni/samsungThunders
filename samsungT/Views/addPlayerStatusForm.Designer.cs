@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.GamePick = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.PlayerPick = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Score = new System.Windows.Forms.TextBox();
+            this.ThreePointA = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ThreePoint = new System.Windows.Forms.TextBox();
+            this.FieldGoal = new System.Windows.Forms.TextBox();
+            this.FieldGoalA = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.FreeThrow = new System.Windows.Forms.TextBox();
+            this.FreeThrowA = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.Rebound = new System.Windows.Forms.TextBox();
+            this.Assist = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.resisterPlayerStatus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // GamePick
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(280, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(259, 20);
-            this.comboBox1.TabIndex = 0;
+            this.GamePick.FormattingEnabled = true;
+            this.GamePick.Location = new System.Drawing.Point(280, 83);
+            this.GamePick.Name = "GamePick";
+            this.GamePick.Size = new System.Drawing.Size(259, 20);
+            this.GamePick.TabIndex = 0;
             // 
             // label1
             // 
@@ -79,13 +79,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "선수 이름";
             // 
-            // comboBox2
+            // PlayerPick
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(281, 141);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(99, 20);
-            this.comboBox2.TabIndex = 3;
+            this.PlayerPick.FormattingEnabled = true;
+            this.PlayerPick.Location = new System.Drawing.Point(281, 141);
+            this.PlayerPick.Name = "PlayerPick";
+            this.PlayerPick.Size = new System.Drawing.Size(99, 20);
+            this.PlayerPick.TabIndex = 3;
             // 
             // label3
             // 
@@ -96,19 +96,19 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "득점";
             // 
-            // textBox1
+            // Score
             // 
-            this.textBox1.Location = new System.Drawing.Point(466, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 5;
+            this.Score.Location = new System.Drawing.Point(466, 140);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(100, 21);
+            this.Score.TabIndex = 5;
             // 
-            // textBox2
+            // ThreePointA
             // 
-            this.textBox2.Location = new System.Drawing.Point(466, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 9;
+            this.ThreePointA.Location = new System.Drawing.Point(466, 180);
+            this.ThreePointA.Name = "ThreePointA";
+            this.ThreePointA.Size = new System.Drawing.Size(100, 21);
+            this.ThreePointA.TabIndex = 9;
             // 
             // label4
             // 
@@ -128,26 +128,26 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "3점슛 성공";
             // 
-            // textBox3
+            // ThreePoint
             // 
-            this.textBox3.Location = new System.Drawing.Point(280, 180);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 10;
+            this.ThreePoint.Location = new System.Drawing.Point(280, 180);
+            this.ThreePoint.Name = "ThreePoint";
+            this.ThreePoint.Size = new System.Drawing.Size(100, 21);
+            this.ThreePoint.TabIndex = 10;
             // 
-            // textBox4
+            // FieldGoal
             // 
-            this.textBox4.Location = new System.Drawing.Point(280, 220);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 14;
+            this.FieldGoal.Location = new System.Drawing.Point(280, 220);
+            this.FieldGoal.Name = "FieldGoal";
+            this.FieldGoal.Size = new System.Drawing.Size(100, 21);
+            this.FieldGoal.TabIndex = 14;
             // 
-            // textBox5
+            // FieldGoalA
             // 
-            this.textBox5.Location = new System.Drawing.Point(466, 220);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 13;
+            this.FieldGoalA.Location = new System.Drawing.Point(466, 220);
+            this.FieldGoalA.Name = "FieldGoalA";
+            this.FieldGoalA.Size = new System.Drawing.Size(100, 21);
+            this.FieldGoalA.TabIndex = 13;
             // 
             // label6
             // 
@@ -167,19 +167,19 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "야투 성공";
             // 
-            // textBox6
+            // FreeThrow
             // 
-            this.textBox6.Location = new System.Drawing.Point(280, 260);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 18;
+            this.FreeThrow.Location = new System.Drawing.Point(280, 260);
+            this.FreeThrow.Name = "FreeThrow";
+            this.FreeThrow.Size = new System.Drawing.Size(100, 21);
+            this.FreeThrow.TabIndex = 18;
             // 
-            // textBox7
+            // FreeThrowA
             // 
-            this.textBox7.Location = new System.Drawing.Point(466, 260);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 17;
+            this.FreeThrowA.Location = new System.Drawing.Point(466, 260);
+            this.FreeThrowA.Name = "FreeThrowA";
+            this.FreeThrowA.Size = new System.Drawing.Size(100, 21);
+            this.FreeThrowA.TabIndex = 17;
             // 
             // label8
             // 
@@ -199,19 +199,19 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "자유투 성공";
             // 
-            // textBox8
+            // Rebound
             // 
-            this.textBox8.Location = new System.Drawing.Point(280, 303);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 21);
-            this.textBox8.TabIndex = 22;
+            this.Rebound.Location = new System.Drawing.Point(280, 303);
+            this.Rebound.Name = "Rebound";
+            this.Rebound.Size = new System.Drawing.Size(100, 21);
+            this.Rebound.TabIndex = 22;
             // 
-            // textBox9
+            // Assist
             // 
-            this.textBox9.Location = new System.Drawing.Point(466, 303);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 21);
-            this.textBox9.TabIndex = 21;
+            this.Assist.Location = new System.Drawing.Point(466, 303);
+            this.Assist.Name = "Assist";
+            this.Assist.Size = new System.Drawing.Size(100, 21);
+            this.Assist.TabIndex = 21;
             // 
             // label10
             // 
@@ -231,43 +231,43 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "리바운드";
             // 
-            // button1
+            // resisterPlayerStatus
             // 
-            this.button1.Location = new System.Drawing.Point(346, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "선수 기록 등록";
-            this.button1.UseVisualStyleBackColor = true;
+            this.resisterPlayerStatus.Location = new System.Drawing.Point(346, 368);
+            this.resisterPlayerStatus.Name = "resisterPlayerStatus";
+            this.resisterPlayerStatus.Size = new System.Drawing.Size(94, 23);
+            this.resisterPlayerStatus.TabIndex = 23;
+            this.resisterPlayerStatus.Text = "선수 기록 등록";
+            this.resisterPlayerStatus.UseVisualStyleBackColor = true;
             // 
             // addPlayerStatusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.resisterPlayerStatus);
+            this.Controls.Add(this.Rebound);
+            this.Controls.Add(this.Assist);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.FreeThrow);
+            this.Controls.Add(this.FreeThrowA);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.FieldGoal);
+            this.Controls.Add(this.FieldGoalA);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ThreePoint);
+            this.Controls.Add(this.ThreePointA);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Score);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.PlayerPick);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.GamePick);
             this.Name = "addPlayerStatusForm";
             this.Text = "addPlayerStatusForm";
             this.Load += new System.EventHandler(this.addPlayerStatusForm_Load);
@@ -278,28 +278,28 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox GamePick;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox PlayerPick;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Score;
+        private System.Windows.Forms.TextBox ThreePointA;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ThreePoint;
+        private System.Windows.Forms.TextBox FieldGoal;
+        private System.Windows.Forms.TextBox FieldGoalA;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox FreeThrow;
+        private System.Windows.Forms.TextBox FreeThrowA;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox Rebound;
+        private System.Windows.Forms.TextBox Assist;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button resisterPlayerStatus;
     }
 }

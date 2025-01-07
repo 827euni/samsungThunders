@@ -74,14 +74,16 @@ namespace samsungT.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = @"
-                    INSERT INTO PlayerStats (GameID, PlayerID, Points, Rebounds, Assists, 
-                                              ThreePointsMade, ThreePointsAttempted, 
-                                              FreeThrowsMade, FreeThrowsAttempted, 
-                                              TwoPointsMade, TwoPointsAttempted)
-                    VALUES (@GameID, @PlayerID, @Points, @Rebounds, @Assists, 
-                            @ThreePointsMade, @ThreePointsAttempted, 
-                            @FreeThrowsMade, @FreeThrowsAttempted, 
-                            @TwoPointsMade, @TwoPointsAttempted)";
+            INSERT INTO PlayerStatus (GameID, PlayerID, Points, Rebounds, Assists, 
+                                      ThreePoints, ThreePointsA, 
+                                      FreeThrow, FreeThrowA, 
+                                      FieldGoal, FieldGoalA, 
+                                      Assist, Score)
+            VALUES (@GameID, @PlayerID, @Points, @Rebounds, @Assists, 
+                    @ThreePoints, @ThreePointsA, 
+                    @FreeThrow, @FreeThrowA, 
+                    @FieldGoal, @FieldGoalA, 
+                    @Assist, @Score)";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@GameID", playerStat.GameID);
@@ -89,17 +91,20 @@ namespace samsungT.Models
                 command.Parameters.AddWithValue("@Points", playerStat.Points);
                 command.Parameters.AddWithValue("@Rebounds", playerStat.Rebounds);
                 command.Parameters.AddWithValue("@Assists", playerStat.Assists);
-                command.Parameters.AddWithValue("@ThreePointsMade", playerStat.ThreePoints);
-                command.Parameters.AddWithValue("@ThreePointsAttempted", playerStat.ThreePointsA);
-                command.Parameters.AddWithValue("@FreeThrowsMade", playerStat.FreeThrow);
-                command.Parameters.AddWithValue("@FreeThrowsAttempted", playerStat.FreeThrowA);
-                command.Parameters.AddWithValue("@TwoPointsMade", playerStat.TwoPoints);
-                command.Parameters.AddWithValue("@TwoPointsAttempted", playerStat.TwoPointsA);
+                command.Parameters.AddWithValue("@ThreePoints", playerStat.ThreePoints);
+                command.Parameters.AddWithValue("@ThreePointsA", playerStat.ThreePointsA);
+                command.Parameters.AddWithValue("@FreeThrow", playerStat.FreeThrow);
+                command.Parameters.AddWithValue("@FreeThrowA", playerStat.FreeThrowA);
+                command.Parameters.AddWithValue("@FieldGoal", playerStat.FieldGoal);
+                command.Parameters.AddWithValue("@FieldGoalA", playerStat.FieldGoalA);
+                command.Parameters.AddWithValue("@Assist", playerStat.Assist);
+                command.Parameters.AddWithValue("@Score", playerStat.Score);
 
                 connection.Open();
                 command.ExecuteNonQuery();
             }
         }
+
 
         // 팀 스테이터스 추가
         public void AddTeamStat(TeamStatus teamStat)
@@ -117,35 +122,6 @@ namespace samsungT.Models
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-        }
-
-        // 삼성과의 승률 비교
-        public decimal GetWinRate(int teamID)
-        {
-            decimal winRate = 0;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT SUM(Wins) AS TotalWins, SUM(Losses) AS TotalLosses FROM TeamStats WHERE TeamID = @TeamID";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@TeamID", teamID);
-
-                connection.Open();
-                var reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    int totalWins = reader["TotalWins"] != DBNull.Value ? (int)reader["TotalWins"] : 0;
-                    int totalLosses = reader["TotalLosses"] != DBNull.Value ? (int)reader["TotalLosses"] : 0;
-                    int totalGames = totalWins + totalLosses;
-
-                    if (totalGames > 0)
-                    {
-                        winRate = (decimal)totalWins / totalGames;
-                    }
-                }
-            }
-
-            return winRate;
         }
 
         public void UpdateTeamWin(int teamID, bool IsWin)
@@ -225,13 +201,15 @@ namespace samsungT.Models
                         ThreePointsA = (int)reader["ThreePointsA"],
                         FreeThrow = (int)reader["FreeThrow"],
                         FreeThrowA = (int)reader["FreeThrowA"],
-                        TwoPoints = (int)reader["TwoPoints"],
-                        TwoPointsA = (int)reader["TwoPointsA"]
+                        FieldGoal = (int)reader["FieldGoal"],
+                        FieldGoalA = (int)reader["FieldGoalA"],
+                        Assist = (int)reader["Assist"],
+                        Score = (int)reader["Score"]
                     };
 
                     decimal threePointPer = status.Get3PointPercentage();
                     decimal freeThrowPer = status.GetFreeThrowPercentage();
-                    decimal twoPointper = status.Get2PointPercentage();
+                    decimal fieldGoalPer = status.GetFieldGoalPercentage();
 
                     playerStatus.Add(status);
                 }

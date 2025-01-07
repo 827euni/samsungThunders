@@ -34,12 +34,14 @@
             this.playerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.playerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Position = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ThreePoints = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.FreeThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TwoThrows = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ThreePoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FreeThrow = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FieldGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Rebounds = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.resisterGame = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.Assist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // resisterPlayer
@@ -68,11 +70,12 @@
             this.playerID,
             this.playerName,
             this.Position,
-            this.Height,
-            this.ThreePoints,
-            this.FreeThrows,
-            this.TwoThrows,
-            this.Rebounds});
+            this.Score,
+            this.ThreePoint,
+            this.FreeThrow,
+            this.FieldGoal,
+            this.Rebounds,
+            this.Assist});
             this.listPlayers.HideSelection = false;
             this.listPlayers.Location = new System.Drawing.Point(152, 12);
             this.listPlayers.Name = "listPlayers";
@@ -93,25 +96,25 @@
             // 
             this.Position.Text = "Position";
             // 
-            // Height
+            // ThreePoint
             // 
-            this.Height.Text = "Height";
+            this.ThreePoint.DisplayIndex = 3;
+            this.ThreePoint.Text = "ThreePoint";
             // 
-            // ThreePoints
+            // FreeThrow
             // 
-            this.ThreePoints.Text = "ThreePoints";
+            this.FreeThrow.DisplayIndex = 4;
+            this.FreeThrow.Text = "FreeThrow";
             // 
-            // FreeThrows
+            // FieldGoal
             // 
-            this.FreeThrows.Text = "FreeThrows";
-            // 
-            // TwoThrows
-            // 
-            this.TwoThrows.Text = "TwoThrows";
+            this.FieldGoal.DisplayIndex = 5;
+            this.FieldGoal.Text = "FieldGoal";
             // 
             // Rebounds
             // 
-            this.Rebounds.Text = "Rebounds";
+            this.Rebounds.DisplayIndex = 6;
+            this.Rebounds.Text = "Rebound";
             // 
             // resisterGame
             // 
@@ -123,11 +126,28 @@
             this.resisterGame.UseVisualStyleBackColor = true;
             this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(129, 256);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
+            // 
+            // Assist
+            // 
+            this.Assist.DisplayIndex = 7;
+            this.Assist.Text = "Assist";
+            // 
+            // Score
+            // 
+            this.Score.DisplayIndex = 8;
+            this.Score.Text = "Score";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.resisterGame);
             this.Controls.Add(this.listPlayers);
             this.Controls.Add(this.resisterTeam);
@@ -146,12 +166,14 @@
         private System.Windows.Forms.ColumnHeader playerID;
         private System.Windows.Forms.ColumnHeader playerName;
         private System.Windows.Forms.ColumnHeader Position;
-        private System.Windows.Forms.ColumnHeader Height;
-        private System.Windows.Forms.ColumnHeader ThreePoints;
-        private System.Windows.Forms.ColumnHeader FreeThrows;
-        private System.Windows.Forms.ColumnHeader TwoThrows;
+        private System.Windows.Forms.ColumnHeader ThreePoint;
+        private System.Windows.Forms.ColumnHeader FreeThrow;
+        private System.Windows.Forms.ColumnHeader FieldGoal;
         private System.Windows.Forms.ColumnHeader Rebounds;
         private System.Windows.Forms.Button resisterGame;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ColumnHeader Score;
+        private System.Windows.Forms.ColumnHeader Assist;
     }
 }
 

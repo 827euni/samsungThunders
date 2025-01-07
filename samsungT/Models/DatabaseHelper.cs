@@ -15,8 +15,8 @@ namespace samsungT.Models
 
         public DatabaseHelper()
         {
-            //connectionString = "Server=DESKTOP-FB39PEA\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 집 데스크탑
-            connectionString = "Server=EA-PC\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 회사 데스크탑/노트북
+            connectionString = "Server=DESKTOP-FB39PEA\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 집 데스크탑
+            //connectionString = "Server=EA-PC\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 회사 데스크탑/노트북
         }
 
         public void AddTeam(Team team)
@@ -38,15 +38,22 @@ namespace samsungT.Models
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Players (PlayerName, TeamID, Position, Height) VALUES (@PlayerName, @TeamID, @Position, @Height)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@PlayerName", player.PlayerName);
-                command.Parameters.AddWithValue("@TeamID", player.TeamID);
-                command.Parameters.AddWithValue("@Position", player.Position);
-                command.Parameters.AddWithValue("@Height", player.Height);
+              string query = @"SET IDENTITY_INSERT Players ON;
+            INSERT INTO Players (PlayerID, PlayerName, TeamID, Position, Height)
+            VALUES (@PlayerID, @PlayerName, @TeamID, @Position, @Height);
+            SET IDENTITY_INSERT Players OFF;";
 
-                connection.Open();
-                command.ExecuteNonQuery();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PlayerID", player.PlayerID);
+                    command.Parameters.AddWithValue("@PlayerName", player.PlayerName);
+                    command.Parameters.AddWithValue("@TeamID", player.TeamID);
+                    command.Parameters.AddWithValue("@Position", player.Position);
+                    command.Parameters.AddWithValue("@Height", player.Height);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
             }
         }
 

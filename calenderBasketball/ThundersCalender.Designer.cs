@@ -32,6 +32,7 @@
             this.monthText = new System.Windows.Forms.Label();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
+            this.todayButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // calender
@@ -91,11 +92,24 @@
             this.nextButton.UseVisualStyleBackColor = false;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
+            // todayButton
+            // 
+            this.todayButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.todayButton.Font = new System.Drawing.Font("Pretendard Variable Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.todayButton.Location = new System.Drawing.Point(512, 22);
+            this.todayButton.Name = "todayButton";
+            this.todayButton.Size = new System.Drawing.Size(56, 35);
+            this.todayButton.TabIndex = 4;
+            this.todayButton.Text = "오늘";
+            this.todayButton.UseVisualStyleBackColor = false;
+            this.todayButton.Click += new System.EventHandler(this.todayButton_Click);
+            // 
             // ThundersCalender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.todayButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.prevButton);
             this.Controls.Add(this.monthText);
@@ -113,5 +127,6 @@
         private System.Windows.Forms.Label monthText;
         private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button todayButton;
     }
 }

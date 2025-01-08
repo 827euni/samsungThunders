@@ -77,5 +77,11 @@ namespace calenderBasketball
             today = today.AddMonths(-1);
             fillCalender(today.Year, today.Month);
         }
+
+        private void todayButton_Click(object sender, EventArgs e)
+        {
+            today = DateTime.Now;
+            fillCalender(today.Year, today.Month);
+        }
     }
 }

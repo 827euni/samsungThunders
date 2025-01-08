@@ -33,13 +33,13 @@ namespace calenderBasketball
 
             monthText.Text = $"{month}월";
             DateTime firstDay = new DateTime(year, month, 1);
-            int startDayIndex = ((int)firstDay.DayOfWeek + 6) % 7;
+            int startDayIndex = ((int)firstDay.DayOfWeek + 6) % 7; // 월요일 시작
 
             int totalDays = DateTime.DaysInMonth(year, month);
 
-            for (int day = totalDays; day >= 1; day--)
+            for (int day = 1; day <= totalDays; day++)
             {
-                int index = startDayIndex + (totalDays - day);
+                int index = startDayIndex + (day - 1);
                 if (index < calender.Controls.Count)
                 {
                     if (calender.Controls[index] is Button button)
@@ -48,15 +48,8 @@ namespace calenderBasketball
                     }
                 }
             }
-
-            for (int i = startDayIndex + totalDays; i < calender.Controls.Count; i++)
-            {
-                if (calender.Controls[i] is Button button)
-                {
-                    button.Text = "";
-                }
-            }
         }
+
         private void nextButton_Click(object sender, EventArgs e)
         {
             today = today.AddMonths(1);

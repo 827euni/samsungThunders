@@ -31,9 +31,8 @@ namespace calenderBasketball
                 }
             }
             monthText.Text = $"{month}월";
-
             DateTime first = new DateTime(year, month, 1);
-            int startDays = ((int)first.DayOfWeek + 6) % 7; // 일요일 시작이 아닌 월요일 시작이라서
+            int startDays = ((int)first.DayOfWeek + 6) % 7;
 
             for (int i = 1; i <= DateTime.DaysInMonth(year, month); i++)
             {
@@ -92,7 +91,7 @@ namespace calenderBasketball
             float size = 100 / (rowCount - 1);
             for (int i = 0; i <= rowCount; i++)
             {
-                calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, size));
+                calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent,size));
             }
         }
     }

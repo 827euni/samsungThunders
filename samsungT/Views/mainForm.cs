@@ -25,6 +25,7 @@ namespace samsungT
             loadPlayers();
             loadWinRateChart();
             loadRecentGame();
+            loadStatus();
         }
 
         // 리스트 뷰에 선수들을 나타내게 하는 함수
@@ -132,7 +133,6 @@ namespace samsungT
         // 최근 경기의 결과를 볼 수 있게 하는 함수
         private void loadRecentGame()
         {
-            var players = db.GetPlayers();
             var playerStatus = db.GetPlayersStatus();
             var recentGame = db.GetRecentGame();
 
@@ -184,7 +184,43 @@ namespace samsungT
                     recentAwayScore.ForeColor = Color.RoyalBlue;
                 }
             }
+        }
 
+        private void loadStatus()
+        {
+            var games = db.GetGames();
+            var playerStatus = db.GetPlayersStatus();
+            var players = db.GetPlayers();
+
+            int totalScore = 0;
+            int total3Point = 0;
+            int total3PointA = 0;
+            int totalField = 0;
+            int totalFieldA = 0;
+            int totalFree = 0;
+            int totalFreeA = 0;
+            int totalRebound = 0;
+            int totalAssist = 0;
+
+            foreach (var player in playerStatus)
+            {
+                totalScore += player.Score;
+                total3Point += player.ThreePoint;
+                total3PointA += player.ThreePointA;
+                totalField += player.FieldGoal;
+                totalFieldA += player.FieldGoalA;
+                totalFree += player.FreeThrow;
+                totalFreeA += player.FreeThrowA;
+                totalRebound += player.Rebound;
+                totalAssist += player.Assist;
+            }
+
+            clickScore.Text = totalScore.ToString();
+            click3.Text = total3PointA > 0 ? ((float)total3Point / total3PointA * 100).ToString("F2") + "%" : 0.ToString();
+            clickField.Text = totalFieldA > 0 ? ((float)totalField / totalFieldA * 100).ToString("F2") + "%" : 0.ToString();
+            clickFree.Text = totalFreeA > 0 ? ((float)totalFree / totalFreeA * 100).ToString("F2") + "%" : 0.ToString();
+            clickRebound.Text = totalRebound.ToString();
+            clickAssist.Text = totalAssist.ToString();
 
         }
         private void resisterPlayer_Click(object sender, EventArgs e)
@@ -197,11 +233,6 @@ namespace samsungT
         {
             addTeamForm addTeam = new addTeamForm();
             addTeam.ShowDialog();
-
-            if (addTeam.ShowDialog() == DialogResult.OK) 
-            {
-                loadPlayers();
-            }
         }
 
         private void resisterGame_Click(object sender, EventArgs e)
@@ -219,7 +250,7 @@ namespace samsungT
 
         // 승률 버튼
 
-        private void setButtonColor(Button button)
+        private void setButtonColor(System.Windows.Forms.Button button)
         {
             DBButton.BackColor = SystemColors.ButtonHighlight;
             SONOButton.BackColor = SystemColors.ButtonHighlight;
@@ -313,5 +344,6 @@ namespace samsungT
         {
             oneMoreClickButton(MOBISButton, 10);
         }
+
     }
 }

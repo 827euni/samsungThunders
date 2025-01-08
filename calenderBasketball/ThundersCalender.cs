@@ -23,24 +23,15 @@ namespace calenderBasketball
 
         private void fillCalender(int year, int month)
         {
-            calender.Controls.Clear();
-            calender.RowCount = 6;
-            calender.ColumnCount = 7;
+            for (int i = calender.Controls.Count - 1; i >= 0; i--)
+            {
+                if (calender.GetRow(calender.Controls[i]) > 0)
+                {
+                    calender.Controls.Remove(calender.Controls[i]);
+                }
+            }
             monthText.Text = $"{month}월";
 
-            string[] week = {"월요일","화요일","수요일","목요일","금요일","토요일","일요일"};
-            for (int i = 0; i < week.Length; i++)
-            {
-                Label days = new Label
-                {
-                    Text = week[i],
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Pretendard Variable", 12, FontStyle.Bold),
-                    BackColor = SystemColors.ButtonHighlight,
-                    Dock = DockStyle.Fill
-                };
-                calender.Controls.Add(days, i, 0);
-            }
             DateTime first = new DateTime(year, month, 1);
             int startDays = ((int)first.DayOfWeek + 6) % 7; // 일요일 시작이 아닌 월요일 시작이라서
 
@@ -61,10 +52,22 @@ namespace calenderBasketball
                 {
                     day.ForeColor = Color.IndianRed;
                 }
+
                 calender.Controls.Add(day, column, row);
             }
+
+            if (calender.RowCount == 7)
+            {
+                changeSize(7);
+            }
+
+            else if (calender.RowCount == 6)
+            {
+                changeSize(6);
+            }
+
         }
-        
+
 
         private void nextButton_Click(object sender, EventArgs e)
         {
@@ -82,6 +85,15 @@ namespace calenderBasketball
         {
             today = DateTime.Now;
             fillCalender(today.Year, today.Month);
+        }
+
+        private void changeSize(int rowCount)
+        {
+            float size = 100 / (rowCount - 1);
+            for (int i = 0; i <= rowCount; i++)
+            {
+                calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, size));
+            }
         }
     }
 }

@@ -18,85 +18,61 @@ namespace calenderBasketball
         {
             InitializeComponent();
             today = DateTime.Now;
-            fillCalender(today.Year, today.Month);
+            makeCalender(today.Year, today.Month);
         }
 
-        private void fillCalender(int year, int month)
+        private void makeCalender(int year, int month)
         {
-            for (int i = calender.Controls.Count - 1; i >= 0; i--)
+            foreach (Control control in calender.Controls)
             {
-                if (calender.GetRow(calender.Controls[i]) > 0)
-                {
-                    calender.Controls.Remove(calender.Controls[i]);
-                }
-            }
-            monthText.Text = $"{month}월";
-            DateTime first = new DateTime(year, month, 1);
-            int startDays = ((int)first.DayOfWeek + 6) % 7;
-
-            for (int i = 1; i <= 35; i++)
-            {
-                int row = (i + startDays - 1) / 7 + 1;
-                int column = (i + startDays - 1) % 7;
-
-                //Button day = (Button)calender.Controls[button1]; 여기 버튼을 어떻게 하나하나 찾아야 할지 모르겠음.
-
-                if (i <= DateTime.DaysInMonth(year, month))
-                {
-                    day.Text = i.ToString();
-                    day.TextAlign = ContentAlignment.MiddleCenter;
-                    day.Font = new Font("Pretendard", 20, FontStyle.Regular);
-                    day.BackColor = SystemColors.ButtonHighlight;
-                    day.Dock = DockStyle.Fill;
-
-                    if (column == 6)
-                    {
-                        day.ForeColor = Color.IndianRed;
-                    }
-
-                    day.Click += (sender, e) =>
-                    {
-                        int dayId = i;
-                        MessageBox.Show($"You clicked on day: {dayId}");
-                    };
-                }
-
-                else
+                if (control is Button day)
                 {
                     day.Text = "";
                 }
+            }
 
-                if (calender.RowCount == 7)
-                {
-                    changeSize(7);
-                }
+            monthText.Text = $"{month}월";
+            DateTime firstDay = new DateTime(year, month, 1);
+            int startDayIndex = ((int)firstDay.DayOfWeek + 6) % 7;
 
-                else if (calender.RowCount == 6)
+            int totalDays = DateTime.DaysInMonth(year, month);
+
+            for (int day = totalDays; day >= 1; day--)
+            {
+                int index = startDayIndex + (totalDays - day);
+                if (index < calender.Controls.Count)
                 {
-                    changeSize(6);
+                    if (calender.Controls[index] is Button button)
+                    {
+                        button.Text = day.ToString();
+                    }
                 }
             }
 
-
+            for (int i = startDayIndex + totalDays; i < calender.Controls.Count; i++)
+            {
+                if (calender.Controls[i] is Button button)
+                {
+                    button.Text = "";
+                }
+            }
         }
-
-
         private void nextButton_Click(object sender, EventArgs e)
         {
             today = today.AddMonths(1);
-            fillCalender(today.Year, today.Month);
+            makeCalender(today.Year, today.Month);
         }
 
         private void prevButton_Click(object sender, EventArgs e)
         {
             today = today.AddMonths(-1);
-            fillCalender(today.Year, today.Month);
+            makeCalender(today.Year, today.Month);
         }
 
         private void todayButton_Click(object sender, EventArgs e)
         {
             today = DateTime.Now;
-            fillCalender(today.Year, today.Month);
+            makeCalender(today.Year, today.Month);
         }
 
         private void changeSize(int rowCount)
@@ -107,5 +83,6 @@ namespace calenderBasketball
                 calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent,size));
             }
         }
+
     }
 }

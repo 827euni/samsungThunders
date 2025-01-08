@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterPlayer = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
@@ -61,13 +61,15 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.recentScore = new System.Windows.Forms.Label();
             this.recentText = new System.Windows.Forms.Label();
-            this.recentScores = new System.Windows.Forms.Label();
+            this.recentHomeScore = new System.Windows.Forms.Label();
             this.recentGame = new System.Windows.Forms.Label();
             this.recentRebound = new System.Windows.Forms.Label();
             this.recentAssist = new System.Windows.Forms.Label();
             this.recentField = new System.Windows.Forms.Label();
             this.recentFree = new System.Windows.Forms.Label();
             this.recentCity = new System.Windows.Forms.Label();
+            this.recentAwayScore = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -198,19 +200,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend7);
             this.winRateChart.Location = new System.Drawing.Point(903, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.winRateChart.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series7.CustomProperties = "PieStartAngle=270";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.winRateChart.Series.Add(series7);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -349,8 +351,14 @@
             this.splitContainer1.Panel1.Controls.Add(this.recentScore);
             this.splitContainer1.Panel1.Controls.Add(this.recentText);
             this.splitContainer1.Panel1.Controls.Add(this.recentCity);
-            this.splitContainer1.Panel1.Controls.Add(this.recentScores);
+            this.splitContainer1.Panel1.Controls.Add(this.recentAwayScore);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.recentHomeScore);
             this.splitContainer1.Panel1.Controls.Add(this.recentGame);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.splitContainer1.Size = new System.Drawing.Size(509, 265);
             this.splitContainer1.SplitterDistance = 236;
             this.splitContainer1.TabIndex = 20;
@@ -377,15 +385,16 @@
             this.recentText.Text = "득점\r\n리바운드\r\n어시스트\r\n야투\r\n자유투";
             this.recentText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // recentScores
+            // recentHomeScore
             // 
-            this.recentScores.AutoSize = true;
-            this.recentScores.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentScores.Location = new System.Drawing.Point(50, 70);
-            this.recentScores.Name = "recentScores";
-            this.recentScores.Size = new System.Drawing.Size(135, 27);
-            this.recentScores.TabIndex = 1;
-            this.recentScores.Text = "recentScores";
+            this.recentHomeScore.AutoSize = true;
+            this.recentHomeScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentHomeScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.recentHomeScore.Location = new System.Drawing.Point(78, 70);
+            this.recentHomeScore.Name = "recentHomeScore";
+            this.recentHomeScore.Size = new System.Drawing.Size(24, 27);
+            this.recentHomeScore.TabIndex = 1;
+            this.recentHomeScore.Text = "0";
             // 
             // recentGame
             // 
@@ -450,6 +459,28 @@
             this.recentCity.Size = new System.Drawing.Size(82, 19);
             this.recentCity.TabIndex = 1;
             this.recentCity.Text = "recentCity";
+            // 
+            // recentAwayScore
+            // 
+            this.recentAwayScore.AutoSize = true;
+            this.recentAwayScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentAwayScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.recentAwayScore.Location = new System.Drawing.Point(121, 70);
+            this.recentAwayScore.Name = "recentAwayScore";
+            this.recentAwayScore.Size = new System.Drawing.Size(24, 27);
+            this.recentAwayScore.TabIndex = 1;
+            this.recentAwayScore.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(108, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 27);
+            this.label1.TabIndex = 1;
+            this.label1.Text = ":";
             // 
             // mainForm
             // 
@@ -519,13 +550,15 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label recentGame;
         private System.Windows.Forms.Label recentText;
-        private System.Windows.Forms.Label recentScores;
+        private System.Windows.Forms.Label recentHomeScore;
         private System.Windows.Forms.Label recentScore;
         private System.Windows.Forms.Label recentFree;
         private System.Windows.Forms.Label recentField;
         private System.Windows.Forms.Label recentAssist;
         private System.Windows.Forms.Label recentRebound;
         private System.Windows.Forms.Label recentCity;
+        private System.Windows.Forms.Label recentAwayScore;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -307,6 +307,35 @@ namespace samsungT.Models
             return teamName;
         }
 
+        public string GetCityName(int teamID)
+        {
+            string city = "";
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT City FROM Teams WHERE TeamID = @TeamID";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+                    cmd.Parameters.AddWithValue("@TeamID", teamID);
+
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        city = result.ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"팀 이름을 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return city;
+        }
+
         public string GetPlayerName(int playerID)
         {
             string Name = "";
@@ -334,6 +363,42 @@ namespace samsungT.Models
             }
 
             return Name;
+        }
+
+        public Game GetRecentGame()
+        {
+            Game recentGame = null;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT TOP 1 GameID, Date, HomeTeamID, AwayTeamID, HomeScore, AwayScore FROM Games WHERE Date <= @Today ORDER BY Date DESC";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+                    cmd.Parameters.AddWithValue("@Today", DateTime.Now);
+
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        recentGame = new Game
+                        {
+                            GameID = (int)reader["GameID"],
+                            Date = (DateTime)reader["Date"],
+                            HomeTeamID = (int)reader["HomeTeamID"],
+                            AwayTeamID = (int)reader["AwayTeamID"],
+                            HomeScore = (int)reader["HomeScore"],
+                            AwayScore = (int)reader["AwayScore"]
+                        };
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"최근 게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return recentGame;
         }
     }
 }

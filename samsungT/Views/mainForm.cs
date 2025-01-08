@@ -24,6 +24,7 @@ namespace samsungT
             db = new Models.DatabaseHelper();
             loadPlayers();
             loadWinRateChart();
+            loadRecentGame();
         }
 
         // 리스트 뷰에 선수들을 나타내게 하는 함수
@@ -93,6 +94,7 @@ namespace samsungT
             }
         }
 
+        //승률 차트 바꾸고, 기본 값이 삼성썬더스로 보이게 하는 함수
         private void loadWinRateChart(int teamID = 1)
         {
             winRateChart.Series[0].Points.Clear();
@@ -125,6 +127,34 @@ namespace samsungT
             {
                 winRateText.Text = $"팀 ID가 {TeamID}인 팀을 찾을 수 없습니다.";
             }
+        }
+        
+        // 최근 경기의 결과를 볼 수 있게 하는 함수
+        private void loadRecentGame()
+        {
+            var players = db.GetPlayers();
+            var playerStatus = db.GetPlayersStatus();
+            var recentGame = db.GetRecentGame();
+
+            if (recentGame != null) 
+            {
+                int gameID = recentGame.GameID;
+                string homeCityName = db.GetCityName(recentGame.HomeTeamID);
+                string awayCityName = db.GetCityName(recentGame.AwayTeamID);
+                recentHomeScore.Text = recentGame.HomeScore.ToString();
+                recentAwayScore.Text = recentGame.AwayScore.ToString();
+                recentCity.Text = $"{homeCityName}  :  {awayCityName}";
+                if (recentGame.HomeTeamID == 1)
+                {
+                    recentHomeScore.ForeColor = Color.RoyalBlue;
+                }
+                else
+                {
+                    recentAwayScore.ForeColor = Color.RoyalBlue;
+                }
+            }
+
+
         }
         private void resisterPlayer_Click(object sender, EventArgs e)
         {

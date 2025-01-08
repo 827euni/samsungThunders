@@ -32,7 +32,8 @@ namespace calenderBasketball
                 Label days = new Label
                 {
                     Text = week[i],
-                    TextAlign = ContentAlignment.MiddleCenter,//폰트 이름 프리텐다드, 폰트 사이즈도 변경해야함
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font("Pretendard", 14, FontStyle.Regular),
                     BackColor = SystemColors.ButtonHighlight,
                     Dock = DockStyle.Fill
                 };
@@ -46,12 +47,18 @@ namespace calenderBasketball
                 Label day = new Label
                 {
                     Text = i.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter,//폰트 이름 프리텐다드, 폰트 사이즈도 변경해야함
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font("Pretendard", 12, FontStyle.Regular),
                     BackColor = SystemColors.ButtonHighlight,
                     Dock = DockStyle.Fill
                 };
                 int row = (i + startDays - 1) / 7 + 1;
                 int column = (i + startDays - 1) % 7;
+
+                if (column == 6)
+                {
+                    day.ForeColor = Color.IndianRed;
+                }
                 calender.Controls.Add(day, column, row);
             }
         }

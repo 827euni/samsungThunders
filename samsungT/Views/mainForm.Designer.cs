@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterPlayer = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
@@ -59,17 +59,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.winRateText = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.recentScore = new System.Windows.Forms.Label();
-            this.recentText = new System.Windows.Forms.Label();
-            this.recentHomeScore = new System.Windows.Forms.Label();
-            this.recentGame = new System.Windows.Forms.Label();
-            this.recentRebound = new System.Windows.Forms.Label();
-            this.recentAssist = new System.Windows.Forms.Label();
-            this.recentField = new System.Windows.Forms.Label();
             this.recentFree = new System.Windows.Forms.Label();
+            this.recentField = new System.Windows.Forms.Label();
+            this.recentAssist = new System.Windows.Forms.Label();
+            this.recentRebound = new System.Windows.Forms.Label();
+            this.recentText = new System.Windows.Forms.Label();
             this.recentCity = new System.Windows.Forms.Label();
             this.recentAwayScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.recentHomeScore = new System.Windows.Forms.Label();
+            this.recentGame = new System.Windows.Forms.Label();
+            this.recent3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -200,19 +200,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea7.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend7);
+            chartArea5.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend5);
             this.winRateChart.Location = new System.Drawing.Point(903, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series7.CustomProperties = "PieStartAngle=270";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.winRateChart.Series.Add(series7);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.CustomProperties = "PieStartAngle=270";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.winRateChart.Series.Add(series5);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -344,11 +344,11 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.splitContainer1.Panel1.Controls.Add(this.recentFree);
-            this.splitContainer1.Panel1.Controls.Add(this.recentField);
-            this.splitContainer1.Panel1.Controls.Add(this.recentAssist);
             this.splitContainer1.Panel1.Controls.Add(this.recentRebound);
-            this.splitContainer1.Panel1.Controls.Add(this.recentScore);
+            this.splitContainer1.Panel1.Controls.Add(this.recentAssist);
+            this.splitContainer1.Panel1.Controls.Add(this.recentFree);
+            this.splitContainer1.Panel1.Controls.Add(this.recent3);
+            this.splitContainer1.Panel1.Controls.Add(this.recentField);
             this.splitContainer1.Panel1.Controls.Add(this.recentText);
             this.splitContainer1.Panel1.Controls.Add(this.recentCity);
             this.splitContainer1.Panel1.Controls.Add(this.recentAwayScore);
@@ -363,16 +363,49 @@
             this.splitContainer1.SplitterDistance = 236;
             this.splitContainer1.TabIndex = 20;
             // 
-            // recentScore
+            // recentFree
             // 
-            this.recentScore.AutoSize = true;
-            this.recentScore.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentScore.Location = new System.Drawing.Point(114, 130);
-            this.recentScore.Name = "recentScore";
-            this.recentScore.Size = new System.Drawing.Size(99, 21);
-            this.recentScore.TabIndex = 2;
-            this.recentScore.Text = "recentScore";
-            this.recentScore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.recentFree.AutoSize = true;
+            this.recentFree.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentFree.Location = new System.Drawing.Point(114, 165);
+            this.recentFree.Name = "recentFree";
+            this.recentFree.Size = new System.Drawing.Size(88, 21);
+            this.recentFree.TabIndex = 2;
+            this.recentFree.Text = "recentFree";
+            this.recentFree.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // recentField
+            // 
+            this.recentField.AutoSize = true;
+            this.recentField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentField.Location = new System.Drawing.Point(114, 147);
+            this.recentField.Name = "recentField";
+            this.recentField.Size = new System.Drawing.Size(92, 21);
+            this.recentField.TabIndex = 2;
+            this.recentField.Text = "recentField";
+            this.recentField.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // recentAssist
+            // 
+            this.recentAssist.AutoSize = true;
+            this.recentAssist.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentAssist.Location = new System.Drawing.Point(114, 205);
+            this.recentAssist.Name = "recentAssist";
+            this.recentAssist.Size = new System.Drawing.Size(101, 21);
+            this.recentAssist.TabIndex = 2;
+            this.recentAssist.Text = "recentAssist";
+            this.recentAssist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // recentRebound
+            // 
+            this.recentRebound.AutoSize = true;
+            this.recentRebound.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentRebound.Location = new System.Drawing.Point(114, 185);
+            this.recentRebound.Name = "recentRebound";
+            this.recentRebound.Size = new System.Drawing.Size(124, 21);
+            this.recentRebound.TabIndex = 2;
+            this.recentRebound.Text = "recentRebound";
+            this.recentRebound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // recentText
             // 
@@ -382,73 +415,8 @@
             this.recentText.Name = "recentText";
             this.recentText.Size = new System.Drawing.Size(85, 95);
             this.recentText.TabIndex = 2;
-            this.recentText.Text = "득점\r\n리바운드\r\n어시스트\r\n야투\r\n자유투";
+            this.recentText.Text = "3점\r\n야투\r\n자유투\r\n리바운드\r\n어시스트\r\n";
             this.recentText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // recentHomeScore
-            // 
-            this.recentHomeScore.AutoSize = true;
-            this.recentHomeScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentHomeScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recentHomeScore.Location = new System.Drawing.Point(78, 70);
-            this.recentHomeScore.Name = "recentHomeScore";
-            this.recentHomeScore.Size = new System.Drawing.Size(24, 27);
-            this.recentHomeScore.TabIndex = 1;
-            this.recentHomeScore.Text = "0";
-            // 
-            // recentGame
-            // 
-            this.recentGame.AutoSize = true;
-            this.recentGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentGame.Location = new System.Drawing.Point(11, 28);
-            this.recentGame.Name = "recentGame";
-            this.recentGame.Size = new System.Drawing.Size(216, 42);
-            this.recentGame.TabIndex = 0;
-            this.recentGame.Text = "Recent Game";
-            // 
-            // recentRebound
-            // 
-            this.recentRebound.AutoSize = true;
-            this.recentRebound.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentRebound.Location = new System.Drawing.Point(114, 151);
-            this.recentRebound.Name = "recentRebound";
-            this.recentRebound.Size = new System.Drawing.Size(124, 21);
-            this.recentRebound.TabIndex = 2;
-            this.recentRebound.Text = "recentRebound";
-            this.recentRebound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // recentAssist
-            // 
-            this.recentAssist.AutoSize = true;
-            this.recentAssist.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentAssist.Location = new System.Drawing.Point(114, 168);
-            this.recentAssist.Name = "recentAssist";
-            this.recentAssist.Size = new System.Drawing.Size(101, 21);
-            this.recentAssist.TabIndex = 2;
-            this.recentAssist.Text = "recentAssist";
-            this.recentAssist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // recentField
-            // 
-            this.recentField.AutoSize = true;
-            this.recentField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentField.Location = new System.Drawing.Point(114, 187);
-            this.recentField.Name = "recentField";
-            this.recentField.Size = new System.Drawing.Size(92, 21);
-            this.recentField.TabIndex = 2;
-            this.recentField.Text = "recentField";
-            this.recentField.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // recentFree
-            // 
-            this.recentFree.AutoSize = true;
-            this.recentFree.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentFree.Location = new System.Drawing.Point(114, 204);
-            this.recentFree.Name = "recentFree";
-            this.recentFree.Size = new System.Drawing.Size(88, 21);
-            this.recentFree.TabIndex = 2;
-            this.recentFree.Text = "recentFree";
-            this.recentFree.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // recentCity
             // 
@@ -481,6 +449,38 @@
             this.label1.Size = new System.Drawing.Size(18, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = ":";
+            // 
+            // recentHomeScore
+            // 
+            this.recentHomeScore.AutoSize = true;
+            this.recentHomeScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentHomeScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.recentHomeScore.Location = new System.Drawing.Point(78, 70);
+            this.recentHomeScore.Name = "recentHomeScore";
+            this.recentHomeScore.Size = new System.Drawing.Size(24, 27);
+            this.recentHomeScore.TabIndex = 1;
+            this.recentHomeScore.Text = "0";
+            // 
+            // recentGame
+            // 
+            this.recentGame.AutoSize = true;
+            this.recentGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentGame.Location = new System.Drawing.Point(11, 28);
+            this.recentGame.Name = "recentGame";
+            this.recentGame.Size = new System.Drawing.Size(216, 42);
+            this.recentGame.TabIndex = 0;
+            this.recentGame.Text = "Recent Game";
+            // 
+            // recent3
+            // 
+            this.recent3.AutoSize = true;
+            this.recent3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recent3.Location = new System.Drawing.Point(114, 130);
+            this.recent3.Name = "recent3";
+            this.recent3.Size = new System.Drawing.Size(64, 21);
+            this.recent3.TabIndex = 2;
+            this.recent3.Text = "recent3";
+            this.recent3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // mainForm
             // 
@@ -551,7 +551,6 @@
         private System.Windows.Forms.Label recentGame;
         private System.Windows.Forms.Label recentText;
         private System.Windows.Forms.Label recentHomeScore;
-        private System.Windows.Forms.Label recentScore;
         private System.Windows.Forms.Label recentFree;
         private System.Windows.Forms.Label recentField;
         private System.Windows.Forms.Label recentAssist;
@@ -559,6 +558,7 @@
         private System.Windows.Forms.Label recentCity;
         private System.Windows.Forms.Label recentAwayScore;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label recent3;
     }
 }
 

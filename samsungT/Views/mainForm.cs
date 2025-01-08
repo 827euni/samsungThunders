@@ -141,9 +141,40 @@ namespace samsungT
                 int gameID = recentGame.GameID;
                 string homeCityName = db.GetCityName(recentGame.HomeTeamID);
                 string awayCityName = db.GetCityName(recentGame.AwayTeamID);
+
+                int total3Point = 0;
+                int total3PointA = 0;
+                int totalField = 0;
+                int totalFieldA = 0;
+                int totalFree = 0;
+                int totalFreeA = 0;
+                int totalRebound = 0;
+                int totalAssist = 0;
+
+                foreach (var status in playerStatus)
+                {
+                    if (status.GameID == gameID)
+                    {
+                        total3Point += status.ThreePoint;
+                        total3PointA += status.ThreePointA;
+                        totalField += status.FieldGoal;
+                        totalFieldA += status.FieldGoalA;
+                        totalFree += status.FreeThrow;
+                        totalFreeA += status.FreeThrowA;
+                        totalRebound += status.Rebound;
+                        totalAssist += status.Assist;
+                    }
+
+                }
                 recentHomeScore.Text = recentGame.HomeScore.ToString();
                 recentAwayScore.Text = recentGame.AwayScore.ToString();
                 recentCity.Text = $"{homeCityName}  :  {awayCityName}";
+                recent3.Text = $"{total3Point}/{total3PointA}";
+                recentField.Text = $"{totalField}/{totalFieldA}";
+                recentFree.Text = $"{totalFree}/{totalFreeA}";
+                recentRebound.Text = totalRebound.ToString();
+                recentAssist.Text = totalAssist.ToString();
+
                 if (recentGame.HomeTeamID == 1)
                 {
                     recentHomeScore.ForeColor = Color.RoyalBlue;

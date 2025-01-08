@@ -15,8 +15,8 @@ namespace samsungT.Models
 
         public DatabaseHelper()
         {
-            connectionString = "Server=DESKTOP-FB39PEA\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 집 데스크탑
-            //connectionString = "Server=EA-PC\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 권은아 회사 데스크탑/노트북
+            //connectionString = "Server=DESKTOP-FB39PEA\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 집 데스크탑
+            connectionString = "Server=EA-PC\\SQLEXPRESS;Database=samsungThunders;Integrated Security=True;"; // 회사 데스크탑/노트북
         }
 
         public void AddTeam(Team team)

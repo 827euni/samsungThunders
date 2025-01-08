@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.calender = new System.Windows.Forms.TableLayoutPanel();
-            this.month = new System.Windows.Forms.Label();
+            this.monthText = new System.Windows.Forms.Label();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,7 +46,6 @@
             this.calender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2851F));
             this.calender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28939F));
             this.calender.Font = new System.Drawing.Font("Pretendard", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.calender.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.calender.Location = new System.Drawing.Point(62, 73);
             this.calender.Name = "calender";
             this.calender.RowCount = 6;
@@ -59,15 +58,15 @@
             this.calender.Size = new System.Drawing.Size(757, 458);
             this.calender.TabIndex = 0;
             // 
-            // month
+            // monthText
             // 
-            this.month.AutoSize = true;
-            this.month.Font = new System.Drawing.Font("Pretendard Variable ExtraBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.month.Location = new System.Drawing.Point(408, 22);
-            this.month.Name = "month";
-            this.month.Size = new System.Drawing.Size(59, 38);
-            this.month.TabIndex = 1;
-            this.month.Text = "1월";
+            this.monthText.AutoSize = true;
+            this.monthText.Font = new System.Drawing.Font("Pretendard Variable ExtraBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.monthText.Location = new System.Drawing.Point(408, 22);
+            this.monthText.Name = "monthText";
+            this.monthText.Size = new System.Drawing.Size(59, 38);
+            this.monthText.TabIndex = 1;
+            this.monthText.Text = "1월";
             // 
             // prevButton
             // 
@@ -78,6 +77,7 @@
             this.prevButton.TabIndex = 2;
             this.prevButton.Text = "◀";
             this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // nextButton
             // 
@@ -89,6 +89,7 @@
             this.nextButton.TabIndex = 3;
             this.nextButton.Text = "▶";
             this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // ThundersCalender
             // 
@@ -97,10 +98,10 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.prevButton);
-            this.Controls.Add(this.month);
+            this.Controls.Add(this.monthText);
             this.Controls.Add(this.calender);
             this.Name = "ThundersCalender";
-            this.Size = new System.Drawing.Size(888, 548);
+            this.Size = new System.Drawing.Size(888, 616);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +110,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel calender;
-        private System.Windows.Forms.Label month;
+        private System.Windows.Forms.Label monthText;
         private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Button nextButton;
     }

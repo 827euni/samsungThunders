@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterPlayer = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
@@ -45,7 +45,6 @@
             this.Assist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterGamePlayer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.winRateChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SKButton = new System.Windows.Forms.Button();
             this.KCCButton = new System.Windows.Forms.Button();
@@ -83,6 +82,7 @@
             this.clickField = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.clickHomeScore = new System.Windows.Forms.Label();
+            this.thundersCalender1 = new calenderBasketball.ThundersCalender();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -202,31 +202,22 @@
             this.resisterGamePlayer.UseVisualStyleBackColor = false;
             this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(163, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(461, 248);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "유저컨트롤달력위치";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend4);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.winRateChart.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.CustomProperties = "PieStartAngle=270";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.winRateChart.Series.Add(series4);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -646,11 +637,20 @@
             this.clickHomeScore.Size = new System.Drawing.Size(0, 27);
             this.clickHomeScore.TabIndex = 1;
             // 
+            // thundersCalender1
+            // 
+            this.thundersCalender1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender1.Location = new System.Drawing.Point(162, 18);
+            this.thundersCalender1.Name = "thundersCalender1";
+            this.thundersCalender1.Size = new System.Drawing.Size(465, 245);
+            this.thundersCalender1.TabIndex = 21;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 549);
+            this.Controls.Add(this.thundersCalender1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.winRateText);
             this.Controls.Add(this.button3);
@@ -664,7 +664,6 @@
             this.Controls.Add(this.KCCButton);
             this.Controls.Add(this.SKButton);
             this.Controls.Add(this.winRateChart);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.resisterGamePlayer);
             this.Controls.Add(this.resisterGame);
             this.Controls.Add(this.listPlayers);
@@ -700,7 +699,6 @@
         private System.Windows.Forms.ColumnHeader Score;
         private System.Windows.Forms.ColumnHeader Assist;
         private System.Windows.Forms.Button resisterGamePlayer;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart winRateChart;
         private System.Windows.Forms.Button SKButton;
         private System.Windows.Forms.Button KCCButton;
@@ -738,6 +736,7 @@
         private System.Windows.Forms.Label clickHomeScore;
         private System.Windows.Forms.Label clickScoreText;
         private System.Windows.Forms.Label clickScore;
+        private calenderBasketball.ThundersCalender thundersCalender1;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace calenderBasketball
 {
@@ -18,7 +19,7 @@ namespace calenderBasketball
         public ThundersCalender()
         {
             InitializeComponent();
-            today = DateTime.Now;
+            today = DateTime.Now.Date;
             int year = today.Year;
             int month = today.Month;
             makeCalender(year, month);
@@ -26,6 +27,7 @@ namespace calenderBasketball
 
         private void makeCalender(int year, int month)
         {
+
             foreach (Control control in calender.Controls)
             {
                 if (control is Button day)
@@ -36,7 +38,7 @@ namespace calenderBasketball
                 }
             }
 
-            monthText.Text = $"{month}월";
+            monthText.Text = $"{year}년 {month}월";
             DateTime first = new DateTime(year, month, 1);
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
 
@@ -45,6 +47,7 @@ namespace calenderBasketball
             for (int day = 1; day <= total; day++)
             {
                 int index = start + (day - 1);
+
                 if (index < calender.Controls.Count)
                 {
                     if (calender.Controls[index] is Button btn)
@@ -61,6 +64,7 @@ namespace calenderBasketball
                     }
                 }
             }
+
         }
 
         private void Day_Click(object sender, EventArgs e)

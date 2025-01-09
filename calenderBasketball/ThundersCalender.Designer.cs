@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.calender = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -73,11 +73,11 @@
             this.button42 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.monthText = new System.Windows.Forms.Label();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
@@ -95,8 +95,8 @@
             this.calender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2851F));
             this.calender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2851F));
             this.calender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28939F));
-            this.calender.Controls.Add(this.button1, 0, 1);
             this.calender.Controls.Add(this.button2, 1, 1);
+            this.calender.Controls.Add(this.button1, 0, 1);
             this.calender.Controls.Add(this.button3, 2, 1);
             this.calender.Controls.Add(this.button4, 3, 1);
             this.calender.Controls.Add(this.button5, 4, 1);
@@ -158,16 +158,6 @@
             this.calender.Size = new System.Drawing.Size(461, 197);
             this.calender.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 21);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -177,6 +167,16 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(3, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 21);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -606,34 +606,6 @@
             this.label2.Text = "화요일";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Pretendard", 8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(133, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 30);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "수요일";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Pretendard", 8F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(198, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 30);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "목요일";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -676,15 +648,43 @@
             this.label7.Text = "일요일";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Pretendard", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(133, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "수요일";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Pretendard", 8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(198, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 30);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "목요일";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // monthText
             // 
             this.monthText.AutoSize = true;
             this.monthText.Font = new System.Drawing.Font("Pretendard Variable ExtraBold", 12F, System.Drawing.FontStyle.Bold);
-            this.monthText.Location = new System.Drawing.Point(214, 10);
+            this.monthText.Location = new System.Drawing.Point(185, 13);
             this.monthText.Name = "monthText";
-            this.monthText.Size = new System.Drawing.Size(30, 19);
+            this.monthText.Size = new System.Drawing.Size(86, 19);
             this.monthText.TabIndex = 1;
-            this.monthText.Text = "1월";
+            this.monthText.Text = "2025년 1월";
             // 
             // prevButton
             // 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -82,8 +82,8 @@
             this.clickField = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.clickHomeScore = new System.Windows.Forms.Label();
-            this.thundersCalender2 = new calenderBasketball.ThundersCalender();
             this.thundersCalender = new calenderBasketball.ThundersCalender();
+            this.thundersCalender2 = new calenderBasketball.ThundersCalender();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -211,19 +211,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea4.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend1);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.CustomProperties = "PieStartAngle=270";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.winRateChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.winRateChart.Series.Add(series1);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -652,14 +652,6 @@
             this.clickHomeScore.Size = new System.Drawing.Size(0, 27);
             this.clickHomeScore.TabIndex = 1;
             // 
-            // thundersCalender2
-            // 
-            this.thundersCalender2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thundersCalender2.Location = new System.Drawing.Point(398, 135);
-            this.thundersCalender2.Name = "thundersCalender2";
-            this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
-            this.thundersCalender2.TabIndex = 22;
-            // 
             // thundersCalender
             // 
             this.thundersCalender.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -667,6 +659,14 @@
             this.thundersCalender.Name = "thundersCalender";
             this.thundersCalender.Size = new System.Drawing.Size(465, 245);
             this.thundersCalender.TabIndex = 23;
+            // 
+            // thundersCalender2
+            // 
+            this.thundersCalender2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender2.Location = new System.Drawing.Point(398, 135);
+            this.thundersCalender2.Name = "thundersCalender2";
+            this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
+            this.thundersCalender2.TabIndex = 22;
             // 
             // mainForm
             // 

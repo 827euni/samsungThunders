@@ -85,7 +85,7 @@
             this.PlayerPick.Location = new System.Drawing.Point(281, 141);
             this.PlayerPick.Name = "PlayerPick";
             this.PlayerPick.Size = new System.Drawing.Size(99, 20);
-            this.PlayerPick.TabIndex = 3;
+            this.PlayerPick.TabIndex = 1;
             // 
             // label3
             // 
@@ -101,14 +101,14 @@
             this.Score.Location = new System.Drawing.Point(466, 140);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(100, 21);
-            this.Score.TabIndex = 5;
+            this.Score.TabIndex = 2;
             // 
             // ThreePointA
             // 
             this.ThreePointA.Location = new System.Drawing.Point(466, 180);
             this.ThreePointA.Name = "ThreePointA";
             this.ThreePointA.Size = new System.Drawing.Size(100, 21);
-            this.ThreePointA.TabIndex = 9;
+            this.ThreePointA.TabIndex = 4;
             // 
             // label4
             // 
@@ -133,21 +133,21 @@
             this.ThreePoint.Location = new System.Drawing.Point(280, 180);
             this.ThreePoint.Name = "ThreePoint";
             this.ThreePoint.Size = new System.Drawing.Size(100, 21);
-            this.ThreePoint.TabIndex = 10;
+            this.ThreePoint.TabIndex = 3;
             // 
             // FieldGoal
             // 
             this.FieldGoal.Location = new System.Drawing.Point(280, 220);
             this.FieldGoal.Name = "FieldGoal";
             this.FieldGoal.Size = new System.Drawing.Size(100, 21);
-            this.FieldGoal.TabIndex = 14;
+            this.FieldGoal.TabIndex = 5;
             // 
             // FieldGoalA
             // 
             this.FieldGoalA.Location = new System.Drawing.Point(466, 220);
             this.FieldGoalA.Name = "FieldGoalA";
             this.FieldGoalA.Size = new System.Drawing.Size(100, 21);
-            this.FieldGoalA.TabIndex = 13;
+            this.FieldGoalA.TabIndex = 6;
             // 
             // label6
             // 
@@ -172,14 +172,14 @@
             this.FreeThrow.Location = new System.Drawing.Point(280, 260);
             this.FreeThrow.Name = "FreeThrow";
             this.FreeThrow.Size = new System.Drawing.Size(100, 21);
-            this.FreeThrow.TabIndex = 18;
+            this.FreeThrow.TabIndex = 7;
             // 
             // FreeThrowA
             // 
             this.FreeThrowA.Location = new System.Drawing.Point(466, 260);
             this.FreeThrowA.Name = "FreeThrowA";
             this.FreeThrowA.Size = new System.Drawing.Size(100, 21);
-            this.FreeThrowA.TabIndex = 17;
+            this.FreeThrowA.TabIndex = 8;
             // 
             // label8
             // 
@@ -204,14 +204,14 @@
             this.Rebound.Location = new System.Drawing.Point(280, 303);
             this.Rebound.Name = "Rebound";
             this.Rebound.Size = new System.Drawing.Size(100, 21);
-            this.Rebound.TabIndex = 22;
+            this.Rebound.TabIndex = 9;
             // 
             // Assist
             // 
             this.Assist.Location = new System.Drawing.Point(466, 303);
             this.Assist.Name = "Assist";
             this.Assist.Size = new System.Drawing.Size(100, 21);
-            this.Assist.TabIndex = 21;
+            this.Assist.TabIndex = 10;
             // 
             // label10
             // 
@@ -236,7 +236,7 @@
             this.resisterPlayerStatus.Location = new System.Drawing.Point(346, 368);
             this.resisterPlayerStatus.Name = "resisterPlayerStatus";
             this.resisterPlayerStatus.Size = new System.Drawing.Size(94, 23);
-            this.resisterPlayerStatus.TabIndex = 23;
+            this.resisterPlayerStatus.TabIndex = 11;
             this.resisterPlayerStatus.Text = "선수 기록 등록";
             this.resisterPlayerStatus.UseVisualStyleBackColor = true;
             this.resisterPlayerStatus.Click += new System.EventHandler(this.resisterPlayerStatus_Click);

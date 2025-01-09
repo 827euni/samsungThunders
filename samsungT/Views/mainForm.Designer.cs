@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.resisterPlayer = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
+            this.resisterPlayer = new System.Windows.Forms.Button();
+            this.resisterGamePlayer = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
             this.playerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.playerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,9 +45,6 @@
             this.FieldGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Rebound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Assist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.resisterGame = new System.Windows.Forms.Button();
-            this.resisterGamePlayer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.winRateChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SKButton = new System.Windows.Forms.Button();
             this.KCCButton = new System.Windows.Forms.Button();
@@ -69,7 +68,7 @@
             this.recentAwayScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.recentHomeScore = new System.Windows.Forms.Label();
-            this.recentGame = new System.Windows.Forms.Label();
+            this.searchGame = new System.Windows.Forms.Label();
             this.clickScoreText = new System.Windows.Forms.Label();
             this.clickRebound = new System.Windows.Forms.Label();
             this.clickAssist = new System.Windows.Forms.Label();
@@ -83,6 +82,8 @@
             this.clickField = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.clickHomeScore = new System.Windows.Forms.Label();
+            this.thundersCalender = new calenderBasketball.ThundersCalender();
+            this.thundersCalender2 = new calenderBasketball.ThundersCalender();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,27 +91,53 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // resisterPlayer
+            // resisterGame
             // 
-            this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterPlayer.Location = new System.Drawing.Point(12, 146);
-            this.resisterPlayer.Name = "resisterPlayer";
-            this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
-            this.resisterPlayer.TabIndex = 0;
-            this.resisterPlayer.Text = "썬더스 선수등록";
-            this.resisterPlayer.UseVisualStyleBackColor = false;
-            this.resisterPlayer.Click += new System.EventHandler(this.resisterPlayer_Click);
+            this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGame.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterGame.Location = new System.Drawing.Point(8, 21);
+            this.resisterGame.Name = "resisterGame";
+            this.resisterGame.Size = new System.Drawing.Size(145, 51);
+            this.resisterGame.TabIndex = 0;
+            this.resisterGame.Text = "경기 등록";
+            this.resisterGame.UseVisualStyleBackColor = false;
+            this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
             // 
             // resisterTeam
             // 
             this.resisterTeam.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterTeam.Location = new System.Drawing.Point(12, 86);
+            this.resisterTeam.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterTeam.Location = new System.Drawing.Point(8, 87);
             this.resisterTeam.Name = "resisterTeam";
             this.resisterTeam.Size = new System.Drawing.Size(145, 54);
             this.resisterTeam.TabIndex = 1;
             this.resisterTeam.Text = "팀 등록";
             this.resisterTeam.UseVisualStyleBackColor = false;
             this.resisterTeam.Click += new System.EventHandler(this.resisterTeam_Click);
+            // 
+            // resisterPlayer
+            // 
+            this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterPlayer.Location = new System.Drawing.Point(8, 159);
+            this.resisterPlayer.Name = "resisterPlayer";
+            this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
+            this.resisterPlayer.TabIndex = 2;
+            this.resisterPlayer.Text = "썬더스 선수등록";
+            this.resisterPlayer.UseVisualStyleBackColor = false;
+            this.resisterPlayer.Click += new System.EventHandler(this.resisterPlayer_Click);
+            // 
+            // resisterGamePlayer
+            // 
+            this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterGamePlayer.Location = new System.Drawing.Point(8, 226);
+            this.resisterGamePlayer.Name = "resisterGamePlayer";
+            this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
+            this.resisterGamePlayer.TabIndex = 3;
+            this.resisterGamePlayer.Text = "경기기록 등록";
+            this.resisterGamePlayer.UseVisualStyleBackColor = false;
+            this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
             // 
             // listPlayers
             // 
@@ -124,8 +151,9 @@
             this.FieldGoal,
             this.Rebound,
             this.Assist});
+            this.listPlayers.Font = new System.Drawing.Font("Pretendard Variable", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listPlayers.HideSelection = false;
-            this.listPlayers.Location = new System.Drawing.Point(624, 272);
+            this.listPlayers.Location = new System.Drawing.Point(624, 282);
             this.listPlayers.Name = "listPlayers";
             this.listPlayers.Size = new System.Drawing.Size(693, 265);
             this.listPlayers.TabIndex = 2;
@@ -180,53 +208,22 @@
             this.Assist.DisplayIndex = 7;
             this.Assist.Text = "Assist";
             // 
-            // resisterGame
-            // 
-            this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterGame.Location = new System.Drawing.Point(12, 29);
-            this.resisterGame.Name = "resisterGame";
-            this.resisterGame.Size = new System.Drawing.Size(145, 51);
-            this.resisterGame.TabIndex = 3;
-            this.resisterGame.Text = "경기 등록";
-            this.resisterGame.UseVisualStyleBackColor = false;
-            this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
-            // 
-            // resisterGamePlayer
-            // 
-            this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterGamePlayer.Location = new System.Drawing.Point(12, 206);
-            this.resisterGamePlayer.Name = "resisterGamePlayer";
-            this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
-            this.resisterGamePlayer.TabIndex = 5;
-            this.resisterGamePlayer.Text = "경기기록 등록";
-            this.resisterGamePlayer.UseVisualStyleBackColor = false;
-            this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(163, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(461, 248);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "유저컨트롤달력위치";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea4.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend2);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.CustomProperties = "PieStartAngle=270";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.winRateChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.CustomProperties = "PieStartAngle=270";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.winRateChart.Series.Add(series2);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -234,10 +231,11 @@
             // SKButton
             // 
             this.SKButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SKButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SKButton.Location = new System.Drawing.Point(877, 18);
             this.SKButton.Name = "SKButton";
             this.SKButton.Size = new System.Drawing.Size(114, 73);
-            this.SKButton.TabIndex = 8;
+            this.SKButton.TabIndex = 6;
             this.SKButton.Text = "서울 SK";
             this.SKButton.UseVisualStyleBackColor = false;
             this.SKButton.Click += new System.EventHandler(this.SKButton_Click);
@@ -245,6 +243,7 @@
             // KCCButton
             // 
             this.KCCButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KCCButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KCCButton.Location = new System.Drawing.Point(877, 106);
             this.KCCButton.Name = "KCCButton";
             this.KCCButton.Size = new System.Drawing.Size(114, 73);
@@ -256,10 +255,11 @@
             // MOBISButton
             // 
             this.MOBISButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MOBISButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MOBISButton.Location = new System.Drawing.Point(877, 193);
             this.MOBISButton.Name = "MOBISButton";
             this.MOBISButton.Size = new System.Drawing.Size(114, 73);
-            this.MOBISButton.TabIndex = 10;
+            this.MOBISButton.TabIndex = 12;
             this.MOBISButton.Text = "울산 현대모비스";
             this.MOBISButton.UseVisualStyleBackColor = false;
             this.MOBISButton.Click += new System.EventHandler(this.MOBISButton_Click);
@@ -267,10 +267,11 @@
             // SONOButton
             // 
             this.SONOButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SONOButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SONOButton.Location = new System.Drawing.Point(755, 18);
             this.SONOButton.Name = "SONOButton";
             this.SONOButton.Size = new System.Drawing.Size(114, 73);
-            this.SONOButton.TabIndex = 11;
+            this.SONOButton.TabIndex = 5;
             this.SONOButton.Text = "고양 소노";
             this.SONOButton.UseVisualStyleBackColor = false;
             this.SONOButton.Click += new System.EventHandler(this.SONOButton_Click);
@@ -278,10 +279,11 @@
             // DBButton
             // 
             this.DBButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DBButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.DBButton.Location = new System.Drawing.Point(630, 18);
             this.DBButton.Name = "DBButton";
             this.DBButton.Size = new System.Drawing.Size(114, 73);
-            this.DBButton.TabIndex = 12;
+            this.DBButton.TabIndex = 4;
             this.DBButton.Text = "원주 DB";
             this.DBButton.UseVisualStyleBackColor = false;
             this.DBButton.Click += new System.EventHandler(this.DBButton_Click);
@@ -289,10 +291,11 @@
             // KOGASButton
             // 
             this.KOGASButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KOGASButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KOGASButton.Location = new System.Drawing.Point(755, 193);
             this.KOGASButton.Name = "KOGASButton";
             this.KOGASButton.Size = new System.Drawing.Size(114, 73);
-            this.KOGASButton.TabIndex = 14;
+            this.KOGASButton.TabIndex = 11;
             this.KOGASButton.Text = "대구 한국가스공사";
             this.KOGASButton.UseVisualStyleBackColor = false;
             this.KOGASButton.Click += new System.EventHandler(this.KOGASButton_Click);
@@ -300,10 +303,11 @@
             // KGCButton
             // 
             this.KGCButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KGCButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KGCButton.Location = new System.Drawing.Point(755, 106);
             this.KGCButton.Name = "KGCButton";
             this.KGCButton.Size = new System.Drawing.Size(114, 73);
-            this.KGCButton.TabIndex = 13;
+            this.KGCButton.TabIndex = 8;
             this.KGCButton.Text = "안양 정관장";
             this.KGCButton.UseVisualStyleBackColor = false;
             this.KGCButton.Click += new System.EventHandler(this.KGCButton_Click);
@@ -311,10 +315,11 @@
             // KTButton
             // 
             this.KTButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KTButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KTButton.Location = new System.Drawing.Point(630, 193);
             this.KTButton.Name = "KTButton";
             this.KTButton.Size = new System.Drawing.Size(114, 73);
-            this.KTButton.TabIndex = 16;
+            this.KTButton.TabIndex = 10;
             this.KTButton.Text = "수원 KT";
             this.KTButton.UseVisualStyleBackColor = false;
             this.KTButton.Click += new System.EventHandler(this.KTButton_Click);
@@ -322,17 +327,18 @@
             // LGButton
             // 
             this.LGButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LGButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LGButton.Location = new System.Drawing.Point(630, 106);
             this.LGButton.Name = "LGButton";
             this.LGButton.Size = new System.Drawing.Size(114, 73);
-            this.LGButton.TabIndex = 15;
+            this.LGButton.TabIndex = 7;
             this.LGButton.Text = "창원 LG";
             this.LGButton.UseVisualStyleBackColor = false;
             this.LGButton.Click += new System.EventHandler(this.LGButton_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(214, 272);
+            this.button3.Location = new System.Drawing.Point(214, 282);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(406, 265);
             this.button3.TabIndex = 18;
@@ -352,7 +358,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(8, 272);
+            this.splitContainer1.Location = new System.Drawing.Point(8, 282);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -368,7 +374,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.recentAwayScore);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.recentHomeScore);
-            this.splitContainer1.Panel1.Controls.Add(this.recentGame);
+            this.splitContainer1.Panel1.Controls.Add(this.searchGame);
             // 
             // splitContainer1.Panel2
             // 
@@ -499,21 +505,21 @@
             this.recentHomeScore.TabIndex = 1;
             this.recentHomeScore.Text = "0";
             // 
-            // recentGame
+            // searchGame
             // 
-            this.recentGame.AutoSize = true;
-            this.recentGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentGame.Location = new System.Drawing.Point(18, 37);
-            this.recentGame.Name = "recentGame";
-            this.recentGame.Size = new System.Drawing.Size(216, 42);
-            this.recentGame.TabIndex = 0;
-            this.recentGame.Text = "Recent Game";
+            this.searchGame.AutoSize = true;
+            this.searchGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchGame.Location = new System.Drawing.Point(18, 37);
+            this.searchGame.Name = "searchGame";
+            this.searchGame.Size = new System.Drawing.Size(216, 42);
+            this.searchGame.TabIndex = 0;
+            this.searchGame.Text = "Recent Game";
             // 
             // clickScoreText
             // 
             this.clickScoreText.AutoSize = true;
             this.clickScoreText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickScoreText.Location = new System.Drawing.Point(123, 122);
+            this.clickScoreText.Location = new System.Drawing.Point(107, 120);
             this.clickScoreText.Name = "clickScoreText";
             this.clickScoreText.Size = new System.Drawing.Size(72, 19);
             this.clickScoreText.TabIndex = 3;
@@ -546,17 +552,18 @@
             // 
             this.clickChangeTitle.AutoSize = true;
             this.clickChangeTitle.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickChangeTitle.Location = new System.Drawing.Point(111, 39);
+            this.clickChangeTitle.Location = new System.Drawing.Point(111, 15);
             this.clickChangeTitle.Name = "clickChangeTitle";
             this.clickChangeTitle.Size = new System.Drawing.Size(149, 42);
             this.clickChangeTitle.TabIndex = 0;
             this.clickChangeTitle.Text = "STATUS";
+            this.clickChangeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // clickChangeText
             // 
             this.clickChangeText.AutoSize = true;
             this.clickChangeText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickChangeText.Location = new System.Drawing.Point(58, 141);
+            this.clickChangeText.Location = new System.Drawing.Point(42, 142);
             this.clickChangeText.Name = "clickChangeText";
             this.clickChangeText.Size = new System.Drawing.Size(137, 95);
             this.clickChangeText.TabIndex = 2;
@@ -600,7 +607,7 @@
             // 
             this.clickCity.AutoSize = true;
             this.clickCity.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickCity.Location = new System.Drawing.Point(170, 111);
+            this.clickCity.Location = new System.Drawing.Point(155, 106);
             this.clickCity.Name = "clickCity";
             this.clickCity.Size = new System.Drawing.Size(0, 19);
             this.clickCity.TabIndex = 1;
@@ -646,11 +653,29 @@
             this.clickHomeScore.Size = new System.Drawing.Size(0, 27);
             this.clickHomeScore.TabIndex = 1;
             // 
+            // thundersCalender
+            // 
+            this.thundersCalender.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender.Location = new System.Drawing.Point(159, 21);
+            this.thundersCalender.Name = "thundersCalender";
+            this.thundersCalender.Size = new System.Drawing.Size(465, 255);
+            this.thundersCalender.TabIndex = 23;
+            // 
+            // thundersCalender2
+            // 
+            this.thundersCalender2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender2.Location = new System.Drawing.Point(398, 135);
+            this.thundersCalender2.Name = "thundersCalender2";
+            this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
+            this.thundersCalender2.TabIndex = 22;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 549);
+            this.ClientSize = new System.Drawing.Size(1329, 566);
+            this.Controls.Add(this.thundersCalender);
+            this.Controls.Add(this.thundersCalender2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.winRateText);
             this.Controls.Add(this.button3);
@@ -664,14 +689,13 @@
             this.Controls.Add(this.KCCButton);
             this.Controls.Add(this.SKButton);
             this.Controls.Add(this.winRateChart);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.resisterGamePlayer);
             this.Controls.Add(this.resisterGame);
             this.Controls.Add(this.listPlayers);
             this.Controls.Add(this.resisterTeam);
             this.Controls.Add(this.resisterPlayer);
             this.Name = "mainForm";
-            this.Text = "Form1";
+            this.Text = "삼성 썬더스 24-25시즌";
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -700,7 +724,6 @@
         private System.Windows.Forms.ColumnHeader Score;
         private System.Windows.Forms.ColumnHeader Assist;
         private System.Windows.Forms.Button resisterGamePlayer;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart winRateChart;
         private System.Windows.Forms.Button SKButton;
         private System.Windows.Forms.Button KCCButton;
@@ -714,7 +737,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label winRateText;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label recentGame;
+        private System.Windows.Forms.Label searchGame;
         private System.Windows.Forms.Label recentText;
         private System.Windows.Forms.Label recentFree;
         private System.Windows.Forms.Label recentField;
@@ -738,6 +761,8 @@
         private System.Windows.Forms.Label clickHomeScore;
         private System.Windows.Forms.Label clickScoreText;
         private System.Windows.Forms.Label clickScore;
+        private calenderBasketball.ThundersCalender thundersCalender2;
+        private calenderBasketball.ThundersCalender thundersCalender;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace calenderBasketball
 {
@@ -32,18 +33,19 @@ namespace calenderBasketball
                 {
                     day.Text = "";
                     day.Click -= Day_Click;
+                    day.Visible = false;
                 }
             }
 
-            monthText.Text = $"{month}월";
+            monthText.Text = $"{year}년 {month}월";
             DateTime first = new DateTime(year, month, 1);
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
-
             int total = DateTime.DaysInMonth(year, month);
 
             for (int day = 1; day <= total; day++)
             {
                 int index = start + (day - 1);
+
                 if (index < calender.Controls.Count)
                 {
                     if (calender.Controls[index] is Button btn)
@@ -51,14 +53,16 @@ namespace calenderBasketball
                         btn.Text = day.ToString();
                         btn.Tag = day;
                         btn.Click += Day_Click;
+                        btn.Visible = true;
 
-                        if(calender.GetPositionFromControl(btn).Column == 6)
+                        if (calender.GetPositionFromControl(btn).Column == 6)
                         {
                             btn.ForeColor = Color.IndianRed;
                         }
                     }
                 }
             }
+
         }
 
         private void Day_Click(object sender, EventArgs e)
@@ -70,7 +74,6 @@ namespace calenderBasketball
                 {
                     selectDate.Invoke(today.Year, today.Month, day);
                 }
-                MessageBox.Show($"{today.Year}.{today.Month}.{day}");
             }
         }
 

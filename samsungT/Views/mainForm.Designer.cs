@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.resisterPlayer = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
+            this.resisterPlayer = new System.Windows.Forms.Button();
+            this.resisterGamePlayer = new System.Windows.Forms.Button();
             this.listPlayers = new System.Windows.Forms.ListView();
             this.playerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.playerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,8 +45,6 @@
             this.FieldGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Rebound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Assist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.resisterGame = new System.Windows.Forms.Button();
-            this.resisterGamePlayer = new System.Windows.Forms.Button();
             this.winRateChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SKButton = new System.Windows.Forms.Button();
             this.KCCButton = new System.Windows.Forms.Button();
@@ -93,6 +93,7 @@
             // resisterPlayer
             // 
             this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.resisterPlayer.Location = new System.Drawing.Point(12, 146);
             this.resisterPlayer.Name = "resisterPlayer";
             this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
@@ -104,6 +105,7 @@
             // resisterTeam
             // 
             this.resisterTeam.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterTeam.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.resisterTeam.Location = new System.Drawing.Point(12, 86);
             this.resisterTeam.Name = "resisterTeam";
             this.resisterTeam.Size = new System.Drawing.Size(145, 54);
@@ -124,6 +126,7 @@
             this.FieldGoal,
             this.Rebound,
             this.Assist});
+            this.listPlayers.Font = new System.Drawing.Font("Pretendard Variable", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listPlayers.HideSelection = false;
             this.listPlayers.Location = new System.Drawing.Point(624, 272);
             this.listPlayers.Name = "listPlayers";
@@ -183,6 +186,7 @@
             // resisterGame
             // 
             this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGame.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.resisterGame.Location = new System.Drawing.Point(12, 29);
             this.resisterGame.Name = "resisterGame";
             this.resisterGame.Size = new System.Drawing.Size(145, 51);
@@ -194,6 +198,7 @@
             // resisterGamePlayer
             // 
             this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.resisterGamePlayer.Location = new System.Drawing.Point(12, 206);
             this.resisterGamePlayer.Name = "resisterGamePlayer";
             this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
@@ -205,19 +210,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea4.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend1);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.CustomProperties = "PieStartAngle=270";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.winRateChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.winRateChart.Series.Add(series1);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -225,6 +230,7 @@
             // SKButton
             // 
             this.SKButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SKButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SKButton.Location = new System.Drawing.Point(877, 18);
             this.SKButton.Name = "SKButton";
             this.SKButton.Size = new System.Drawing.Size(114, 73);
@@ -236,6 +242,7 @@
             // KCCButton
             // 
             this.KCCButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KCCButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KCCButton.Location = new System.Drawing.Point(877, 106);
             this.KCCButton.Name = "KCCButton";
             this.KCCButton.Size = new System.Drawing.Size(114, 73);
@@ -247,6 +254,7 @@
             // MOBISButton
             // 
             this.MOBISButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MOBISButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MOBISButton.Location = new System.Drawing.Point(877, 193);
             this.MOBISButton.Name = "MOBISButton";
             this.MOBISButton.Size = new System.Drawing.Size(114, 73);
@@ -258,6 +266,7 @@
             // SONOButton
             // 
             this.SONOButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SONOButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SONOButton.Location = new System.Drawing.Point(755, 18);
             this.SONOButton.Name = "SONOButton";
             this.SONOButton.Size = new System.Drawing.Size(114, 73);
@@ -269,6 +278,7 @@
             // DBButton
             // 
             this.DBButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DBButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.DBButton.Location = new System.Drawing.Point(630, 18);
             this.DBButton.Name = "DBButton";
             this.DBButton.Size = new System.Drawing.Size(114, 73);
@@ -280,6 +290,7 @@
             // KOGASButton
             // 
             this.KOGASButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KOGASButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KOGASButton.Location = new System.Drawing.Point(755, 193);
             this.KOGASButton.Name = "KOGASButton";
             this.KOGASButton.Size = new System.Drawing.Size(114, 73);
@@ -291,6 +302,7 @@
             // KGCButton
             // 
             this.KGCButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KGCButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KGCButton.Location = new System.Drawing.Point(755, 106);
             this.KGCButton.Name = "KGCButton";
             this.KGCButton.Size = new System.Drawing.Size(114, 73);
@@ -302,6 +314,7 @@
             // KTButton
             // 
             this.KTButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.KTButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.KTButton.Location = new System.Drawing.Point(630, 193);
             this.KTButton.Name = "KTButton";
             this.KTButton.Size = new System.Drawing.Size(114, 73);
@@ -313,6 +326,7 @@
             // LGButton
             // 
             this.LGButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LGButton.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LGButton.Location = new System.Drawing.Point(630, 106);
             this.LGButton.Name = "LGButton";
             this.LGButton.Size = new System.Drawing.Size(114, 73);
@@ -504,7 +518,7 @@
             // 
             this.clickScoreText.AutoSize = true;
             this.clickScoreText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickScoreText.Location = new System.Drawing.Point(123, 122);
+            this.clickScoreText.Location = new System.Drawing.Point(114, 122);
             this.clickScoreText.Name = "clickScoreText";
             this.clickScoreText.Size = new System.Drawing.Size(72, 19);
             this.clickScoreText.TabIndex = 3;
@@ -547,7 +561,7 @@
             // 
             this.clickChangeText.AutoSize = true;
             this.clickChangeText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickChangeText.Location = new System.Drawing.Point(58, 141);
+            this.clickChangeText.Location = new System.Drawing.Point(42, 142);
             this.clickChangeText.Name = "clickChangeText";
             this.clickChangeText.Size = new System.Drawing.Size(137, 95);
             this.clickChangeText.TabIndex = 2;

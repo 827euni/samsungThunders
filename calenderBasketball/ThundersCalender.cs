@@ -72,7 +72,6 @@ namespace calenderBasketball
                 {
                     selectDate.Invoke(today.Year, today.Month, day);
                 }
-                MessageBox.Show($"{today.Year}.{today.Month}.{day}");
             }
         }
 

@@ -377,12 +377,14 @@ namespace samsungT
 
             if (searchGame == null)
             {
-                
+                //버튼 enabled 작업할 것
             }
             else
             {
                 changeStatus(searchGame);
                 changePlayers(searchGame);
+                clickScoreText.Text = "득점";
+                clickChangeText.Text = "3점\r\n야투\r\n자유투\r\n리바운드\r\n어시스트\r\n";
             }
         }
 

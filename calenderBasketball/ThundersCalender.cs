@@ -14,11 +14,14 @@ namespace calenderBasketball
     {
         public List<DateTime> dates = new List<DateTime>();
         public DateTime today;
+        public event Action<int, int, int> selectDate;
         public ThundersCalender()
         {
             InitializeComponent();
             today = DateTime.Now;
-            makeCalender(today.Year, today.Month);
+            int year = today.Year;
+            int month = today.Month;
+            makeCalender(year, month);
         }
 
         private void makeCalender(int year, int month)
@@ -28,25 +31,41 @@ namespace calenderBasketball
                 if (control is Button day)
                 {
                     day.Text = "";
+                    day.Click -= Day_Click;
                 }
             }
 
             monthText.Text = $"{month}월";
-            DateTime firstDay = new DateTime(year, month, 1);
-            int startDayIndex = ((int)firstDay.DayOfWeek + 6) % 7; // 월요일 시작
+            DateTime first = new DateTime(year, month, 1);
+            int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
 
-            int totalDays = DateTime.DaysInMonth(year, month);
+            int total = DateTime.DaysInMonth(year, month);
 
-            for (int day = 1; day <= totalDays; day++)
+            for (int day = 1; day <= total; day++)
             {
-                int index = startDayIndex + (day - 1);
+                int index = start + (day - 1);
                 if (index < calender.Controls.Count)
                 {
-                    if (calender.Controls[index] is Button button)
+                    if (calender.Controls[index] is Button btn)
                     {
-                        button.Text = day.ToString();
+                        btn.Text = day.ToString();
+                        btn.Tag = day;
+                        btn.Click += Day_Click;
                     }
                 }
+            }
+        }
+
+        private void Day_Click(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                int day = (int)btn.Tag;
+                if (selectDate != null)
+                {
+                    selectDate.Invoke(today.Year, today.Month, day);
+                }
+                MessageBox.Show($"{today.Year}.{today.Month}.{day}");
             }
         }
 
@@ -68,14 +87,15 @@ namespace calenderBasketball
             makeCalender(today.Year, today.Month);
         }
 
-        private void changeSize(int rowCount)
-        {
-            float size = 100 / (rowCount - 1);
-            for (int i = 0; i <= rowCount; i++)
-            {
-                calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent,size));
-            }
-        }
+        //private void changeSize(int rowCount)
+        //{
+        //    float size = 100 / (rowCount - 1);
+        //    for (int i = 0; i <= rowCount; i++)
+        //    {
+        //        calender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent,size));
+        //    }
+        //}
+
 
     }
 }

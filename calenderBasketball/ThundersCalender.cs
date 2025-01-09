@@ -19,7 +19,7 @@ namespace calenderBasketball
         public ThundersCalender()
         {
             InitializeComponent();
-            today = DateTime.Now.Date;
+            today = DateTime.Now;
             int year = today.Year;
             int month = today.Month;
             makeCalender(year, month);
@@ -27,7 +27,6 @@ namespace calenderBasketball
 
         private void makeCalender(int year, int month)
         {
-
             foreach (Control control in calender.Controls)
             {
                 if (control is Button day)
@@ -41,7 +40,6 @@ namespace calenderBasketball
             monthText.Text = $"{year}년 {month}월";
             DateTime first = new DateTime(year, month, 1);
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
-
             int total = DateTime.DaysInMonth(year, month);
 
             for (int day = 1; day <= total; day++)

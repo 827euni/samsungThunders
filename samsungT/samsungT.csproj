@@ -122,6 +122,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\calenderBasketball\calenderBasketball.csproj">
+      <Project>{BF7CA59D-0BA0-47FF-9D30-15A5A7885A00}</Project>
+      <Name>calenderBasketball</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

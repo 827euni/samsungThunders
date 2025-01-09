@@ -32,6 +32,7 @@ namespace calenderBasketball
                 {
                     day.Text = "";
                     day.Click -= Day_Click;
+                    day.Visible = false;
                 }
             }
 
@@ -51,8 +52,9 @@ namespace calenderBasketball
                         btn.Text = day.ToString();
                         btn.Tag = day;
                         btn.Click += Day_Click;
+                        btn.Visible = true;
 
-                        if(calender.GetPositionFromControl(btn).Column == 6)
+                        if (calender.GetPositionFromControl(btn).Column == 6)
                         {
                             btn.ForeColor = Color.IndianRed;
                         }

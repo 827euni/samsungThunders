@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace samsungT.Models
 {
@@ -38,7 +40,7 @@ namespace samsungT.Models
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-            string q = @"SET IDENTITY_INSERT Players ON;
+                string q = @"SET IDENTITY_INSERT Players ON;
             INSERT INTO Players (PlayerID, PlayerName, TeamID, Position, Height) VALUES (@PlayerID, @PlayerName, @TeamID, @Position, @Height);
             SET IDENTITY_INSERT Players OFF;";
 
@@ -229,7 +231,7 @@ namespace samsungT.Models
                 }
             }
 
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show($"팀 정보를 가져오는 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -252,7 +254,7 @@ namespace samsungT.Models
                     connection.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read()) 
+                    while (reader.Read())
                     {
                         Game game = new Game
                         {
@@ -270,7 +272,7 @@ namespace samsungT.Models
                 }
             }
 
-            catch (Exception e) 
+            catch (Exception e)
             {
                 MessageBox.Show($"게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -313,7 +315,7 @@ namespace samsungT.Models
 
             try
             {
-                using(SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string q = "SELECT City FROM Teams WHERE TeamID = @TeamID";
                     SqlCommand cmd = new SqlCommand(q, connection);
@@ -435,8 +437,38 @@ namespace samsungT.Models
 
             return searchGame;
         }
+        public PlayerStatus GetGamePlayer(int gameID, int playerID)
+        {
+            PlayerStatus searchPlayer = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string q = "SELECT Rebound, ThreePoint, ThreePointA, FreeThrow, FreeThrowA, FieldGoal, FieldGoalA, Assist, Score FROM PlayerStatus WHERE GameID = @GameID AND PlayerID = @PlayerID";
+                SqlCommand cmd = new SqlCommand(q, connection);
+                cmd.Parameters.Add("@GameID", SqlDbType.Int).Value = gameID;
+                cmd.Parameters.Add("@PlayerID", SqlDbType.Int).Value = playerID;
 
 
 
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    searchPlayer = new PlayerStatus
+                    {
+                        Rebound = (int)reader["Rebound"],
+                        ThreePoint = (int)reader["ThreePoint"],
+                        ThreePointA = (int)reader["ThreePointA"],
+                        FreeThrow = (int)reader["FreeThrow"],
+                        FreeThrowA = (int)reader["FreeThrowA"],
+                        FieldGoal = (int)reader["FieldGoal"],
+                        FieldGoalA = (int)reader["FieldGoalA"],
+                        Assist = (int)reader["Assist"],
+                        Score = (int)reader["Score"]
+                    };
+                }  
+            }
+            return searchPlayer;
         }
     }
+}

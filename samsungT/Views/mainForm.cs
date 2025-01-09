@@ -97,6 +97,87 @@ namespace samsungT
             }
         }
 
+        private void changePlayers(Game searchGame)
+        {
+            listPlayers.Items.Clear();
+            var players = db.GetPlayers();
+            var playerStatus = db.GetPlayersStatus();
+            int gameID = searchGame.GameID;
+            string homeCityName = db.GetCityName(searchGame.HomeTeamID);
+            string awayCityName = db.GetCityName(searchGame.AwayTeamID);
+
+            var playerStats = new Dictionary<int, PlayerStatus>();
+
+            foreach (var status in playerStatus)
+            {
+                if (!playerStats.ContainsKey(status.PlayerID))
+                {
+                    playerStats[status.PlayerID] = new PlayerStatus
+                    {
+                        PlayerID = status.PlayerID,
+                    };
+                }
+
+                var current = playerStats[status.PlayerID];
+                if (db.GetGamePlayer(gameID, status.PlayerID) != null)
+                {
+                    current.Rebound = db.GetGamePlayer(gameID, status.PlayerID).Rebound;
+                    current.ThreePoint = db.GetGamePlayer(gameID, status.PlayerID).ThreePoint;
+                    current.ThreePointA = db.GetGamePlayer(gameID, status.PlayerID).ThreePointA;
+                    current.FreeThrow = db.GetGamePlayer(gameID, status.PlayerID).FreeThrow;
+                    current.FreeThrowA = db.GetGamePlayer(gameID, status.PlayerID).FreeThrowA;
+                    current.FieldGoal = db.GetGamePlayer(gameID, status.PlayerID).FieldGoal;
+                    current.FieldGoalA = db.GetGamePlayer(gameID, status.PlayerID).FieldGoalA;
+                    current.Assist = db.GetGamePlayer(gameID, status.PlayerID).Assist;
+                    current.Score = db.GetGamePlayer(gameID, status.PlayerID).Score;
+                }
+                else
+                {
+                    current.Rebound = 0;
+                    current.ThreePoint = 0;
+                    current.ThreePointA = 0;
+                    current.FreeThrow = 0;
+                    current.FreeThrowA = 0;
+                    current.FieldGoal = 0;
+                    current.FieldGoalA = 0;
+                    current.Assist = 0;
+                    current.Score = 0;
+                }
+            }
+
+            foreach(var player in players)
+            {
+                var item = new ListViewItem(player.PlayerID.ToString());
+                item.SubItems.Add(player.PlayerName);
+                item.SubItems.Add(player.Position);
+
+                if (playerStats.ContainsKey(player.PlayerID))
+                {
+                    var status = playerStats[player.PlayerID];
+
+                    item.SubItems.Add(status.Score > 0 ? (status.Score).ToString() : "0");
+                    item.SubItems.Add(status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2") + "%" : "0");
+                    item.SubItems.Add(status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2") + "%" : "0");
+                    item.SubItems.Add(status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2") + "%" : "0");
+                    item.SubItems.Add(status.Rebound > 0 ? (status.Rebound).ToString() : "0");
+                    item.SubItems.Add(status.Assist > 0 ? (status.Assist).ToString() : "0");
+                }
+
+                else
+                {
+                    item.SubItems.Add("0");
+                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0");
+                    item.SubItems.Add("0");
+                }
+
+                listPlayers.Items.Add(item);
+            }
+
+        }
+
         //승률 차트 바꾸고, 기본 값이 삼성썬더스로 보이게 하는 함수
         private void loadWinRateChart(int teamID = 1)
         {
@@ -301,6 +382,7 @@ namespace samsungT
             else
             {
                 changeStatus(searchGame);
+                changePlayers(searchGame);
             }
         }
 

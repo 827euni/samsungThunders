@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\GameDTO.cs" />
     <Compile Include="ViewModels\addPlayerViewModel.cs" />
     <Compile Include="Views\addGameForm.cs">
       <SubType>Form</SubType>

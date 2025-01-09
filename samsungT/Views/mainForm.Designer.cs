@@ -90,17 +90,17 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // resisterPlayer
+            // resisterGame
             // 
-            this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterPlayer.Location = new System.Drawing.Point(12, 146);
-            this.resisterPlayer.Name = "resisterPlayer";
-            this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
-            this.resisterPlayer.TabIndex = 0;
-            this.resisterPlayer.Text = "썬더스 선수등록";
-            this.resisterPlayer.UseVisualStyleBackColor = false;
-            this.resisterPlayer.Click += new System.EventHandler(this.resisterPlayer_Click);
+            this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGame.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterGame.Location = new System.Drawing.Point(12, 29);
+            this.resisterGame.Name = "resisterGame";
+            this.resisterGame.Size = new System.Drawing.Size(145, 51);
+            this.resisterGame.TabIndex = 0;
+            this.resisterGame.Text = "경기 등록";
+            this.resisterGame.UseVisualStyleBackColor = false;
+            this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
             // 
             // resisterTeam
             // 
@@ -113,6 +113,30 @@
             this.resisterTeam.Text = "팀 등록";
             this.resisterTeam.UseVisualStyleBackColor = false;
             this.resisterTeam.Click += new System.EventHandler(this.resisterTeam_Click);
+            // 
+            // resisterPlayer
+            // 
+            this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterPlayer.Location = new System.Drawing.Point(12, 146);
+            this.resisterPlayer.Name = "resisterPlayer";
+            this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
+            this.resisterPlayer.TabIndex = 2;
+            this.resisterPlayer.Text = "썬더스 선수등록";
+            this.resisterPlayer.UseVisualStyleBackColor = false;
+            this.resisterPlayer.Click += new System.EventHandler(this.resisterPlayer_Click);
+            // 
+            // resisterGamePlayer
+            // 
+            this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resisterGamePlayer.Location = new System.Drawing.Point(12, 206);
+            this.resisterGamePlayer.Name = "resisterGamePlayer";
+            this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
+            this.resisterGamePlayer.TabIndex = 3;
+            this.resisterGamePlayer.Text = "경기기록 등록";
+            this.resisterGamePlayer.UseVisualStyleBackColor = false;
+            this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
             // 
             // listPlayers
             // 
@@ -183,30 +207,6 @@
             this.Assist.DisplayIndex = 7;
             this.Assist.Text = "Assist";
             // 
-            // resisterGame
-            // 
-            this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterGame.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterGame.Location = new System.Drawing.Point(12, 29);
-            this.resisterGame.Name = "resisterGame";
-            this.resisterGame.Size = new System.Drawing.Size(145, 51);
-            this.resisterGame.TabIndex = 3;
-            this.resisterGame.Text = "경기 등록";
-            this.resisterGame.UseVisualStyleBackColor = false;
-            this.resisterGame.Click += new System.EventHandler(this.resisterGame_Click);
-            // 
-            // resisterGamePlayer
-            // 
-            this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterGamePlayer.Location = new System.Drawing.Point(12, 206);
-            this.resisterGamePlayer.Name = "resisterGamePlayer";
-            this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
-            this.resisterGamePlayer.TabIndex = 5;
-            this.resisterGamePlayer.Text = "경기기록 등록";
-            this.resisterGamePlayer.UseVisualStyleBackColor = false;
-            this.resisterGamePlayer.Click += new System.EventHandler(this.resisterGamePlayer_Click);
-            // 
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
@@ -234,7 +234,7 @@
             this.SKButton.Location = new System.Drawing.Point(877, 18);
             this.SKButton.Name = "SKButton";
             this.SKButton.Size = new System.Drawing.Size(114, 73);
-            this.SKButton.TabIndex = 8;
+            this.SKButton.TabIndex = 6;
             this.SKButton.Text = "서울 SK";
             this.SKButton.UseVisualStyleBackColor = false;
             this.SKButton.Click += new System.EventHandler(this.SKButton_Click);
@@ -258,7 +258,7 @@
             this.MOBISButton.Location = new System.Drawing.Point(877, 193);
             this.MOBISButton.Name = "MOBISButton";
             this.MOBISButton.Size = new System.Drawing.Size(114, 73);
-            this.MOBISButton.TabIndex = 10;
+            this.MOBISButton.TabIndex = 12;
             this.MOBISButton.Text = "울산 현대모비스";
             this.MOBISButton.UseVisualStyleBackColor = false;
             this.MOBISButton.Click += new System.EventHandler(this.MOBISButton_Click);
@@ -270,7 +270,7 @@
             this.SONOButton.Location = new System.Drawing.Point(755, 18);
             this.SONOButton.Name = "SONOButton";
             this.SONOButton.Size = new System.Drawing.Size(114, 73);
-            this.SONOButton.TabIndex = 11;
+            this.SONOButton.TabIndex = 5;
             this.SONOButton.Text = "고양 소노";
             this.SONOButton.UseVisualStyleBackColor = false;
             this.SONOButton.Click += new System.EventHandler(this.SONOButton_Click);
@@ -282,7 +282,7 @@
             this.DBButton.Location = new System.Drawing.Point(630, 18);
             this.DBButton.Name = "DBButton";
             this.DBButton.Size = new System.Drawing.Size(114, 73);
-            this.DBButton.TabIndex = 12;
+            this.DBButton.TabIndex = 4;
             this.DBButton.Text = "원주 DB";
             this.DBButton.UseVisualStyleBackColor = false;
             this.DBButton.Click += new System.EventHandler(this.DBButton_Click);
@@ -294,7 +294,7 @@
             this.KOGASButton.Location = new System.Drawing.Point(755, 193);
             this.KOGASButton.Name = "KOGASButton";
             this.KOGASButton.Size = new System.Drawing.Size(114, 73);
-            this.KOGASButton.TabIndex = 14;
+            this.KOGASButton.TabIndex = 11;
             this.KOGASButton.Text = "대구 한국가스공사";
             this.KOGASButton.UseVisualStyleBackColor = false;
             this.KOGASButton.Click += new System.EventHandler(this.KOGASButton_Click);
@@ -306,7 +306,7 @@
             this.KGCButton.Location = new System.Drawing.Point(755, 106);
             this.KGCButton.Name = "KGCButton";
             this.KGCButton.Size = new System.Drawing.Size(114, 73);
-            this.KGCButton.TabIndex = 13;
+            this.KGCButton.TabIndex = 8;
             this.KGCButton.Text = "안양 정관장";
             this.KGCButton.UseVisualStyleBackColor = false;
             this.KGCButton.Click += new System.EventHandler(this.KGCButton_Click);
@@ -318,7 +318,7 @@
             this.KTButton.Location = new System.Drawing.Point(630, 193);
             this.KTButton.Name = "KTButton";
             this.KTButton.Size = new System.Drawing.Size(114, 73);
-            this.KTButton.TabIndex = 16;
+            this.KTButton.TabIndex = 10;
             this.KTButton.Text = "수원 KT";
             this.KTButton.UseVisualStyleBackColor = false;
             this.KTButton.Click += new System.EventHandler(this.KTButton_Click);
@@ -330,7 +330,7 @@
             this.LGButton.Location = new System.Drawing.Point(630, 106);
             this.LGButton.Name = "LGButton";
             this.LGButton.Size = new System.Drawing.Size(114, 73);
-            this.LGButton.TabIndex = 15;
+            this.LGButton.TabIndex = 7;
             this.LGButton.Text = "창원 LG";
             this.LGButton.UseVisualStyleBackColor = false;
             this.LGButton.Click += new System.EventHandler(this.LGButton_Click);

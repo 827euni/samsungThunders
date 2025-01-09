@@ -46,7 +46,7 @@
             this.resister.Location = new System.Drawing.Point(149, 296);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
-            this.resister.TabIndex = 17;
+            this.resister.TabIndex = 6;
             this.resister.Text = "경기등록";
             this.resister.UseVisualStyleBackColor = true;
             this.resister.Click += new System.EventHandler(this.resister_Click);
@@ -56,7 +56,7 @@
             this.homeScore.Location = new System.Drawing.Point(167, 229);
             this.homeScore.Name = "homeScore";
             this.homeScore.Size = new System.Drawing.Size(100, 21);
-            this.homeScore.TabIndex = 16;
+            this.homeScore.TabIndex = 4;
             // 
             // label4
             // 
@@ -99,14 +99,14 @@
             this.dateGame.Location = new System.Drawing.Point(167, 130);
             this.dateGame.Name = "dateGame";
             this.dateGame.Size = new System.Drawing.Size(200, 21);
-            this.dateGame.TabIndex = 18;
+            this.dateGame.TabIndex = 1;
             // 
             // awayScore
             // 
             this.awayScore.Location = new System.Drawing.Point(167, 256);
             this.awayScore.Name = "awayScore";
             this.awayScore.Size = new System.Drawing.Size(100, 21);
-            this.awayScore.TabIndex = 20;
+            this.awayScore.TabIndex = 5;
             // 
             // label5
             // 
@@ -123,7 +123,7 @@
             this.HomePick.Location = new System.Drawing.Point(167, 163);
             this.HomePick.Name = "HomePick";
             this.HomePick.Size = new System.Drawing.Size(115, 20);
-            this.HomePick.TabIndex = 21;
+            this.HomePick.TabIndex = 2;
             // 
             // AwayPick
             // 
@@ -131,7 +131,7 @@
             this.AwayPick.Location = new System.Drawing.Point(167, 195);
             this.AwayPick.Name = "AwayPick";
             this.AwayPick.Size = new System.Drawing.Size(115, 20);
-            this.AwayPick.TabIndex = 22;
+            this.AwayPick.TabIndex = 3;
             // 
             // addGameForm
             // 

@@ -80,40 +80,40 @@
             this.playerName.Location = new System.Drawing.Point(164, 144);
             this.playerName.Name = "playerName";
             this.playerName.Size = new System.Drawing.Size(100, 21);
-            this.playerName.TabIndex = 4;
+            this.playerName.TabIndex = 0;
             // 
             // playerId
             // 
             this.playerId.Location = new System.Drawing.Point(164, 174);
             this.playerId.Name = "playerId";
             this.playerId.Size = new System.Drawing.Size(100, 21);
-            this.playerId.TabIndex = 5;
+            this.playerId.TabIndex = 1;
             // 
             // playerPosition
             // 
             this.playerPosition.Location = new System.Drawing.Point(164, 209);
             this.playerPosition.Name = "playerPosition";
             this.playerPosition.Size = new System.Drawing.Size(100, 21);
-            this.playerPosition.TabIndex = 6;
+            this.playerPosition.TabIndex = 2;
             // 
             // playerHeight
             // 
             this.playerHeight.Location = new System.Drawing.Point(164, 240);
             this.playerHeight.Name = "playerHeight";
             this.playerHeight.Size = new System.Drawing.Size(100, 21);
-            this.playerHeight.TabIndex = 7;
+            this.playerHeight.TabIndex = 3;
             // 
             // resister
             // 
             this.resister.Location = new System.Drawing.Point(164, 288);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
-            this.resister.TabIndex = 8;
+            this.resister.TabIndex = 4;
             this.resister.Text = "선수등록";
             this.resister.UseVisualStyleBackColor = true;
             this.resister.Click += new System.EventHandler(this.resister_Click);
             // 
-            // addPlayer
+            // addPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +127,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "addPlayer";
+            this.Name = "addPlayerForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

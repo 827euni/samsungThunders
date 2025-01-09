@@ -40,7 +40,7 @@
             this.resister.Location = new System.Drawing.Point(149, 217);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
-            this.resister.TabIndex = 17;
+            this.resister.TabIndex = 2;
             this.resister.Text = "팀 등록";
             this.resister.UseVisualStyleBackColor = true;
             this.resister.Click += new System.EventHandler(this.resister_Click);
@@ -50,14 +50,14 @@
             this.teamCity.Location = new System.Drawing.Point(176, 172);
             this.teamCity.Name = "teamCity";
             this.teamCity.Size = new System.Drawing.Size(100, 21);
-            this.teamCity.TabIndex = 14;
+            this.teamCity.TabIndex = 1;
             // 
             // teamName
             // 
             this.teamName.Location = new System.Drawing.Point(176, 142);
             this.teamName.Name = "teamName";
             this.teamName.Size = new System.Drawing.Size(100, 21);
-            this.teamName.TabIndex = 13;
+            this.teamName.TabIndex = 0;
             // 
             // label2
             // 

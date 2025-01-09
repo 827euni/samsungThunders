@@ -41,23 +41,30 @@ namespace calenderBasketball
             DateTime first = new DateTime(year, month, 1);
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
             int total = DateTime.DaysInMonth(year, month);
+            int index;
+
+            Button[] buttons = new Button[42]
+            {
+                button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button42 
+            };
+        
 
             for (int day = 1; day <= total; day++)
             {
-                int index = start + (day - 1);
+                index = start + (day - 1);
 
                 if (index < calender.Controls.Count)
                 {
-                    if (calender.Controls[index] is Button btn)
+                    if (buttons[index] != null)
                     {
-                        btn.Text = day.ToString();
-                        btn.Tag = day;
-                        btn.Click += Day_Click;
-                        btn.Visible = true;
+                        buttons[index].Text = day.ToString();
+                        buttons[index].Tag = day;
+                        buttons[index].Click += Day_Click;
+                        buttons[index].Visible = true;
 
-                        if (calender.GetPositionFromControl(btn).Column == 6)
+                        if (calender.GetPositionFromControl(buttons[index]).Column == 6)
                         {
-                            btn.ForeColor = Color.IndianRed;
+                            buttons[index].ForeColor = Color.IndianRed;
                         }
                     }
                 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using calenderBasketball;
 using samsungT.Models;
 using samsungT.Views;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
@@ -26,8 +27,8 @@ namespace samsungT
             loadWinRateChart();
             loadRecentGame();
             loadStatus();
+            thundersCalender.selectDate += thundersSelectDate;
         }
-
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
         {
@@ -223,6 +224,12 @@ namespace samsungT
             clickAssist.Text = totalAssist.ToString();
 
         }
+
+        private void thundersSelectDate(int year, int month, int day)
+        {
+            MessageBox.Show($"{year}년 {month}월 {day}일");
+        }
+
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
             addPlayerForm addPlayer = new addPlayerForm();

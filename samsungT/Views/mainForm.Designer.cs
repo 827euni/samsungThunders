@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -82,7 +82,8 @@
             this.clickField = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.clickHomeScore = new System.Windows.Forms.Label();
-            this.thundersCalender1 = new calenderBasketball.ThundersCalender();
+            this.thundersCalender2 = new calenderBasketball.ThundersCalender();
+            this.thundersCalender = new calenderBasketball.ThundersCalender();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -94,7 +95,7 @@
             // 
             this.resisterGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterGame.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterGame.Location = new System.Drawing.Point(12, 29);
+            this.resisterGame.Location = new System.Drawing.Point(8, 21);
             this.resisterGame.Name = "resisterGame";
             this.resisterGame.Size = new System.Drawing.Size(145, 51);
             this.resisterGame.TabIndex = 0;
@@ -106,7 +107,7 @@
             // 
             this.resisterTeam.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterTeam.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterTeam.Location = new System.Drawing.Point(12, 86);
+            this.resisterTeam.Location = new System.Drawing.Point(8, 87);
             this.resisterTeam.Name = "resisterTeam";
             this.resisterTeam.Size = new System.Drawing.Size(145, 54);
             this.resisterTeam.TabIndex = 1;
@@ -118,7 +119,7 @@
             // 
             this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterPlayer.Location = new System.Drawing.Point(12, 146);
+            this.resisterPlayer.Location = new System.Drawing.Point(8, 156);
             this.resisterPlayer.Name = "resisterPlayer";
             this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
             this.resisterPlayer.TabIndex = 2;
@@ -130,7 +131,7 @@
             // 
             this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterGamePlayer.Location = new System.Drawing.Point(12, 206);
+            this.resisterGamePlayer.Location = new System.Drawing.Point(8, 219);
             this.resisterGamePlayer.Name = "resisterGamePlayer";
             this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
             this.resisterGamePlayer.TabIndex = 3;
@@ -152,7 +153,7 @@
             this.Assist});
             this.listPlayers.Font = new System.Drawing.Font("Pretendard Variable", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listPlayers.HideSelection = false;
-            this.listPlayers.Location = new System.Drawing.Point(624, 272);
+            this.listPlayers.Location = new System.Drawing.Point(624, 282);
             this.listPlayers.Name = "listPlayers";
             this.listPlayers.Size = new System.Drawing.Size(693, 265);
             this.listPlayers.TabIndex = 2;
@@ -210,19 +211,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend4);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.winRateChart.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.CustomProperties = "PieStartAngle=270";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.winRateChart.Series.Add(series4);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -337,7 +338,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(214, 272);
+            this.button3.Location = new System.Drawing.Point(214, 282);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(406, 265);
             this.button3.TabIndex = 18;
@@ -357,7 +358,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(8, 272);
+            this.splitContainer1.Location = new System.Drawing.Point(8, 282);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -651,20 +652,29 @@
             this.clickHomeScore.Size = new System.Drawing.Size(0, 27);
             this.clickHomeScore.TabIndex = 1;
             // 
-            // thundersCalender1
+            // thundersCalender2
             // 
-            this.thundersCalender1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thundersCalender1.Location = new System.Drawing.Point(162, 18);
-            this.thundersCalender1.Name = "thundersCalender1";
-            this.thundersCalender1.Size = new System.Drawing.Size(465, 245);
-            this.thundersCalender1.TabIndex = 21;
+            this.thundersCalender2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender2.Location = new System.Drawing.Point(398, 135);
+            this.thundersCalender2.Name = "thundersCalender2";
+            this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
+            this.thundersCalender2.TabIndex = 22;
+            // 
+            // thundersCalender
+            // 
+            this.thundersCalender.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thundersCalender.Location = new System.Drawing.Point(161, 21);
+            this.thundersCalender.Name = "thundersCalender";
+            this.thundersCalender.Size = new System.Drawing.Size(465, 245);
+            this.thundersCalender.TabIndex = 23;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 549);
-            this.Controls.Add(this.thundersCalender1);
+            this.ClientSize = new System.Drawing.Size(1329, 566);
+            this.Controls.Add(this.thundersCalender);
+            this.Controls.Add(this.thundersCalender2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.winRateText);
             this.Controls.Add(this.button3);
@@ -684,7 +694,7 @@
             this.Controls.Add(this.resisterTeam);
             this.Controls.Add(this.resisterPlayer);
             this.Name = "mainForm";
-            this.Text = "Form1";
+            this.Text = "삼성 썬더스 24-25시즌";
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -750,7 +760,8 @@
         private System.Windows.Forms.Label clickHomeScore;
         private System.Windows.Forms.Label clickScoreText;
         private System.Windows.Forms.Label clickScore;
-        private calenderBasketball.ThundersCalender thundersCalender1;
+        private calenderBasketball.ThundersCalender thundersCalender2;
+        private calenderBasketball.ThundersCalender thundersCalender;
     }
 }
 

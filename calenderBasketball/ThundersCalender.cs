@@ -51,6 +51,11 @@ namespace calenderBasketball
                         btn.Text = day.ToString();
                         btn.Tag = day;
                         btn.Click += Day_Click;
+
+                        if(calender.GetPositionFromControl(btn).Column == 6)
+                        {
+                            btn.ForeColor = Color.IndianRed;
+                        }
                     }
                 }
             }

@@ -400,5 +400,43 @@ namespace samsungT.Models
 
             return recentGame;
         }
+
+        public Game GetSearchGame(DateTime date)
+        {
+            Game searchGame = null;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string q = "SELECT GameID, HomeTeamID, AwayTeamID, HomeScore, AwayScore FROM Games WHERE CONVERT(DATE, Date) = @Date";
+                    SqlCommand cmd = new SqlCommand(q, connection);
+                    cmd.Parameters.AddWithValue("@Date", date.Date);
+
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        searchGame = new Game
+                        {
+                            GameID = (int)reader["GameID"],
+                            HomeTeamID = (int)reader["HomeTeamID"],
+                            AwayTeamID = (int)reader["AwayTeamID"],
+                            HomeScore = (int)reader["HomeScore"],
+                            AwayScore = (int)reader["AwayScore"]
+                        };
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"최근 게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return searchGame;
+        }
+
+
+
+        }
     }
-}

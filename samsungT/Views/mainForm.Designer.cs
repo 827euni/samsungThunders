@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.recentAwayScore = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.recentHomeScore = new System.Windows.Forms.Label();
-            this.recentGame = new System.Windows.Forms.Label();
+            this.searchGame = new System.Windows.Forms.Label();
             this.clickScoreText = new System.Windows.Forms.Label();
             this.clickRebound = new System.Windows.Forms.Label();
             this.clickAssist = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             // 
             this.resisterPlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterPlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterPlayer.Location = new System.Drawing.Point(8, 156);
+            this.resisterPlayer.Location = new System.Drawing.Point(8, 159);
             this.resisterPlayer.Name = "resisterPlayer";
             this.resisterPlayer.Size = new System.Drawing.Size(145, 54);
             this.resisterPlayer.TabIndex = 2;
@@ -131,7 +131,7 @@
             // 
             this.resisterGamePlayer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.resisterGamePlayer.Font = new System.Drawing.Font("Pretendard Variable", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resisterGamePlayer.Location = new System.Drawing.Point(8, 219);
+            this.resisterGamePlayer.Location = new System.Drawing.Point(8, 226);
             this.resisterGamePlayer.Name = "resisterGamePlayer";
             this.resisterGamePlayer.Size = new System.Drawing.Size(145, 50);
             this.resisterGamePlayer.TabIndex = 3;
@@ -211,19 +211,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend2);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.winRateChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.CustomProperties = "PieStartAngle=270";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.winRateChart.Series.Add(series2);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -374,7 +374,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.recentAwayScore);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.recentHomeScore);
-            this.splitContainer1.Panel1.Controls.Add(this.recentGame);
+            this.splitContainer1.Panel1.Controls.Add(this.searchGame);
             // 
             // splitContainer1.Panel2
             // 
@@ -505,15 +505,15 @@
             this.recentHomeScore.TabIndex = 1;
             this.recentHomeScore.Text = "0";
             // 
-            // recentGame
+            // searchGame
             // 
-            this.recentGame.AutoSize = true;
-            this.recentGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentGame.Location = new System.Drawing.Point(18, 37);
-            this.recentGame.Name = "recentGame";
-            this.recentGame.Size = new System.Drawing.Size(216, 42);
-            this.recentGame.TabIndex = 0;
-            this.recentGame.Text = "Recent Game";
+            this.searchGame.AutoSize = true;
+            this.searchGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchGame.Location = new System.Drawing.Point(18, 37);
+            this.searchGame.Name = "searchGame";
+            this.searchGame.Size = new System.Drawing.Size(216, 42);
+            this.searchGame.TabIndex = 0;
+            this.searchGame.Text = "Recent Game";
             // 
             // clickScoreText
             // 
@@ -552,11 +552,12 @@
             // 
             this.clickChangeTitle.AutoSize = true;
             this.clickChangeTitle.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickChangeTitle.Location = new System.Drawing.Point(111, 39);
+            this.clickChangeTitle.Location = new System.Drawing.Point(111, 15);
             this.clickChangeTitle.Name = "clickChangeTitle";
             this.clickChangeTitle.Size = new System.Drawing.Size(149, 42);
             this.clickChangeTitle.TabIndex = 0;
             this.clickChangeTitle.Text = "STATUS";
+            this.clickChangeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // clickChangeText
             // 
@@ -606,7 +607,7 @@
             // 
             this.clickCity.AutoSize = true;
             this.clickCity.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickCity.Location = new System.Drawing.Point(170, 111);
+            this.clickCity.Location = new System.Drawing.Point(155, 106);
             this.clickCity.Name = "clickCity";
             this.clickCity.Size = new System.Drawing.Size(0, 19);
             this.clickCity.TabIndex = 1;
@@ -655,9 +656,9 @@
             // thundersCalender
             // 
             this.thundersCalender.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thundersCalender.Location = new System.Drawing.Point(161, 21);
+            this.thundersCalender.Location = new System.Drawing.Point(159, 21);
             this.thundersCalender.Name = "thundersCalender";
-            this.thundersCalender.Size = new System.Drawing.Size(465, 245);
+            this.thundersCalender.Size = new System.Drawing.Size(465, 255);
             this.thundersCalender.TabIndex = 23;
             // 
             // thundersCalender2
@@ -736,7 +737,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label winRateText;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label recentGame;
+        private System.Windows.Forms.Label searchGame;
         private System.Windows.Forms.Label recentText;
         private System.Windows.Forms.Label recentFree;
         private System.Windows.Forms.Label recentField;

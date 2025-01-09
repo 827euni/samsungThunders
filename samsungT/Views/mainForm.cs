@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -225,9 +226,82 @@ namespace samsungT
 
         }
 
+        private void changeStatus(Game searchGame)
+        {
+            var playerStatus = db.GetPlayersStatus();
+            int gameID = searchGame.GameID;
+            string homeCityName = db.GetCityName(searchGame.HomeTeamID);
+            string awayCityName = db.GetCityName(searchGame.AwayTeamID);
+
+            int total3Point = 0;
+            int total3PointA = 0;
+            int totalField = 0;
+            int totalFieldA = 0;
+            int totalFree = 0;
+            int totalFreeA = 0;
+            int totalRebound = 0;
+            int totalAssist = 0;
+
+            foreach (var status in playerStatus)
+            {
+                if (status.GameID == gameID)
+                {
+                    total3Point += status.ThreePoint;
+                    total3PointA += status.ThreePointA;
+                    totalField += status.FieldGoal;
+                    totalFieldA += status.FieldGoalA;
+                    totalFree += status.FreeThrow;
+                    totalFreeA += status.FreeThrowA;
+                    totalRebound += status.Rebound;
+                    totalAssist += status.Assist;
+                }
+            }
+
+            if (searchGame.HomeScore > searchGame.AwayScore)
+            {
+                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "WIN" : "LOSE";
+            }
+
+            else
+            {
+                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WiN";
+            }
+
+            clickHomeScore.Text = searchGame.HomeScore.ToString();
+            label3.Text = ":";
+            clickAwayScore.Text = searchGame.AwayScore.ToString();
+            clickCity.Text = $"{homeCityName}  :  {awayCityName}";
+            click3.Text = $"{total3Point}/{total3PointA}";
+            clickField.Text = $"{totalField}/{totalFieldA}";
+            clickFree.Text = $"{totalFree}/{totalFreeA}";
+            clickRebound.Text = totalRebound.ToString();
+            clickAssist.Text = totalAssist.ToString();
+
+
+            if (searchGame.HomeTeamID == 1)
+            {
+                clickHomeScore.ForeColor = Color.RoyalBlue;
+            }
+            else
+            {
+                clickAwayScore.ForeColor = Color.RoyalBlue;
+            }
+        }
+
         private void thundersSelectDate(int year, int month, int day)
         {
-            MessageBox.Show($"{year}년 {month}월 {day}일");
+
+            DateTime targetDate = new DateTime(year, month, day);
+            Game searchGame = db.GetSearchGame(targetDate);
+
+            if (searchGame == null)
+            {
+                
+            }
+            else
+            {
+                changeStatus(searchGame);
+            }
         }
 
         private void resisterPlayer_Click(object sender, EventArgs e)
@@ -256,7 +330,6 @@ namespace samsungT
         }
 
         // 승률 버튼
-
         private void setButtonColor(System.Windows.Forms.Button button)
         {
             DBButton.BackColor = SystemColors.ButtonHighlight;

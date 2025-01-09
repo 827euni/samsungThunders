@@ -519,7 +519,7 @@
             // 
             this.clickScoreText.AutoSize = true;
             this.clickScoreText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickScoreText.Location = new System.Drawing.Point(114, 122);
+            this.clickScoreText.Location = new System.Drawing.Point(107, 120);
             this.clickScoreText.Name = "clickScoreText";
             this.clickScoreText.Size = new System.Drawing.Size(72, 19);
             this.clickScoreText.TabIndex = 3;

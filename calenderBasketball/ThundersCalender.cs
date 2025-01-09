@@ -16,6 +16,18 @@ namespace calenderBasketball
         public List<DateTime> dates = new List<DateTime>();
         public DateTime today;
         public event Action<int, int, int> selectDate;
+
+        public class GameDTO
+        {
+            public int GameID { get; set; }
+            public DateTime Date { get; set; }
+            public int HomeTeamID { get; set; }
+            public int AwayTeamID { get; set; }
+            public int HomeScore { get; set; }
+            public int AwayScore { get; set; }
+        }
+        public event Func<DateTime, GameDTO> RequestGame;
+
         public ThundersCalender()
         {
             InitializeComponent();
@@ -61,6 +73,19 @@ namespace calenderBasketball
                         buttons[index].Tag = day;
                         buttons[index].Click += Day_Click;
                         buttons[index].Visible = true;
+
+                        DateTime targetDate = new DateTime(year, month, day);
+                        GameDTO searchGame = RequestGame?.Invoke(targetDate);
+
+                        if (searchGame != null)
+                        {
+                            buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightBlue : Color.LightCoral;
+                            buttons[index].Enabled = true;
+                        }
+                        else
+                        {
+                            buttons[index].Enabled = false;
+                        }
 
                         if (calender.GetPositionFromControl(buttons[index]).Column == 6)
                         {

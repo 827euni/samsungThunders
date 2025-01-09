@@ -26,7 +26,7 @@ namespace calenderBasketball
             public int HomeScore { get; set; }
             public int AwayScore { get; set; }
         }
-        public event Func<DateTime, GameDTO> RequestGame;
+        public event Func<DateTime, GameDTO> RequestSearchGame;
 
         public ThundersCalender()
         {
@@ -54,6 +54,8 @@ namespace calenderBasketball
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
             int total = DateTime.DaysInMonth(year, month);
             int index;
+            DateTime targetDate;
+            GameDTO searchGame;
 
             Button[] buttons = new Button[42]
             {
@@ -64,7 +66,8 @@ namespace calenderBasketball
             for (int day = 1; day <= total; day++)
             {
                 index = start + (day - 1);
-
+                targetDate = new DateTime(year, month, day);
+                searchGame = RequestSearchGame?.Invoke(targetDate);
                 if (index < calender.Controls.Count)
                 {
                     if (buttons[index] != null)
@@ -73,13 +76,16 @@ namespace calenderBasketball
                         buttons[index].Tag = day;
                         buttons[index].Click += Day_Click;
                         buttons[index].Visible = true;
-
-                        DateTime targetDate = new DateTime(year, month, day);
-                        GameDTO searchGame = RequestGame?.Invoke(targetDate);
-
                         if (searchGame != null)
                         {
-                            buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightBlue : Color.LightCoral;
+                            if (searchGame.HomeTeamID == 1)
+                            {
+                                buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightBlue : Color.LightCoral;
+                            }
+                            else
+                            {
+                                buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightCoral : Color.LightBlue;
+                            }
                             buttons[index].Enabled = true;
                         }
                         else
@@ -94,7 +100,6 @@ namespace calenderBasketball
                     }
                 }
             }
-
         }
 
         private void Day_Click(object sender, EventArgs e)

@@ -554,7 +554,7 @@ namespace samsungT
         private void splitContainer1_Panel2_Click(object sender, EventArgs e)
         {
             thundersChart _Chart_ThundersChart = new thundersChart();
-            _Chart_ThundersChart.ShowDialog();
+            _Chart_ThundersChart.Show();
         }
     }
 }

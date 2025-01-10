@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.Chart_Thunders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Button_Score = new System.Windows.Forms.Button();
             this.Button_3Point = new System.Windows.Forms.Button();
             this.Button_Field = new System.Windows.Forms.Button();
@@ -39,25 +39,26 @@
             this.Button_Rebound = new System.Windows.Forms.Button();
             this.Button_Assist = new System.Windows.Forms.Button();
             this.Label_ThundersName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_Thunders)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // Chart_Thunders
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(177, 64);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(616, 407);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            chartArea2.Name = "ChartArea1";
+            this.Chart_Thunders.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Chart_Thunders.Legends.Add(legend2);
+            this.Chart_Thunders.Location = new System.Drawing.Point(177, 64);
+            this.Chart_Thunders.Name = "Chart_Thunders";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.Chart_Thunders.Series.Add(series2);
+            this.Chart_Thunders.Size = new System.Drawing.Size(616, 407);
+            this.Chart_Thunders.TabIndex = 0;
+            this.Chart_Thunders.Text = "chart1";
             // 
             // Button_Score
             // 
@@ -68,6 +69,7 @@
             this.Button_Score.TabIndex = 1;
             this.Button_Score.Text = "득점";
             this.Button_Score.UseVisualStyleBackColor = true;
+            this.Button_Score.Click += new System.EventHandler(this.Button_Score_Click);
             // 
             // Button_3Point
             // 
@@ -141,10 +143,10 @@
             this.Controls.Add(this.Button_Field);
             this.Controls.Add(this.Button_3Point);
             this.Controls.Add(this.Button_Score);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.Chart_Thunders);
             this.Name = "thundersChart";
             this.Text = "thundersChart";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_Thunders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +154,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_Thunders;
         private System.Windows.Forms.Button Button_Score;
         private System.Windows.Forms.Button Button_3Point;
         private System.Windows.Forms.Button Button_Field;

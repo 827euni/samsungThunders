@@ -187,6 +187,7 @@ namespace samsungT
             List<Team> teams = db.GetTeams();
 
             Team TeamID = null;
+            double winRate;
 
             foreach (Team team in teams)
             {
@@ -200,10 +201,22 @@ namespace samsungT
             if (TeamID != null)
             {
                 int totalGames = TeamID.Wins + TeamID.Losses;
-                double winRate = totalGames > 0 ? (double)TeamID.Wins / totalGames * 100 : 0;
+                if(teamID == 1)
+                {
+                    winRate = totalGames > 0 ? (double)TeamID.Wins / totalGames * 100 : 0;
+                    winRateChart.Series[0].Points.AddXY("승리", TeamID.Wins);
+                    winRateChart.Series[0].Points.AddXY("패배", TeamID.Losses);
+                }
+                else // 데이터베이스에 기록되는 정보는 전부 삼성썬더스 기준이므로, 차트에 그려질 때 반대로 그려져야 함
+                {
+                    winRate = totalGames > 0 ? (double)100 - (((double)TeamID.Wins / totalGames * 100)) : 0;
+                    winRateChart.Series[0].Points.AddXY("승리", TeamID.Losses);
+                    winRateChart.Series[0].Points.AddXY("패배", TeamID.Wins);
+                }
+                winRateChart.Series[0].Points[0].Color = Color.LightBlue;
+                winRateChart.Series[0].Points[1].Color = Color.LightCoral;
 
-                winRateChart.Series[0].Points.AddXY("승리",TeamID.Wins);
-                winRateChart.Series[0].Points.AddXY("패배",TeamID.Losses);
+
 
                 string WinRateText = $"{winRate:F2}%";
                 winRateText.Text = WinRateText; 
@@ -298,8 +311,14 @@ namespace samsungT
                 totalRebound += player.Rebound;
                 totalAssist += player.Assist;
             }
-
+            clickChangeTitle.Text = "STATUS";
+            clickHomeScore.Text = "";
+            label3.Text = "";
+            clickAwayScore.Text = "";
+            clickCity.Text = "";
+            clickScoreText.Text = "총 득점";
             clickScore.Text = totalScore.ToString();
+            clickChangeText.Text = "평균 3점슛(%)\r\n평균 야투율(%)\r\n평균 자유투(%)\r\n총 리바운드\r\n총 어시스트";
             click3.Text = total3PointA > 0 ? ((float)total3Point / total3PointA * 100).ToString("F2") + "%" : 0.ToString();
             clickField.Text = totalFieldA > 0 ? ((float)totalField / totalFieldA * 100).ToString("F2") + "%" : 0.ToString();
             clickFree.Text = totalFreeA > 0 ? ((float)totalFree / totalFreeA * 100).ToString("F2") + "%" : 0.ToString();
@@ -353,6 +372,9 @@ namespace samsungT
             label3.Text = ":";
             clickAwayScore.Text = searchGame.AwayScore.ToString();
             clickCity.Text = $"{homeCityName}  :  {awayCityName}";
+            clickScore.Text = "";
+            clickScoreText.Text = "";
+            clickChangeText.Text = "3점\r\n야투\r\n자유투\r\n리바운드\r\n어시스트\r\n";
             click3.Text = $"{total3Point}/{total3PointA}";
             clickField.Text = $"{totalField}/{totalFieldA}";
             clickFree.Text = $"{totalFree}/{totalFreeA}";
@@ -376,16 +398,10 @@ namespace samsungT
             DateTime targetDate = new DateTime(year, month, day);
             Game searchGame = db.GetSearchGame(targetDate);
 
-            if (searchGame == null)
-            {
-                //버튼 enabled 작업할 것
-            }
-            else
+            if(searchGame != null)
             {
                 changeStatus(searchGame);
                 changePlayers(searchGame);
-                clickScoreText.Text = "득점";
-                clickChangeText.Text = "3점\r\n야투\r\n자유투\r\n리바운드\r\n어시스트\r\n";
             }
         
         }
@@ -462,7 +478,7 @@ namespace samsungT
             }
         }
 
-        private void oneMoreClickButton(Button clickButton, int chartType)
+        private void oneMoreClickButton(Button clickButton, int KBLNum)
         {
             if (lastButton == clickButton)
             {
@@ -479,7 +495,7 @@ namespace samsungT
 
                 setButtonColor(clickButton);
                 lastButton = clickButton;
-                loadWinRateChart(chartType);
+                loadWinRateChart(KBLNum);
             }
         }
 
@@ -529,5 +545,10 @@ namespace samsungT
             oneMoreClickButton(MOBISButton, 10);
         }
 
+        private void Button_BackClick_Click(object sender, EventArgs e)
+        {
+            loadPlayers();
+            loadStatus();
+        }
     }
 }

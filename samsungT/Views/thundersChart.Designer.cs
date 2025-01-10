@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Chart_Thunders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Button_Score = new System.Windows.Forms.Button();
             this.Button_3Point = new System.Windows.Forms.Button();
@@ -44,18 +44,18 @@
             // 
             // Chart_Thunders
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Chart_Thunders.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Chart_Thunders.Legends.Add(legend2);
+            chartArea7.Name = "ChartArea1";
+            this.Chart_Thunders.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.Chart_Thunders.Legends.Add(legend7);
             this.Chart_Thunders.Location = new System.Drawing.Point(177, 64);
             this.Chart_Thunders.Name = "Chart_Thunders";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.Chart_Thunders.Series.Add(series2);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.Chart_Thunders.Series.Add(series7);
             this.Chart_Thunders.Size = new System.Drawing.Size(616, 407);
             this.Chart_Thunders.TabIndex = 0;
             this.Chart_Thunders.Text = "chart1";
@@ -80,6 +80,7 @@
             this.Button_3Point.TabIndex = 1;
             this.Button_3Point.Text = "3점(%)";
             this.Button_3Point.UseVisualStyleBackColor = true;
+            this.Button_3Point.Click += new System.EventHandler(this.Button_3Point_Click);
             // 
             // Button_Field
             // 
@@ -90,6 +91,7 @@
             this.Button_Field.TabIndex = 1;
             this.Button_Field.Text = "야투(%)";
             this.Button_Field.UseVisualStyleBackColor = true;
+            this.Button_Field.Click += new System.EventHandler(this.Button_Field_Click);
             // 
             // Button_Free
             // 
@@ -100,6 +102,7 @@
             this.Button_Free.TabIndex = 1;
             this.Button_Free.Text = "자유투(%)";
             this.Button_Free.UseVisualStyleBackColor = true;
+            this.Button_Free.Click += new System.EventHandler(this.Button_Free_Click);
             // 
             // Button_Rebound
             // 
@@ -110,6 +113,7 @@
             this.Button_Rebound.TabIndex = 1;
             this.Button_Rebound.Text = "리바운드";
             this.Button_Rebound.UseVisualStyleBackColor = true;
+            this.Button_Rebound.Click += new System.EventHandler(this.Button_Rebound_Click);
             // 
             // Button_Assist
             // 
@@ -120,6 +124,7 @@
             this.Button_Assist.TabIndex = 1;
             this.Button_Assist.Text = "어시스트";
             this.Button_Assist.UseVisualStyleBackColor = true;
+            this.Button_Assist.Click += new System.EventHandler(this.Button_Assist_Click);
             // 
             // Label_ThundersName
             // 

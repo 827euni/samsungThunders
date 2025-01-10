@@ -41,5 +41,30 @@ namespace samsungT.Views
         {
             makeDefaultScoreChart();
         }
+
+        private void Button_3Point_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Field_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Free_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Rebound_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Assist_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

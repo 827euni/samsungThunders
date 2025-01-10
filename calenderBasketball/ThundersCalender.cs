@@ -41,11 +41,12 @@ namespace calenderBasketball
         {
             foreach (Control control in calender.Controls)
             {
-                if (control is Button day)
+                if (control is Button btn)
                 {
-                    day.Text = "";
-                    day.Click -= Day_Click;
-                    day.Visible = false;
+                    btn.Text = "";
+                    btn.Click -= Day_Click;
+                    btn.Visible = false;
+                    btn.BackColor = SystemColors.ButtonHighlight;
                 }
             }
 

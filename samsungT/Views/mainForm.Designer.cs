@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -84,6 +84,7 @@
             this.clickHomeScore = new System.Windows.Forms.Label();
             this.thundersCalender = new calenderBasketball.ThundersCalender();
             this.thundersCalender2 = new calenderBasketball.ThundersCalender();
+            this.Button_BackClick = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -211,19 +212,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea2.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend1);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.CustomProperties = "PieStartAngle=270";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.winRateChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.winRateChart.Series.Add(series1);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -669,13 +670,24 @@
             this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
             this.thundersCalender2.TabIndex = 22;
             // 
+            // Button_BackClick
+            // 
+            this.Button_BackClick.Font = new System.Drawing.Font("Pretendard Variable", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Button_BackClick.Location = new System.Drawing.Point(552, 253);
+            this.Button_BackClick.Name = "Button_BackClick";
+            this.Button_BackClick.Size = new System.Drawing.Size(68, 23);
+            this.Button_BackClick.TabIndex = 24;
+            this.Button_BackClick.Text = "돌아가기";
+            this.Button_BackClick.UseVisualStyleBackColor = true;
+            this.Button_BackClick.Click += new System.EventHandler(this.Button_BackClick_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 566);
+            this.Controls.Add(this.Button_BackClick);
             this.Controls.Add(this.thundersCalender);
-            this.Controls.Add(this.thundersCalender2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.winRateText);
             this.Controls.Add(this.button3);
@@ -763,6 +775,7 @@
         private System.Windows.Forms.Label clickScore;
         private calenderBasketball.ThundersCalender thundersCalender2;
         private calenderBasketball.ThundersCalender thundersCalender;
+        private System.Windows.Forms.Button Button_BackClick;
     }
 }
 

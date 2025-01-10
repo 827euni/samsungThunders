@@ -18,12 +18,12 @@ namespace samsungT
     public partial class mainForm : Form
     {
 
-        private Models.DatabaseHelper db;
+        private DatabaseHelper db;
         public Button lastButton = null;
         public mainForm()
         {
             InitializeComponent();
-            db = new Models.DatabaseHelper();
+            db = new DatabaseHelper();
             loadPlayers();
             loadWinRateChart();
             loadRecentGame();

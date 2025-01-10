@@ -29,6 +29,7 @@ namespace samsungT
             loadRecentGame();
             loadStatus();
             thundersCalender.selectDate += thundersSelectDate;
+            thundersCalender.RequestSearchGame += getGame;
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -386,6 +387,25 @@ namespace samsungT
                 clickScoreText.Text = "득점";
                 clickChangeText.Text = "3점\r\n야투\r\n자유투\r\n리바운드\r\n어시스트\r\n";
             }
+        
+        }
+        private ThundersCalender.GameDTO getGame(DateTime date)
+        {
+            Game searchGame = db.GetSearchGame(date);
+
+            if (searchGame != null)
+            {
+                return new ThundersCalender.GameDTO
+                {
+                    GameID = searchGame.GameID,
+                    Date = searchGame.Date,
+                    HomeTeamID = searchGame.HomeTeamID,
+                    AwayTeamID = searchGame.AwayTeamID,
+                    HomeScore = searchGame.HomeScore,
+                    AwayScore = searchGame.AwayScore
+                };
+            }
+            return null;
         }
 
         private void resisterPlayer_Click(object sender, EventArgs e)

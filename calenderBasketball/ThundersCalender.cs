@@ -16,6 +16,18 @@ namespace calenderBasketball
         public List<DateTime> dates = new List<DateTime>();
         public DateTime today;
         public event Action<int, int, int> selectDate;
+
+        public class GameDTO
+        {
+            public int GameID { get; set; }
+            public DateTime Date { get; set; }
+            public int HomeTeamID { get; set; }
+            public int AwayTeamID { get; set; }
+            public int HomeScore { get; set; }
+            public int AwayScore { get; set; }
+        }
+        public event Func<DateTime, GameDTO> RequestSearchGame;
+
         public ThundersCalender()
         {
             InitializeComponent();
@@ -29,11 +41,12 @@ namespace calenderBasketball
         {
             foreach (Control control in calender.Controls)
             {
-                if (control is Button day)
+                if (control is Button btn)
                 {
-                    day.Text = "";
-                    day.Click -= Day_Click;
-                    day.Visible = false;
+                    btn.Text = "";
+                    btn.Click -= Day_Click;
+                    btn.Visible = false;
+                    btn.BackColor = SystemColors.ButtonHighlight;
                 }
             }
 
@@ -42,6 +55,8 @@ namespace calenderBasketball
             int start = ((int)first.DayOfWeek + 6) % 7; // 월요일 시작
             int total = DateTime.DaysInMonth(year, month);
             int index;
+            DateTime targetDate;
+            GameDTO searchGame;
 
             Button[] buttons = new Button[42]
             {
@@ -52,7 +67,8 @@ namespace calenderBasketball
             for (int day = 1; day <= total; day++)
             {
                 index = start + (day - 1);
-
+                targetDate = new DateTime(year, month, day);
+                searchGame = RequestSearchGame?.Invoke(targetDate);
                 if (index < calender.Controls.Count)
                 {
                     if (buttons[index] != null)
@@ -61,6 +77,22 @@ namespace calenderBasketball
                         buttons[index].Tag = day;
                         buttons[index].Click += Day_Click;
                         buttons[index].Visible = true;
+                        if (searchGame != null)
+                        {
+                            if (searchGame.HomeTeamID == 1)
+                            {
+                                buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightBlue : Color.LightCoral;
+                            }
+                            else
+                            {
+                                buttons[index].BackColor = searchGame.HomeScore > searchGame.AwayScore ? Color.LightCoral : Color.LightBlue;
+                            }
+                            buttons[index].Enabled = true;
+                        }
+                        else
+                        {
+                            buttons[index].Enabled = false;
+                        }
 
                         if (calender.GetPositionFromControl(buttons[index]).Column == 6)
                         {
@@ -69,7 +101,6 @@ namespace calenderBasketball
                     }
                 }
             }
-
         }
 
         private void Day_Click(object sender, EventArgs e)

@@ -187,6 +187,7 @@ namespace samsungT
             List<Team> teams = db.GetTeams();
 
             Team TeamID = null;
+            double winRate;
 
             foreach (Team team in teams)
             {
@@ -200,10 +201,22 @@ namespace samsungT
             if (TeamID != null)
             {
                 int totalGames = TeamID.Wins + TeamID.Losses;
-                double winRate = totalGames > 0 ? (double)TeamID.Wins / totalGames * 100 : 0;
+                if(teamID == 1)
+                {
+                    winRate = totalGames > 0 ? (double)TeamID.Wins / totalGames * 100 : 0;
+                    winRateChart.Series[0].Points.AddXY("승리", TeamID.Wins);
+                    winRateChart.Series[0].Points.AddXY("패배", TeamID.Losses);
+                }
+                else // 데이터베이스에 기록되는 정보는 전부 삼성썬더스 기준이므로, 차트에 그려질 때 반대로 그려져야 함
+                {
+                    winRate = totalGames > 0 ? (double)100 - (((double)TeamID.Wins / totalGames * 100)) : 0;
+                    winRateChart.Series[0].Points.AddXY("승리", TeamID.Losses);
+                    winRateChart.Series[0].Points.AddXY("패배", TeamID.Wins);
+                }
+                winRateChart.Series[0].Points[0].Color = Color.LightBlue;
+                winRateChart.Series[0].Points[1].Color = Color.LightCoral;
 
-                winRateChart.Series[0].Points.AddXY("승리",TeamID.Wins);
-                winRateChart.Series[0].Points.AddXY("패배",TeamID.Losses);
+
 
                 string WinRateText = $"{winRate:F2}%";
                 winRateText.Text = WinRateText; 
@@ -465,7 +478,7 @@ namespace samsungT
             }
         }
 
-        private void oneMoreClickButton(Button clickButton, int chartType)
+        private void oneMoreClickButton(Button clickButton, int KBLNum)
         {
             if (lastButton == clickButton)
             {
@@ -482,7 +495,7 @@ namespace samsungT
 
                 setButtonColor(clickButton);
                 lastButton = clickButton;
-                loadWinRateChart(chartType);
+                loadWinRateChart(KBLNum);
             }
         }
 

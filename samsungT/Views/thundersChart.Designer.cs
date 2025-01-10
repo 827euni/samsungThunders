@@ -38,7 +38,7 @@
             this.Button_Free = new System.Windows.Forms.Button();
             this.Button_Rebound = new System.Windows.Forms.Button();
             this.Button_Assist = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Label_ThundersName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,22 +119,22 @@
             this.Button_Assist.Text = "어시스트";
             this.Button_Assist.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Label_ThundersName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Pretendard Variable", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(692, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "썬더스";
+            this.Label_ThundersName.AutoSize = true;
+            this.Label_ThundersName.Font = new System.Drawing.Font("Pretendard Variable", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Label_ThundersName.Location = new System.Drawing.Point(692, 15);
+            this.Label_ThundersName.Name = "Label_ThundersName";
+            this.Label_ThundersName.Size = new System.Drawing.Size(101, 38);
+            this.Label_ThundersName.TabIndex = 2;
+            this.Label_ThundersName.Text = "썬더스";
             // 
             // thundersChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 477);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Label_ThundersName);
             this.Controls.Add(this.Button_Assist);
             this.Controls.Add(this.Button_Rebound);
             this.Controls.Add(this.Button_Free);
@@ -159,6 +159,6 @@
         private System.Windows.Forms.Button Button_Free;
         private System.Windows.Forms.Button Button_Rebound;
         private System.Windows.Forms.Button Button_Assist;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Label_ThundersName;
     }
 }

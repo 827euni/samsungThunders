@@ -14,6 +14,8 @@ namespace samsungT.Views
     public partial class thundersChart : Form
     {
         private DatabaseHelper db;
+
+
         public thundersChart()
         {
             InitializeComponent();
@@ -44,6 +46,14 @@ namespace samsungT.Views
 
         private void Button_3Point_Click(object sender, EventArgs e)
         {
+            //var playerStatus = db.GetPlayersStatus();
+            //Chart_Thunders.Series[0].Points.Clear();
+
+            //List<Game> games = db.GetGames();
+
+            //DateTime[] dateTimes = new DateTime[games.Count];
+            //int score;
+
 
         }
 

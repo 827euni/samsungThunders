@@ -432,7 +432,7 @@ namespace samsungT.Models
             }
             catch (Exception e)
             {
-                MessageBox.Show($"최근 게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"검색된 게임 정보를 가져오는 중 오류가 발생했습니다: {e.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return searchGame;

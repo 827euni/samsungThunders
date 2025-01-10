@@ -248,7 +248,7 @@ namespace samsungT.Models
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string q = "SELECT GameID, Date, HomeTeamID, AwayTeamID, HomeScore, AwayScore FROM Games";
+                    string q = "SELECT GameID, Date, HomeTeamID, AwayTeamID, HomeScore, AwayScore FROM Games ORDER BY Date DESC";
                     SqlCommand cmd = new SqlCommand(q, connection);
 
                     connection.Open();

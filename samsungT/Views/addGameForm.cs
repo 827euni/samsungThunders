@@ -81,6 +81,9 @@ namespace samsungT
                     db.UpdateTeamWin(awayTeam, true);
                     db.UpdateTeamWin(homeTeam, false);
                 }
+                dateTime = DateTime.Now;
+                HomePick.SelectedIndex = 0;
+                AwayPick.SelectedIndex = 0;
                 homeScore.Clear();
                 awayScore.Clear();
             }

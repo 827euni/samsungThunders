@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace samsungT.Views
 {
@@ -48,6 +49,7 @@ namespace samsungT.Views
             }
             GamePick.DisplayMember = "Text";
             GamePick.ValueMember = "value";
+            GamePick.SelectedIndex = 0;
         }
 
         private void LoadPickPlayer()
@@ -114,6 +116,18 @@ namespace samsungT.Views
 
                 db.AddPlayerStat(playerStatus);
                 MessageBox.Show("선수 기록이 추가되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                GamePick.SelectedIndex = 0;
+                PlayerPick.SelectedIndex = 0;
+                Rebound.Clear();
+                ThreePoint.Clear();
+                ThreePointA.Clear();
+                FreeThrow.Clear();
+                FreeThrowA.Clear();
+                FieldGoal.Clear();
+                FieldGoalA.Clear();
+                Assist.Clear();
+                Score.Clear();
             }
             catch (Exception ex) 
             {

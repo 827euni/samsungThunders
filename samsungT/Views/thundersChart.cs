@@ -185,7 +185,6 @@ namespace samsungT.Views
             }
 
             Dictionary<DateTime, int> dateStatus = new Dictionary<DateTime, int>();
-            int rebound;
 
 
             foreach (var status in playerStatus)
@@ -229,7 +228,6 @@ namespace samsungT.Views
             }
 
             Dictionary<DateTime, int> dateStatus = new Dictionary<DateTime, int>();
-            int assist;
 
 
             foreach (var status in playerStatus)

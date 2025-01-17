@@ -116,7 +116,6 @@ namespace samsungT.Views
 
                 db.AddPlayerStat(playerStatus);
                 MessageBox.Show("선수 기록이 추가되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 GamePick.SelectedIndex = 0;
                 PlayerPick.SelectedIndex = 0;
                 Rebound.Clear();

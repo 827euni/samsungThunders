@@ -30,7 +30,7 @@ namespace samsungT
             loadStatus();
             thundersCalender.selectDate += thundersSelectDate;
             thundersCalender.RequestSearchGame += getGame;
-            thundersCalender.makeCalender(thundersCalender.today.Year, thundersCalender.today.Month);
+            thundersCalender.makeCalender(DateTime.Now.Year, DateTime.Now.Month);
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -262,8 +262,10 @@ namespace samsungT
                         totalRebound += status.Rebound;
                         totalAssist += status.Assist;
                     }
-
                 }
+
+                recentHomeScore.ForeColor = Color.Black;
+                recentAwayScore.ForeColor = Color.Black;
                 recentHomeScore.Text = recentGame.HomeScore.ToString();
                 recentAwayScore.Text = recentGame.AwayScore.ToString();
                 recentCity.Text = $"{homeCityName}  :  {awayCityName}";
@@ -344,6 +346,9 @@ namespace samsungT
             int totalRebound = 0;
             int totalAssist = 0;
 
+            clickHomeScore.ForeColor = Color.Black;
+            clickAwayScore.ForeColor = Color.Black;
+
             foreach (var status in playerStatus)
             {
                 if (status.GameID == gameID)
@@ -366,7 +371,7 @@ namespace samsungT
 
             else
             {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WiN";
+                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
             }
 
             clickHomeScore.Text = searchGame.HomeScore.ToString();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,11 +31,13 @@ namespace samsungT.Views
             List<Game> games = db.GetGames();
             int score;
 
-            foreach (Game game in games)
+
+            foreach (var game in games)
             {
                 score = game.HomeTeamID == 1 ? game.HomeScore : game.AwayScore;
                 Chart_Thunders.Series[0].Points.AddXY(game.Date, score);
             }
+
         }
 
         private void Button_Score_Click(object sender, EventArgs e)
@@ -71,12 +74,11 @@ namespace samsungT.Views
                 }
             }
             var sortStatus = dateStatus.OrderBy(k => k.Key);
-            var filteredData = sortStatus.Where(entry => entry.Value.total3PointA > 0);
 
-            foreach (var filter in filteredData)
+            foreach (var sort in sortStatus)
             {
-                var date = filter.Key;
-                var (total3Point, total3PointA) = filter.Value;
+                var date = sort.Key;
+                var (total3Point, total3PointA) = sort.Value;
 
                 if (total3PointA > 0)
                 {
@@ -115,12 +117,11 @@ namespace samsungT.Views
                 }
             }
             var sortStatus = dateStatus.OrderBy(k => k.Key);
-            var filteredData = sortStatus.Where(entry => entry.Value.totalFieldA > 0);
 
-            foreach (var filter in filteredData)
+            foreach (var sort in sortStatus)
             {
-                var date = filter.Key;
-                var (totalField, totalFieldA) = filter.Value;
+                var date = sort.Key;
+                var (totalField, totalFieldA) = sort.Value;
 
                 if (totalFieldA > 0)
                 {
@@ -131,17 +132,131 @@ namespace samsungT.Views
 
         private void Button_Free_Click(object sender, EventArgs e)
         {
+            Chart_Thunders.Series[0].Points.Clear();
+            var playerStatus = db.GetPlayersStatus();
+            List<Game> games = db.GetGames();
+            int[] gameIDs = new int[games.Count];
+            for (int i = 0; i<games.Count; i++)
+            {
+                gameIDs[i] = db.GetSearchGame(games[i].Date).GameID;
+            }
 
+            Dictionary<DateTime, (int totalFree, int totalFreeA)> dateStatus = new Dictionary<DateTime, (int, int)>();
+
+            foreach (var status in playerStatus)
+            {
+                for (int i = 0; i < gameIDs.Length; i++)
+                {
+                    if (status.GameID == gameIDs[i])
+                    {
+                        if (!dateStatus.ContainsKey(games[i].Date))
+                        {
+                            dateStatus[games[i].Date] = (0, 0);
+                        }
+
+                        dateStatus[games[i].Date] = (dateStatus[games[i].Date].totalFree + status.FreeThrow,
+                                                          dateStatus[games[i].Date].totalFreeA + status.FreeThrowA);
+                    }
+                }
+            }
+            var sortStatus = dateStatus.OrderBy(k => k.Key);
+
+            foreach (var sort in sortStatus)
+            {
+                var date = sort.Key;
+                var (totalFree, totalFreeA) = sort.Value;
+
+                if (totalFreeA > 0)
+                {
+                    Chart_Thunders.Series[0].Points.AddXY(date, (double)totalFree / totalFreeA * 100);
+                }
+            }
         }
 
         private void Button_Rebound_Click(object sender, EventArgs e)
         {
+            Chart_Thunders.Series[0].Points.Clear();
+            var playerStatus = db.GetPlayersStatus();
+            List<Game> games = db.GetGames();
+            int[] gameIDs = new int[games.Count];
+            for (int i = 0; i < games.Count; i++)
+            {
+                gameIDs[i] = db.GetSearchGame(games[i].Date).GameID;
+            }
 
+            Dictionary<DateTime, int> dateStatus = new Dictionary<DateTime, int>();
+            int rebound;
+
+
+            foreach (var status in playerStatus)
+            {
+                for (int i = 0; i < gameIDs.Length; i++)
+                {
+                    if (status.GameID == gameIDs[i])
+                    {
+                        if (!dateStatus.ContainsKey(games[i].Date))
+                        {
+                            dateStatus[games[i].Date] = 0;
+                        }
+                        dateStatus[games[i].Date] += status.Rebound;
+                    }
+                }
+            }
+
+            var sortStatus = dateStatus.OrderBy(k => k.Key);
+
+            foreach (var sort in sortStatus)
+            {
+                var date = sort.Key;
+                var rebounds = sort.Value;
+
+                if (rebounds > 0)
+                {
+                    Chart_Thunders.Series[0].Points.AddXY(date, rebounds);
+                }
+            }
         }
 
         private void Button_Assist_Click(object sender, EventArgs e)
         {
+            Chart_Thunders.Series[0].Points.Clear();
+            var playerStatus = db.GetPlayersStatus();
+            List<Game> games = db.GetGames();
+            int[] gameIDs = new int[games.Count];
+            for (int i = 0; i < games.Count; i++)
+            {
+                gameIDs[i] = db.GetSearchGame(games[i].Date).GameID;
+            }
 
+            Dictionary<DateTime, int> dateStatus = new Dictionary<DateTime, int>();
+            int assist;
+
+
+            foreach (var status in playerStatus)
+            {
+                for (int i = 0; i < gameIDs.Length; i++)
+                {
+                    if (status.GameID == gameIDs[i])
+                    {
+                        if (!dateStatus.ContainsKey(games[i].Date))
+                        {
+                            dateStatus[games[i].Date] = 0;
+                        }
+                        dateStatus[games[i].Date] += status.Assist;
+                    }
+                }
+            }
+
+            var sortStatus = dateStatus.OrderBy(k => k.Key);
+
+            foreach (var data in sortStatus)
+            {
+                var date = data.Key;
+                var assists = data.Value;
+
+                Chart_Thunders.Series[0].Points.AddXY(date, assists);
+            }
         }
+
     }
 }

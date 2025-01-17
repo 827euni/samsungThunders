@@ -37,7 +37,7 @@ namespace calenderBasketball
             makeCalender(year, month);
         }
 
-        private void makeCalender(int year, int month)
+        public void makeCalender(int year, int month)
         {
             foreach (Control control in calender.Controls)
             {

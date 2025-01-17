@@ -30,6 +30,7 @@ namespace samsungT
             loadStatus();
             thundersCalender.selectDate += thundersSelectDate;
             thundersCalender.RequestSearchGame += getGame;
+            thundersCalender.makeCalender(thundersCalender.today.Year, thundersCalender.today.Month);
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()

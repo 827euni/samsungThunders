@@ -78,9 +78,9 @@ namespace samsungT
                     decimal gameCount = status.GameCount;
 
                     item.SubItems.Add(gameCount > 0 ? (status.Score / gameCount).ToString("F2") : "0");
-                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0");
-                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0");
-                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0.00%");
+                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0.00%");
+                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0.00%");
                     item.SubItems.Add(gameCount > 0 ? (status.Rebound / gameCount).ToString("F2") : "0"); 
                     item.SubItems.Add(gameCount > 0 ? (status.Assist / gameCount).ToString("F2") : "0");
                 }
@@ -88,9 +88,9 @@ namespace samsungT
                 else
                 {
                     item.SubItems.Add("0");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
                     item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }
@@ -158,9 +158,9 @@ namespace samsungT
                     var status = playerStats[player.PlayerID];
 
                     item.SubItems.Add(status.Score > 0 ? (status.Score).ToString() : "0");
-                    item.SubItems.Add(status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2") + "%" : "0");
-                    item.SubItems.Add(status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2") + "%" : "0");
-                    item.SubItems.Add(status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2") + "%" : "0");
+                    item.SubItems.Add(status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2") + "%" : "0.00%");
+                    item.SubItems.Add(status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2") + "%" : "0.00%");
+                    item.SubItems.Add(status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2") + "%" : "0.00%");
                     item.SubItems.Add(status.Rebound > 0 ? (status.Rebound).ToString() : "0");
                     item.SubItems.Add(status.Assist > 0 ? (status.Assist).ToString() : "0");
                 }
@@ -168,9 +168,9 @@ namespace samsungT
                 else
                 {
                     item.SubItems.Add("0");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
                     item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }

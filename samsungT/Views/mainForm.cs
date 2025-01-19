@@ -30,7 +30,8 @@ namespace samsungT
             loadStatus();
             thundersCalender.selectDate += thundersSelectDate;
             thundersCalender.RequestSearchGame += getGame;
-            thundersCalender.makeCalender(thundersCalender.today.Year, thundersCalender.today.Month);
+            thundersCalender.makeCalender(DateTime.Now.Year, DateTime.Now.Month);
+            listPlayers.Click += ClickListPlayer;
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -78,9 +79,9 @@ namespace samsungT
                     decimal gameCount = status.GameCount;
 
                     item.SubItems.Add(gameCount > 0 ? (status.Score / gameCount).ToString("F2") : "0");
-                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0");
-                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0");
-                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0");
+                    item.SubItems.Add(gameCount > 0 && status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2")+"%" : "0.00%");
+                    item.SubItems.Add(gameCount > 0 && status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2")+"%" : "0.00%");
+                    item.SubItems.Add(gameCount > 0 && status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2")+"%" : "0.00%");
                     item.SubItems.Add(gameCount > 0 ? (status.Rebound / gameCount).ToString("F2") : "0"); 
                     item.SubItems.Add(gameCount > 0 ? (status.Assist / gameCount).ToString("F2") : "0");
                 }
@@ -88,15 +89,34 @@ namespace samsungT
                 else
                 {
                     item.SubItems.Add("0");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
                     item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }
 
                 listPlayers.Items.Add(item);
             }
+        }
+
+        private void ClickListPlayer(object sender, EventArgs e)
+        {
+            if (listPlayers.SelectedItems.Count > 0)
+            {
+                var selectedItem = listPlayers.SelectedItems[0];
+                int playerId = int.Parse(selectedItem.Text);
+                string playerName = selectedItem.SubItems[1].Text;
+
+                ShowPlayerChart(playerId, playerName);
+            }
+        }
+
+
+        private void ShowPlayerChart(int playerId, string playerName)
+        {
+            playerChart playerChart = new playerChart(playerId, playerName);
+            playerChart.ShowDialog();
         }
 
         private void changePlayers(Game searchGame)
@@ -158,9 +178,9 @@ namespace samsungT
                     var status = playerStats[player.PlayerID];
 
                     item.SubItems.Add(status.Score > 0 ? (status.Score).ToString() : "0");
-                    item.SubItems.Add(status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2") + "%" : "0");
-                    item.SubItems.Add(status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2") + "%" : "0");
-                    item.SubItems.Add(status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2") + "%" : "0");
+                    item.SubItems.Add(status.ThreePointA > 0 ? ((float)status.ThreePoint / status.ThreePointA * 100).ToString("F2") + "%" : "0.00%");
+                    item.SubItems.Add(status.FreeThrowA > 0 ? ((float)status.FreeThrow / status.FreeThrowA * 100).ToString("F2") + "%" : "0.00%");
+                    item.SubItems.Add(status.FieldGoalA > 0 ? ((float)status.FieldGoal / status.FieldGoalA * 100).ToString("F2") + "%" : "0.00%");
                     item.SubItems.Add(status.Rebound > 0 ? (status.Rebound).ToString() : "0");
                     item.SubItems.Add(status.Assist > 0 ? (status.Assist).ToString() : "0");
                 }
@@ -168,16 +188,15 @@ namespace samsungT
                 else
                 {
                     item.SubItems.Add("0");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
-                    item.SubItems.Add("0%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
+                    item.SubItems.Add("0.00%");
                     item.SubItems.Add("0");
                     item.SubItems.Add("0");
                 }
 
                 listPlayers.Items.Add(item);
             }
-
         }
 
         //승률 차트 바꾸고, 기본 값이 삼성썬더스로 보이게 하는 함수
@@ -262,8 +281,10 @@ namespace samsungT
                         totalRebound += status.Rebound;
                         totalAssist += status.Assist;
                     }
-
                 }
+
+                recentHomeScore.ForeColor = Color.Black;
+                recentAwayScore.ForeColor = Color.Black;
                 recentHomeScore.Text = recentGame.HomeScore.ToString();
                 recentAwayScore.Text = recentGame.AwayScore.ToString();
                 recentCity.Text = $"{homeCityName}  :  {awayCityName}";
@@ -344,6 +365,9 @@ namespace samsungT
             int totalRebound = 0;
             int totalAssist = 0;
 
+            clickHomeScore.ForeColor = Color.Black;
+            clickAwayScore.ForeColor = Color.Black;
+
             foreach (var status in playerStatus)
             {
                 if (status.GameID == gameID)
@@ -366,7 +390,7 @@ namespace samsungT
 
             else
             {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WiN";
+                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
             }
 
             clickHomeScore.Text = searchGame.HomeScore.ToString();

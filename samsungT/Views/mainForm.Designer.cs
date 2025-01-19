@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -153,6 +153,7 @@
             this.Rebound,
             this.Assist});
             this.listPlayers.Font = new System.Drawing.Font("Pretendard Variable", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listPlayers.FullRowSelect = true;
             this.listPlayers.HideSelection = false;
             this.listPlayers.Location = new System.Drawing.Point(624, 282);
             this.listPlayers.Name = "listPlayers";
@@ -212,19 +213,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea2.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend1);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.CustomProperties = "PieStartAngle=270";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.winRateChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.winRateChart.Series.Add(series1);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";

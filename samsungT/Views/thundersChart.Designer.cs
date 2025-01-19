@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Chart_Thunders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Button_Score = new System.Windows.Forms.Button();
             this.Button_3Point = new System.Windows.Forms.Button();
@@ -44,19 +44,19 @@
             // 
             // Chart_Thunders
             // 
-            chartArea4.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea4.Name = "ChartArea1";
-            this.Chart_Thunders.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.Chart_Thunders.Legends.Add(legend4);
+            chartArea6.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea6.Name = "ChartArea1";
+            this.Chart_Thunders.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.Chart_Thunders.Legends.Add(legend6);
             this.Chart_Thunders.Location = new System.Drawing.Point(177, 64);
             this.Chart_Thunders.Name = "Chart_Thunders";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.Chart_Thunders.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.Chart_Thunders.Series.Add(series6);
             this.Chart_Thunders.Size = new System.Drawing.Size(616, 407);
             this.Chart_Thunders.TabIndex = 0;
             this.Chart_Thunders.Text = "chart1";
@@ -131,7 +131,7 @@
             // 
             this.Label_ThundersName.AutoSize = true;
             this.Label_ThundersName.Font = new System.Drawing.Font("Pretendard Variable", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Label_ThundersName.Location = new System.Drawing.Point(692, 15);
+            this.Label_ThundersName.Location = new System.Drawing.Point(352, 9);
             this.Label_ThundersName.Name = "Label_ThundersName";
             this.Label_ThundersName.Size = new System.Drawing.Size(101, 38);
             this.Label_ThundersName.TabIndex = 2;

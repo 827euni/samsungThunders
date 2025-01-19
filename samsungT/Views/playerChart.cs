@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,14 +15,180 @@ namespace samsungT.Views
     public partial class playerChart : Form
     {
         private DatabaseHelper db;
+        int PlayerID;
+        string PlayerName;
+
         public playerChart(int playerID, string playerName)
         {
             InitializeComponent();
-            int ID = playerID;
-            string Name = playerName;
+            db = new DatabaseHelper();
+            PlayerID = playerID;
+            PlayerName = playerName;
+            Label_PlayerName.Text = $"{PlayerName} 경기 기록";
+            makeScoreChart(PlayerID);
+        }
 
-            Label_PlayerName.Text = $"{Name} 경기 기록";
 
+
+        private void Button_Score_Click(object sender, EventArgs e)
+        {
+            makeScoreChart(PlayerID);
+        }
+
+        private void Button_3Point_Click(object sender, EventArgs e)
+        {
+
+            make3PointChart(PlayerID);
+        }
+
+        private void Button_Field_Click(object sender, EventArgs e)
+        {
+            makeFieldGoalChart(PlayerID);
+        }
+
+        private void Button_Free_Click(object sender, EventArgs e)
+        {
+            makeFreeThrowChart(PlayerID);
+        }
+
+        private void Button_Rebound_Click(object sender, EventArgs e)
+        {
+            makeReboundChart(PlayerID);
+        }
+
+        private void Button_Assist_Click(object sender, EventArgs e)
+        {
+            makeAssistChart(PlayerID);
+        }
+
+        private void makeScoreChart(int PlayerID)
+        {
+            Chart_Players.Series[0].Points.Clear();
+
+            List<Game> games = db.GetGames();
+            int score;
+
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    score = db.GetGamePlayer(game.GameID, PlayerID).Score;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, score);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
+
+        }
+
+        private void make3PointChart(int PlayerID)
+        {
+            Chart_Players.Series[0].Points.Clear();
+            List<Game> games = db.GetGames();
+            int ThreePoint;
+            int ThreePointA;
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    ThreePoint = db.GetGamePlayer(game.GameID, PlayerID).ThreePoint;
+                    ThreePointA = db.GetGamePlayer(game.GameID, PlayerID).ThreePointA;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, (double)ThreePoint / ThreePointA * 100);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
+        }
+
+        private void makeFieldGoalChart(int PlayerID) 
+        { 
+            Chart_Players.Series[0].Points.Clear();
+            List<Game> games = db.GetGames();
+            int Field;
+            int FieldA;
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    Field = db.GetGamePlayer(game.GameID, PlayerID).FieldGoal;
+                    FieldA = db.GetGamePlayer(game.GameID, PlayerID).FieldGoalA;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, (double)Field / FieldA * 100);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
+        }
+        private void makeFreeThrowChart(int PlayerID) 
+        {
+            Chart_Players.Series[0].Points.Clear();
+            List<Game> games = db.GetGames();
+            int Free;
+            int FreeA;
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    Free = db.GetGamePlayer(game.GameID, PlayerID).FreeThrow;
+                    FreeA = db.GetGamePlayer(game.GameID, PlayerID).FreeThrowA;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, (double)Free / FreeA * 100);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
+        }
+        private void makeReboundChart(int PlayerID) 
+        {
+            Chart_Players.Series[0].Points.Clear();
+
+            List<Game> games = db.GetGames();
+            int rebound;
+
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    rebound = db.GetGamePlayer(game.GameID, PlayerID).Rebound;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, rebound);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
+        }
+        private void makeAssistChart(int PlayerID) 
+        {
+            Chart_Players.Series[0].Points.Clear();
+
+            List<Game> games = db.GetGames();
+            int assist;
+
+
+            foreach (var game in games)
+            {
+                if (db.GetGamePlayer(game.GameID, PlayerID) != null)
+                {
+                    assist = db.GetGamePlayer(game.GameID, PlayerID).Assist;
+                    Chart_Players.Series[0].Points.AddXY(game.Date, assist);
+                }
+                else
+                {
+                    Chart_Players.Series[0].Points.AddXY(game.Date, 0);
+                }
+            }
         }
     }
 }

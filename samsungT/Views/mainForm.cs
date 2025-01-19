@@ -31,6 +31,7 @@ namespace samsungT
             thundersCalender.selectDate += thundersSelectDate;
             thundersCalender.RequestSearchGame += getGame;
             thundersCalender.makeCalender(DateTime.Now.Year, DateTime.Now.Month);
+            listPlayers.Click += ClickListPlayer;
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -97,6 +98,25 @@ namespace samsungT
 
                 listPlayers.Items.Add(item);
             }
+        }
+
+        private void ClickListPlayer(object sender, EventArgs e)
+        {
+            if (listPlayers.SelectedItems.Count > 0)
+            {
+                var selectedItem = listPlayers.SelectedItems[0];
+                int playerId = int.Parse(selectedItem.Text);
+                string playerName = selectedItem.SubItems[1].Text;
+
+                ShowPlayerChart(playerId, playerName);
+            }
+        }
+
+
+        private void ShowPlayerChart(int playerId, string playerName)
+        {
+            playerChart playerChart = new playerChart(playerId, playerName);
+            playerChart.ShowDialog();
         }
 
         private void changePlayers(Game searchGame)
@@ -177,7 +197,6 @@ namespace samsungT
 
                 listPlayers.Items.Add(item);
             }
-
         }
 
         //승률 차트 바꾸고, 기본 값이 삼성썬더스로 보이게 하는 함수

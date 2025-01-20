@@ -337,6 +337,7 @@ namespace samsungT
             label3.Text = "";
             clickAwayScore.Text = "";
             clickCity.Text = "";
+            Label_WINLOSE.Text = "";
             clickScoreText.Text = "총 득점";
             clickScore.Text = totalScore.ToString();
             clickChangeText.Text = "평균 3점슛(%)\r\n평균 야투율(%)\r\n평균 자유투(%)\r\n총 리바운드\r\n총 어시스트";
@@ -381,17 +382,8 @@ namespace samsungT
                     totalAssist += status.Assist;
                 }
             }
-
-            if (searchGame.HomeScore > searchGame.AwayScore)
-            {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "WIN" : "LOSE";
-            }
-
-            else
-            {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
-            }
-
+            splitContainer1.Panel2.BackColor = SystemColors.ButtonHighlight;
+            Label_WINLOSE.Text = "";
             clickHomeScore.Text = searchGame.HomeScore.ToString();
             label3.Text = ":";
             clickAwayScore.Text = searchGame.AwayScore.ToString();
@@ -413,6 +405,16 @@ namespace samsungT
             else
             {
                 clickAwayScore.ForeColor = Color.RoyalBlue;
+            }
+
+            if (searchGame.HomeScore > searchGame.AwayScore)
+            {
+                Label_WINLOSE.Text = searchGame.HomeTeamID == 1 ? "WIN" : "LOSE";
+            }
+
+            else
+            {
+                Label_WINLOSE.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
             }
         }
 

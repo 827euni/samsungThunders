@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -86,6 +86,7 @@
             this.thundersCalender = new calenderBasketball.ThundersCalender();
             this.thundersCalender2 = new calenderBasketball.ThundersCalender();
             this.Label_RecentGame = new System.Windows.Forms.Label();
+            this.Label_WINLOSE = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -214,19 +215,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea8.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend8);
+            chartArea6.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend6);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series8.CustomProperties = "PieStartAngle=270";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.winRateChart.Series.Add(series8);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.CustomProperties = "PieStartAngle=270";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.winRateChart.Series.Add(series6);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -383,6 +384,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer1.Panel2.Controls.Add(this.Label_WINLOSE);
             this.splitContainer1.Panel2.Controls.Add(this.clickScoreText);
             this.splitContainer1.Panel2.Controls.Add(this.clickRebound);
             this.splitContainer1.Panel2.Controls.Add(this.clickAssist);
@@ -700,6 +702,17 @@
             this.Label_RecentGame.Text = "2025/01/20";
             this.Label_RecentGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Label_WINLOSE
+            // 
+            this.Label_WINLOSE.AutoSize = true;
+            this.Label_WINLOSE.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_WINLOSE.Location = new System.Drawing.Point(255, 71);
+            this.Label_WINLOSE.Name = "Label_WINLOSE";
+            this.Label_WINLOSE.Size = new System.Drawing.Size(106, 23);
+            this.Label_WINLOSE.TabIndex = 3;
+            this.Label_WINLOSE.Text = "WIN LOSE";
+            this.Label_WINLOSE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -796,6 +809,7 @@
         private calenderBasketball.ThundersCalender thundersCalender;
         private System.Windows.Forms.Button Button_BackClick;
         private System.Windows.Forms.Label Label_RecentGame;
+        private System.Windows.Forms.Label Label_WINLOSE;
     }
 }
 

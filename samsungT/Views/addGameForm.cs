@@ -120,6 +120,8 @@ namespace samsungT
                 AwayPick.SelectedIndex = 0;
                 homeScore.Clear();
                 awayScore.Clear();
+
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {

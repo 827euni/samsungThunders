@@ -127,6 +127,8 @@ namespace samsungT.Views
                 FieldGoalA.Clear();
                 Assist.Clear();
                 Score.Clear();
+
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex) 
             {

@@ -24,14 +24,19 @@ namespace samsungT
         {
             InitializeComponent();
             db = new DatabaseHelper();
+            thundersCalender.selectDate += thundersSelectDate;
+            thundersCalender.RequestSearchGame += getGame;
+            refresh();
+            listPlayers.Click += ClickListPlayer;
+        }
+
+        public void refresh()
+        {
             loadPlayers();
             loadWinRateChart();
             loadRecentGame();
             loadStatus();
-            thundersCalender.selectDate += thundersSelectDate;
-            thundersCalender.RequestSearchGame += getGame;
             thundersCalender.makeCalender(DateTime.Now.Year, DateTime.Now.Month);
-            listPlayers.Click += ClickListPlayer;
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -453,26 +458,38 @@ namespace samsungT
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
             addPlayerForm addPlayer = new addPlayerForm();
-            addPlayer.ShowDialog();
+            if (addPlayer.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         private void resisterTeam_Click(object sender, EventArgs e)
         {
             addTeamForm addTeam = new addTeamForm();
-            addTeam.ShowDialog();
+            if (addTeam.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         private void resisterGame_Click(object sender, EventArgs e)
         {
             addGameForm addGame = new addGameForm();
-            addGame.ShowDialog();
+            if (addGame.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
 
         }
 
         private void resisterGamePlayer_Click(object sender, EventArgs e)
         {
             addPlayerStatusForm addPlayerStatus = new addPlayerStatusForm();
-            addPlayerStatus.ShowDialog();
+            if (addPlayerStatus.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         // 승률 버튼
@@ -573,8 +590,7 @@ namespace samsungT
 
         private void Button_BackClick_Click(object sender, EventArgs e)
         {
-            loadPlayers();
-            loadStatus();
+            refresh();
         }
 
         private void splitContainer1_Panel2_Click(object sender, EventArgs e)

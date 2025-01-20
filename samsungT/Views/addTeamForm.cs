@@ -39,8 +39,11 @@ namespace samsungT
 
                 db.AddTeam(team);
                 MessageBox.Show("팀이 추가되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 teamName.Clear();
                 teamCity.Clear();
+
+                this.DialogResult = DialogResult.OK;
             }
 
             catch (Exception ex)

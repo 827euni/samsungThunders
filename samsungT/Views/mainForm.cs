@@ -24,14 +24,19 @@ namespace samsungT
         {
             InitializeComponent();
             db = new DatabaseHelper();
+            thundersCalender.selectDate += thundersSelectDate;
+            thundersCalender.RequestSearchGame += getGame;
+            refresh();
+            listPlayers.Click += ClickListPlayer;
+        }
+
+        public void refresh()
+        {
             loadPlayers();
             loadWinRateChart();
             loadRecentGame();
             loadStatus();
-            thundersCalender.selectDate += thundersSelectDate;
-            thundersCalender.RequestSearchGame += getGame;
             thundersCalender.makeCalender(DateTime.Now.Year, DateTime.Now.Month);
-            listPlayers.Click += ClickListPlayer;
         }
         // 리스트 뷰에 선수들을 나타내게 하는 함수
         private void loadPlayers()
@@ -282,7 +287,7 @@ namespace samsungT
                         totalAssist += status.Assist;
                     }
                 }
-
+                Label_RecentGame.Text = recentGame.Date.ToString("yyyy/MM/dd");
                 recentHomeScore.ForeColor = Color.Black;
                 recentAwayScore.ForeColor = Color.Black;
                 recentHomeScore.Text = recentGame.HomeScore.ToString();
@@ -333,11 +338,11 @@ namespace samsungT
                 totalRebound += player.Rebound;
                 totalAssist += player.Assist;
             }
-            clickChangeTitle.Text = "STATUS";
             clickHomeScore.Text = "";
             label3.Text = "";
             clickAwayScore.Text = "";
             clickCity.Text = "";
+            Label_WINLOSE.Text = "";
             clickScoreText.Text = "총 득점";
             clickScore.Text = totalScore.ToString();
             clickChangeText.Text = "평균 3점슛(%)\r\n평균 야투율(%)\r\n평균 자유투(%)\r\n총 리바운드\r\n총 어시스트";
@@ -382,17 +387,8 @@ namespace samsungT
                     totalAssist += status.Assist;
                 }
             }
-
-            if (searchGame.HomeScore > searchGame.AwayScore)
-            {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "WIN" : "LOSE";
-            }
-
-            else
-            {
-                clickChangeTitle.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
-            }
-
+            splitContainer1.Panel2.BackColor = SystemColors.ButtonHighlight;
+            Label_WINLOSE.Text = "";
             clickHomeScore.Text = searchGame.HomeScore.ToString();
             label3.Text = ":";
             clickAwayScore.Text = searchGame.AwayScore.ToString();
@@ -414,6 +410,16 @@ namespace samsungT
             else
             {
                 clickAwayScore.ForeColor = Color.RoyalBlue;
+            }
+
+            if (searchGame.HomeScore > searchGame.AwayScore)
+            {
+                Label_WINLOSE.Text = searchGame.HomeTeamID == 1 ? "WIN" : "LOSE";
+            }
+
+            else
+            {
+                Label_WINLOSE.Text = searchGame.HomeTeamID == 1 ? "LOSE" : "WIN";
             }
         }
 
@@ -452,26 +458,38 @@ namespace samsungT
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
             addPlayerForm addPlayer = new addPlayerForm();
-            addPlayer.ShowDialog();
+            if (addPlayer.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         private void resisterTeam_Click(object sender, EventArgs e)
         {
             addTeamForm addTeam = new addTeamForm();
-            addTeam.ShowDialog();
+            if (addTeam.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         private void resisterGame_Click(object sender, EventArgs e)
         {
             addGameForm addGame = new addGameForm();
-            addGame.ShowDialog();
+            if (addGame.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
 
         }
 
         private void resisterGamePlayer_Click(object sender, EventArgs e)
         {
             addPlayerStatusForm addPlayerStatus = new addPlayerStatusForm();
-            addPlayerStatus.ShowDialog();
+            if (addPlayerStatus.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         // 승률 버튼
@@ -572,8 +590,7 @@ namespace samsungT
 
         private void Button_BackClick_Click(object sender, EventArgs e)
         {
-            loadPlayers();
-            loadStatus();
+            refresh();
         }
 
         private void splitContainer1_Panel2_Click(object sender, EventArgs e)
@@ -581,5 +598,6 @@ namespace samsungT
             thundersChart _Chart_ThundersChart = new thundersChart();
             _Chart_ThundersChart.Show();
         }
+
     }
 }

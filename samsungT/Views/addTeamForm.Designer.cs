@@ -37,7 +37,7 @@
             // 
             // resister
             // 
-            this.resister.Location = new System.Drawing.Point(149, 217);
+            this.resister.Location = new System.Drawing.Point(146, 93);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
             this.resister.TabIndex = 2;
@@ -47,14 +47,14 @@
             // 
             // teamCity
             // 
-            this.teamCity.Location = new System.Drawing.Point(176, 172);
+            this.teamCity.Location = new System.Drawing.Point(169, 51);
             this.teamCity.Name = "teamCity";
             this.teamCity.Size = new System.Drawing.Size(100, 21);
             this.teamCity.TabIndex = 1;
             // 
             // teamName
             // 
-            this.teamName.Location = new System.Drawing.Point(176, 142);
+            this.teamName.Location = new System.Drawing.Point(169, 21);
             this.teamName.Name = "teamName";
             this.teamName.Size = new System.Drawing.Size(100, 21);
             this.teamName.TabIndex = 0;
@@ -62,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 175);
+            this.label2.Location = new System.Drawing.Point(104, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 10;
@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 145);
+            this.label1.Location = new System.Drawing.Point(104, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 12);
             this.label1.TabIndex = 9;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 450);
+            this.ClientSize = new System.Drawing.Size(386, 131);
             this.Controls.Add(this.resister);
             this.Controls.Add(this.teamCity);
             this.Controls.Add(this.teamName);

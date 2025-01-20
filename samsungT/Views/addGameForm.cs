@@ -28,15 +28,49 @@ namespace samsungT
             foreach (Team team in teams)
             {
                 HomePick.Items.Add(new {Text = team.TeamName, Value = team.TeamID });
-                AwayPick.Items.Add(new {Text = team.TeamName, Value = team.TeamID });
             }
 
             HomePick.DisplayMember = "Text";
             HomePick.ValueMember = "Value";
 
+            updateAwayPick(teams, homeID: null);
+
+            HomePick.SelectedIndexChanged += (sender, e) =>
+            {
+                int homeID = (int)((dynamic)HomePick.SelectedItem).Value;
+                if (homeID != 1)
+                {
+                    AwayPick.Items.Clear();
+                    AwayPick.Items.Add(new { Text = "삼성 썬더스", Value = 1 });
+                    AwayPick.DisplayMember = "Text";
+                    AwayPick.ValueMember = "Value";
+                    AwayPick.SelectedIndex = 0;
+                }
+                else
+                {
+                    updateAwayPick(teams, homeID);
+                }
+            };
+
+
+        }
+
+        private void updateAwayPick(List<Team> teams, int? homeID)
+        {
+            AwayPick.Items.Clear();
+
+            foreach (Team team in teams)
+            {
+                if (homeID == 1 && team.TeamID == 1)
+                {
+                    continue;
+                }
+
+                AwayPick.Items.Add(new { Text = team.TeamName, Value = team.TeamID });
+            }
+
             AwayPick.DisplayMember = "Text";
             AwayPick.ValueMember = "Value";
-
         }
 
         private void resister_Click(object sender, EventArgs e)
@@ -86,6 +120,8 @@ namespace samsungT
                 AwayPick.SelectedIndex = 0;
                 homeScore.Clear();
                 awayScore.Clear();
+
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {

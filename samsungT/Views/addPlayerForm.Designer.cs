@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 147);
+            this.label1.Location = new System.Drawing.Point(119, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 177);
+            this.label2.Location = new System.Drawing.Point(119, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 209);
+            this.label3.Location = new System.Drawing.Point(119, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 2;
@@ -69,7 +69,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 243);
+            this.label4.Location = new System.Drawing.Point(119, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 12);
             this.label4.TabIndex = 3;
@@ -77,35 +77,35 @@
             // 
             // playerName
             // 
-            this.playerName.Location = new System.Drawing.Point(164, 144);
+            this.playerName.Location = new System.Drawing.Point(184, 38);
             this.playerName.Name = "playerName";
             this.playerName.Size = new System.Drawing.Size(100, 21);
             this.playerName.TabIndex = 0;
             // 
             // playerId
             // 
-            this.playerId.Location = new System.Drawing.Point(164, 174);
+            this.playerId.Location = new System.Drawing.Point(184, 68);
             this.playerId.Name = "playerId";
             this.playerId.Size = new System.Drawing.Size(100, 21);
             this.playerId.TabIndex = 1;
             // 
             // playerPosition
             // 
-            this.playerPosition.Location = new System.Drawing.Point(164, 209);
+            this.playerPosition.Location = new System.Drawing.Point(184, 103);
             this.playerPosition.Name = "playerPosition";
             this.playerPosition.Size = new System.Drawing.Size(100, 21);
             this.playerPosition.TabIndex = 2;
             // 
             // playerHeight
             // 
-            this.playerHeight.Location = new System.Drawing.Point(164, 240);
+            this.playerHeight.Location = new System.Drawing.Point(184, 134);
             this.playerHeight.Name = "playerHeight";
             this.playerHeight.Size = new System.Drawing.Size(100, 21);
             this.playerHeight.TabIndex = 3;
             // 
             // resister
             // 
-            this.resister.Location = new System.Drawing.Point(164, 288);
+            this.resister.Location = new System.Drawing.Point(184, 176);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
             this.resister.TabIndex = 4;
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 485);
+            this.ClientSize = new System.Drawing.Size(428, 223);
             this.Controls.Add(this.resister);
             this.Controls.Add(this.playerHeight);
             this.Controls.Add(this.playerPosition);

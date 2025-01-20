@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Label_PlayerName = new System.Windows.Forms.Label();
             this.Button_Assist = new System.Windows.Forms.Button();
@@ -124,14 +123,11 @@
             chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
             chartArea1.Name = "ChartArea1";
             this.Chart_Players.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.Chart_Players.Legends.Add(legend1);
             this.Chart_Players.Location = new System.Drawing.Point(177, 64);
             this.Chart_Players.Name = "Chart_Players";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Font = new System.Drawing.Font("Pretendard Variable", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.Chart_Players.Series.Add(series1);
             this.Chart_Players.Size = new System.Drawing.Size(616, 407);

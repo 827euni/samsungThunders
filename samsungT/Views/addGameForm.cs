@@ -9,16 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
+using samsungT.ViewModels;
 
 namespace samsungT
 {
     public partial class addGameForm : Form
     {
         private DatabaseHelper db;
+        private addGameViewModel viewModel;
         public addGameForm()
         {
             InitializeComponent();
-            db = new DatabaseHelper();
+            viewModel = new addGameViewModel();
+            dateGame.DataBindings.Add("Value", viewModel, "Date", true, DataSourceUpdateMode.OnPropertyChanged);
+            HomePick.DataBindings.Add("SelectedValue", viewModel, "HomeTeamID", true, DataSourceUpdateMode.OnPropertyChanged);
+            AwayPick.DataBindings.Add("SelectedValue", viewModel, "AwayTeamID", true, DataSourceUpdateMode.OnPropertyChanged);
+            homeScore.DataBindings.Add("Text", viewModel, "HomeScore", true, DataSourceUpdateMode.OnPropertyChanged);
+            awayScore.DataBindings.Add("Text", viewModel, "AwayScore", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void LoadPick()

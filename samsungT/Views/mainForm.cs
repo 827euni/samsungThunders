@@ -333,7 +333,6 @@ namespace samsungT
                 totalRebound += player.Rebound;
                 totalAssist += player.Assist;
             }
-            clickChangeTitle.Text = "STATUS";
             clickHomeScore.Text = "";
             label3.Text = "";
             clickAwayScore.Text = "";

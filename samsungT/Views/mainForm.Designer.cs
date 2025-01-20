@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -214,19 +214,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea2.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend8);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.CustomProperties = "PieStartAngle=270";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.winRateChart.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series8.CustomProperties = "PieStartAngle=270";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.winRateChart.Series.Add(series8);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -405,7 +405,7 @@
             // 
             this.recentRebound.AutoSize = true;
             this.recentRebound.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentRebound.Location = new System.Drawing.Point(136, 196);
+            this.recentRebound.Location = new System.Drawing.Point(126, 199);
             this.recentRebound.Name = "recentRebound";
             this.recentRebound.Size = new System.Drawing.Size(124, 21);
             this.recentRebound.TabIndex = 2;
@@ -416,7 +416,7 @@
             // 
             this.recentAssist.AutoSize = true;
             this.recentAssist.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentAssist.Location = new System.Drawing.Point(136, 216);
+            this.recentAssist.Location = new System.Drawing.Point(126, 219);
             this.recentAssist.Name = "recentAssist";
             this.recentAssist.Size = new System.Drawing.Size(101, 21);
             this.recentAssist.TabIndex = 2;
@@ -427,7 +427,7 @@
             // 
             this.recentFree.AutoSize = true;
             this.recentFree.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentFree.Location = new System.Drawing.Point(136, 176);
+            this.recentFree.Location = new System.Drawing.Point(126, 179);
             this.recentFree.Name = "recentFree";
             this.recentFree.Size = new System.Drawing.Size(88, 21);
             this.recentFree.TabIndex = 2;
@@ -438,7 +438,7 @@
             // 
             this.recent3.AutoSize = true;
             this.recent3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recent3.Location = new System.Drawing.Point(136, 141);
+            this.recent3.Location = new System.Drawing.Point(126, 144);
             this.recent3.Name = "recent3";
             this.recent3.Size = new System.Drawing.Size(64, 21);
             this.recent3.TabIndex = 2;
@@ -449,7 +449,7 @@
             // 
             this.recentField.AutoSize = true;
             this.recentField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentField.Location = new System.Drawing.Point(136, 158);
+            this.recentField.Location = new System.Drawing.Point(126, 161);
             this.recentField.Name = "recentField";
             this.recentField.Size = new System.Drawing.Size(92, 21);
             this.recentField.TabIndex = 2;
@@ -460,7 +460,7 @@
             // 
             this.recentText.AutoSize = true;
             this.recentText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.recentText.Location = new System.Drawing.Point(36, 141);
+            this.recentText.Location = new System.Drawing.Point(26, 144);
             this.recentText.Name = "recentText";
             this.recentText.Size = new System.Drawing.Size(85, 95);
             this.recentText.TabIndex = 2;
@@ -524,7 +524,7 @@
             // 
             this.clickScoreText.AutoSize = true;
             this.clickScoreText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickScoreText.Location = new System.Drawing.Point(107, 120);
+            this.clickScoreText.Location = new System.Drawing.Point(122, 123);
             this.clickScoreText.Name = "clickScoreText";
             this.clickScoreText.Size = new System.Drawing.Size(72, 19);
             this.clickScoreText.TabIndex = 3;
@@ -535,7 +535,7 @@
             // 
             this.clickRebound.AutoSize = true;
             this.clickRebound.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickRebound.Location = new System.Drawing.Point(221, 199);
+            this.clickRebound.Location = new System.Drawing.Point(200, 202);
             this.clickRebound.Name = "clickRebound";
             this.clickRebound.Size = new System.Drawing.Size(114, 21);
             this.clickRebound.TabIndex = 2;
@@ -546,7 +546,7 @@
             // 
             this.clickAssist.AutoSize = true;
             this.clickAssist.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickAssist.Location = new System.Drawing.Point(221, 220);
+            this.clickAssist.Location = new System.Drawing.Point(200, 223);
             this.clickAssist.Name = "clickAssist";
             this.clickAssist.Size = new System.Drawing.Size(91, 21);
             this.clickAssist.TabIndex = 2;
@@ -557,18 +557,18 @@
             // 
             this.clickChangeTitle.AutoSize = true;
             this.clickChangeTitle.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickChangeTitle.Location = new System.Drawing.Point(111, 15);
+            this.clickChangeTitle.Location = new System.Drawing.Point(84, 29);
             this.clickChangeTitle.Name = "clickChangeTitle";
-            this.clickChangeTitle.Size = new System.Drawing.Size(149, 42);
+            this.clickChangeTitle.Size = new System.Drawing.Size(207, 42);
             this.clickChangeTitle.TabIndex = 0;
-            this.clickChangeTitle.Text = "STATUS";
+            this.clickChangeTitle.Text = "Game Result";
             this.clickChangeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // clickChangeText
             // 
             this.clickChangeText.AutoSize = true;
             this.clickChangeText.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clickChangeText.Location = new System.Drawing.Point(42, 142);
+            this.clickChangeText.Location = new System.Drawing.Point(57, 145);
             this.clickChangeText.Name = "clickChangeText";
             this.clickChangeText.Size = new System.Drawing.Size(137, 95);
             this.clickChangeText.TabIndex = 2;
@@ -579,7 +579,7 @@
             // 
             this.clickFree.AutoSize = true;
             this.clickFree.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickFree.Location = new System.Drawing.Point(221, 182);
+            this.clickFree.Location = new System.Drawing.Point(200, 185);
             this.clickFree.Name = "clickFree";
             this.clickFree.Size = new System.Drawing.Size(78, 21);
             this.clickFree.TabIndex = 2;
@@ -590,7 +590,7 @@
             // 
             this.clickScore.AutoSize = true;
             this.clickScore.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickScore.Location = new System.Drawing.Point(221, 120);
+            this.clickScore.Location = new System.Drawing.Point(200, 123);
             this.clickScore.Name = "clickScore";
             this.clickScore.Size = new System.Drawing.Size(89, 21);
             this.clickScore.TabIndex = 2;
@@ -601,7 +601,7 @@
             // 
             this.click3.AutoSize = true;
             this.click3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.click3.Location = new System.Drawing.Point(221, 141);
+            this.click3.Location = new System.Drawing.Point(200, 144);
             this.click3.Name = "click3";
             this.click3.Size = new System.Drawing.Size(54, 21);
             this.click3.TabIndex = 2;
@@ -612,26 +612,28 @@
             // 
             this.clickCity.AutoSize = true;
             this.clickCity.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickCity.Location = new System.Drawing.Point(155, 106);
+            this.clickCity.Location = new System.Drawing.Point(145, 98);
             this.clickCity.Name = "clickCity";
-            this.clickCity.Size = new System.Drawing.Size(0, 19);
+            this.clickCity.Size = new System.Drawing.Size(77, 19);
             this.clickCity.TabIndex = 1;
+            this.clickCity.Text = "서울 : 서울";
             // 
             // clickAwayScore
             // 
             this.clickAwayScore.AutoSize = true;
             this.clickAwayScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clickAwayScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clickAwayScore.Location = new System.Drawing.Point(192, 81);
+            this.clickAwayScore.Location = new System.Drawing.Point(189, 71);
             this.clickAwayScore.Name = "clickAwayScore";
-            this.clickAwayScore.Size = new System.Drawing.Size(0, 27);
+            this.clickAwayScore.Size = new System.Drawing.Size(36, 27);
             this.clickAwayScore.TabIndex = 1;
+            this.clickAwayScore.Text = "31";
             // 
             // clickField
             // 
             this.clickField.AutoSize = true;
             this.clickField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickField.Location = new System.Drawing.Point(221, 161);
+            this.clickField.Location = new System.Drawing.Point(200, 164);
             this.clickField.Name = "clickField";
             this.clickField.Size = new System.Drawing.Size(82, 21);
             this.clickField.TabIndex = 2;
@@ -643,20 +645,22 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(179, 81);
+            this.label3.Location = new System.Drawing.Point(176, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 27);
+            this.label3.Size = new System.Drawing.Size(18, 27);
             this.label3.TabIndex = 1;
+            this.label3.Text = ":";
             // 
             // clickHomeScore
             // 
             this.clickHomeScore.AutoSize = true;
             this.clickHomeScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clickHomeScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clickHomeScore.Location = new System.Drawing.Point(149, 81);
+            this.clickHomeScore.Location = new System.Drawing.Point(146, 71);
             this.clickHomeScore.Name = "clickHomeScore";
-            this.clickHomeScore.Size = new System.Drawing.Size(0, 27);
+            this.clickHomeScore.Size = new System.Drawing.Size(36, 27);
             this.clickHomeScore.TabIndex = 1;
+            this.clickHomeScore.Text = "53";
             // 
             // Button_BackClick
             // 

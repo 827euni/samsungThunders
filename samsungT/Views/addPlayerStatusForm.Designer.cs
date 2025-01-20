@@ -56,7 +56,7 @@
             // GamePick
             // 
             this.GamePick.FormattingEnabled = true;
-            this.GamePick.Location = new System.Drawing.Point(280, 83);
+            this.GamePick.Location = new System.Drawing.Point(100, 36);
             this.GamePick.Name = "GamePick";
             this.GamePick.Size = new System.Drawing.Size(259, 20);
             this.GamePick.TabIndex = 0;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(208, 86);
+            this.label1.Location = new System.Drawing.Point(28, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 1;
@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 143);
+            this.label2.Location = new System.Drawing.Point(34, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 2;
@@ -82,7 +82,7 @@
             // PlayerPick
             // 
             this.PlayerPick.FormattingEnabled = true;
-            this.PlayerPick.Location = new System.Drawing.Point(281, 141);
+            this.PlayerPick.Location = new System.Drawing.Point(101, 94);
             this.PlayerPick.Name = "PlayerPick";
             this.PlayerPick.Size = new System.Drawing.Size(99, 20);
             this.PlayerPick.TabIndex = 1;
@@ -90,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(431, 143);
+            this.label3.Location = new System.Drawing.Point(251, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 4;
@@ -98,14 +98,14 @@
             // 
             // Score
             // 
-            this.Score.Location = new System.Drawing.Point(466, 140);
+            this.Score.Location = new System.Drawing.Point(286, 93);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(100, 21);
             this.Score.TabIndex = 2;
             // 
             // ThreePointA
             // 
-            this.ThreePointA.Location = new System.Drawing.Point(466, 180);
+            this.ThreePointA.Location = new System.Drawing.Point(286, 133);
             this.ThreePointA.Name = "ThreePointA";
             this.ThreePointA.Size = new System.Drawing.Size(100, 21);
             this.ThreePointA.TabIndex = 4;
@@ -113,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(397, 184);
+            this.label4.Location = new System.Drawing.Point(217, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 12);
             this.label4.TabIndex = 8;
@@ -122,7 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(208, 184);
+            this.label5.Location = new System.Drawing.Point(28, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 12);
             this.label5.TabIndex = 6;
@@ -130,21 +130,21 @@
             // 
             // ThreePoint
             // 
-            this.ThreePoint.Location = new System.Drawing.Point(280, 180);
+            this.ThreePoint.Location = new System.Drawing.Point(100, 133);
             this.ThreePoint.Name = "ThreePoint";
             this.ThreePoint.Size = new System.Drawing.Size(100, 21);
             this.ThreePoint.TabIndex = 3;
             // 
             // FieldGoal
             // 
-            this.FieldGoal.Location = new System.Drawing.Point(280, 220);
+            this.FieldGoal.Location = new System.Drawing.Point(100, 173);
             this.FieldGoal.Name = "FieldGoal";
             this.FieldGoal.Size = new System.Drawing.Size(100, 21);
             this.FieldGoal.TabIndex = 5;
             // 
             // FieldGoalA
             // 
-            this.FieldGoalA.Location = new System.Drawing.Point(466, 220);
+            this.FieldGoalA.Location = new System.Drawing.Point(286, 173);
             this.FieldGoalA.Name = "FieldGoalA";
             this.FieldGoalA.Size = new System.Drawing.Size(100, 21);
             this.FieldGoalA.TabIndex = 6;
@@ -152,7 +152,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(403, 223);
+            this.label6.Location = new System.Drawing.Point(223, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 12;
@@ -161,7 +161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 223);
+            this.label7.Location = new System.Drawing.Point(34, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 12);
             this.label7.TabIndex = 11;
@@ -169,14 +169,14 @@
             // 
             // FreeThrow
             // 
-            this.FreeThrow.Location = new System.Drawing.Point(280, 260);
+            this.FreeThrow.Location = new System.Drawing.Point(100, 213);
             this.FreeThrow.Name = "FreeThrow";
             this.FreeThrow.Size = new System.Drawing.Size(100, 21);
             this.FreeThrow.TabIndex = 7;
             // 
             // FreeThrowA
             // 
-            this.FreeThrowA.Location = new System.Drawing.Point(466, 260);
+            this.FreeThrowA.Location = new System.Drawing.Point(286, 213);
             this.FreeThrowA.Name = "FreeThrowA";
             this.FreeThrowA.Size = new System.Drawing.Size(100, 21);
             this.FreeThrowA.TabIndex = 8;
@@ -184,7 +184,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(391, 263);
+            this.label8.Location = new System.Drawing.Point(211, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 12);
             this.label8.TabIndex = 16;
@@ -193,7 +193,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(205, 263);
+            this.label9.Location = new System.Drawing.Point(25, 216);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 12);
             this.label9.TabIndex = 15;
@@ -201,14 +201,14 @@
             // 
             // Rebound
             // 
-            this.Rebound.Location = new System.Drawing.Point(280, 303);
+            this.Rebound.Location = new System.Drawing.Point(100, 256);
             this.Rebound.Name = "Rebound";
             this.Rebound.Size = new System.Drawing.Size(100, 21);
             this.Rebound.TabIndex = 9;
             // 
             // Assist
             // 
-            this.Assist.Location = new System.Drawing.Point(466, 303);
+            this.Assist.Location = new System.Drawing.Point(286, 256);
             this.Assist.Name = "Assist";
             this.Assist.Size = new System.Drawing.Size(100, 21);
             this.Assist.TabIndex = 10;
@@ -216,7 +216,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(407, 306);
+            this.label10.Location = new System.Drawing.Point(227, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 20;
@@ -225,7 +225,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(218, 307);
+            this.label11.Location = new System.Drawing.Point(38, 260);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 19;
@@ -233,7 +233,7 @@
             // 
             // resisterPlayerStatus
             // 
-            this.resisterPlayerStatus.Location = new System.Drawing.Point(346, 368);
+            this.resisterPlayerStatus.Location = new System.Drawing.Point(166, 321);
             this.resisterPlayerStatus.Name = "resisterPlayerStatus";
             this.resisterPlayerStatus.Size = new System.Drawing.Size(94, 23);
             this.resisterPlayerStatus.TabIndex = 11;
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(429, 360);
             this.Controls.Add(this.resisterPlayerStatus);
             this.Controls.Add(this.Rebound);
             this.Controls.Add(this.Assist);

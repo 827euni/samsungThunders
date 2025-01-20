@@ -43,7 +43,7 @@
             // 
             // resister
             // 
-            this.resister.Location = new System.Drawing.Point(149, 296);
+            this.resister.Location = new System.Drawing.Point(172, 195);
             this.resister.Name = "resister";
             this.resister.Size = new System.Drawing.Size(75, 23);
             this.resister.TabIndex = 6;
@@ -53,7 +53,7 @@
             // 
             // homeScore
             // 
-            this.homeScore.Location = new System.Drawing.Point(167, 229);
+            this.homeScore.Location = new System.Drawing.Point(162, 118);
             this.homeScore.Name = "homeScore";
             this.homeScore.Size = new System.Drawing.Size(100, 21);
             this.homeScore.TabIndex = 4;
@@ -61,7 +61,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 232);
+            this.label4.Location = new System.Drawing.Point(82, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 12);
             this.label4.TabIndex = 12;
@@ -70,7 +70,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(87, 198);
+            this.label3.Location = new System.Drawing.Point(82, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 12);
             this.label3.TabIndex = 11;
@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 166);
+            this.label2.Location = new System.Drawing.Point(82, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 12);
             this.label2.TabIndex = 10;
@@ -88,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 136);
+            this.label1.Location = new System.Drawing.Point(82, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 9;
@@ -96,14 +96,14 @@
             // 
             // dateGame
             // 
-            this.dateGame.Location = new System.Drawing.Point(167, 130);
+            this.dateGame.Location = new System.Drawing.Point(162, 19);
             this.dateGame.Name = "dateGame";
             this.dateGame.Size = new System.Drawing.Size(200, 21);
             this.dateGame.TabIndex = 1;
             // 
             // awayScore
             // 
-            this.awayScore.Location = new System.Drawing.Point(167, 256);
+            this.awayScore.Location = new System.Drawing.Point(162, 145);
             this.awayScore.Name = "awayScore";
             this.awayScore.Size = new System.Drawing.Size(100, 21);
             this.awayScore.TabIndex = 5;
@@ -111,7 +111,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(87, 259);
+            this.label5.Location = new System.Drawing.Point(82, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 12);
             this.label5.TabIndex = 19;
@@ -120,7 +120,7 @@
             // HomePick
             // 
             this.HomePick.FormattingEnabled = true;
-            this.HomePick.Location = new System.Drawing.Point(167, 163);
+            this.HomePick.Location = new System.Drawing.Point(162, 52);
             this.HomePick.Name = "HomePick";
             this.HomePick.Size = new System.Drawing.Size(115, 20);
             this.HomePick.TabIndex = 2;
@@ -128,7 +128,7 @@
             // AwayPick
             // 
             this.AwayPick.FormattingEnabled = true;
-            this.AwayPick.Location = new System.Drawing.Point(167, 195);
+            this.AwayPick.Location = new System.Drawing.Point(162, 84);
             this.AwayPick.Name = "AwayPick";
             this.AwayPick.Size = new System.Drawing.Size(115, 20);
             this.AwayPick.TabIndex = 3;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 450);
+            this.ClientSize = new System.Drawing.Size(420, 234);
             this.Controls.Add(this.AwayPick);
             this.Controls.Add(this.HomePick);
             this.Controls.Add(this.awayScore);

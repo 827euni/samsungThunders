@@ -282,7 +282,7 @@ namespace samsungT
                         totalAssist += status.Assist;
                     }
                 }
-
+                Label_RecentGame.Text = recentGame.Date.ToString("yyyy/MM/dd");
                 recentHomeScore.ForeColor = Color.Black;
                 recentAwayScore.ForeColor = Color.Black;
                 recentHomeScore.Text = recentGame.HomeScore.ToString();
@@ -581,5 +581,6 @@ namespace samsungT
             thundersChart _Chart_ThundersChart = new thundersChart();
             _Chart_ThundersChart.Show();
         }
+
     }
 }

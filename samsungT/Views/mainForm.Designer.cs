@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.resisterGame = new System.Windows.Forms.Button();
             this.resisterTeam = new System.Windows.Forms.Button();
             this.resisterPlayer = new System.Windows.Forms.Button();
@@ -85,6 +85,7 @@
             this.Button_BackClick = new System.Windows.Forms.Button();
             this.thundersCalender = new calenderBasketball.ThundersCalender();
             this.thundersCalender2 = new calenderBasketball.ThundersCalender();
+            this.Label_RecentGame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.winRateChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -213,19 +214,19 @@
             // winRateChart
             // 
             this.winRateChart.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.winRateChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.winRateChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.winRateChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.winRateChart.Legends.Add(legend2);
             this.winRateChart.Location = new System.Drawing.Point(1000, 18);
             this.winRateChart.Name = "winRateChart";
             this.winRateChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.winRateChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.CustomProperties = "PieStartAngle=270";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.winRateChart.Series.Add(series2);
             this.winRateChart.Size = new System.Drawing.Size(317, 248);
             this.winRateChart.TabIndex = 7;
             this.winRateChart.Text = "chart1";
@@ -366,6 +367,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer1.Panel1.Controls.Add(this.Label_RecentGame);
             this.splitContainer1.Panel1.Controls.Add(this.recentRebound);
             this.splitContainer1.Panel1.Controls.Add(this.recentAssist);
             this.splitContainer1.Panel1.Controls.Add(this.recentFree);
@@ -469,7 +471,7 @@
             // 
             this.recentCity.AutoSize = true;
             this.recentCity.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentCity.Location = new System.Drawing.Point(78, 106);
+            this.recentCity.Location = new System.Drawing.Point(78, 111);
             this.recentCity.Name = "recentCity";
             this.recentCity.Size = new System.Drawing.Size(82, 19);
             this.recentCity.TabIndex = 1;
@@ -480,7 +482,7 @@
             this.recentAwayScore.AutoSize = true;
             this.recentAwayScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recentAwayScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recentAwayScore.Location = new System.Drawing.Point(125, 79);
+            this.recentAwayScore.Location = new System.Drawing.Point(125, 82);
             this.recentAwayScore.Name = "recentAwayScore";
             this.recentAwayScore.Size = new System.Drawing.Size(24, 27);
             this.recentAwayScore.TabIndex = 1;
@@ -491,7 +493,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(112, 79);
+            this.label1.Location = new System.Drawing.Point(112, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 27);
             this.label1.TabIndex = 1;
@@ -502,7 +504,7 @@
             this.recentHomeScore.AutoSize = true;
             this.recentHomeScore.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recentHomeScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recentHomeScore.Location = new System.Drawing.Point(82, 79);
+            this.recentHomeScore.Location = new System.Drawing.Point(82, 82);
             this.recentHomeScore.Name = "recentHomeScore";
             this.recentHomeScore.Size = new System.Drawing.Size(24, 27);
             this.recentHomeScore.TabIndex = 1;
@@ -512,7 +514,7 @@
             // 
             this.searchGame.AutoSize = true;
             this.searchGame.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchGame.Location = new System.Drawing.Point(18, 37);
+            this.searchGame.Location = new System.Drawing.Point(18, 40);
             this.searchGame.Name = "searchGame";
             this.searchGame.Size = new System.Drawing.Size(216, 42);
             this.searchGame.TabIndex = 0;
@@ -683,6 +685,17 @@
             this.thundersCalender2.Size = new System.Drawing.Size(8, 43);
             this.thundersCalender2.TabIndex = 22;
             // 
+            // Label_RecentGame
+            // 
+            this.Label_RecentGame.AutoSize = true;
+            this.Label_RecentGame.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_RecentGame.Location = new System.Drawing.Point(68, 18);
+            this.Label_RecentGame.Name = "Label_RecentGame";
+            this.Label_RecentGame.Size = new System.Drawing.Size(110, 23);
+            this.Label_RecentGame.TabIndex = 3;
+            this.Label_RecentGame.Text = "2025/01/20";
+            this.Label_RecentGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -778,6 +791,7 @@
         private calenderBasketball.ThundersCalender thundersCalender2;
         private calenderBasketball.ThundersCalender thundersCalender;
         private System.Windows.Forms.Button Button_BackClick;
+        private System.Windows.Forms.Label Label_RecentGame;
     }
 }
 

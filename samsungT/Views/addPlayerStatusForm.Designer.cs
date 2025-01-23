@@ -271,6 +271,7 @@
             this.Controls.Add(this.GamePick);
             this.Name = "addPlayerStatusForm";
             this.Text = "addPlayerStatusForm";
+            this.Load += new System.EventHandler(this.addPlayerStatusForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

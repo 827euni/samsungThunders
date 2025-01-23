@@ -74,6 +74,12 @@ namespace samsungT.Views
 
         }
 
+        private void addPlayerStatusForm_Load(object sender, EventArgs e)
+        {
+            GamePick.SelectedIndex = 0;
+            PlayerPick.SelectedIndex = 0;
+        }
+
         //private void LoadPickGame()
         //{
         //    List<Game> games = db.GetGames();

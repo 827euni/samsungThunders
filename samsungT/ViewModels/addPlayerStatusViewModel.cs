@@ -34,7 +34,6 @@ namespace samsungT.ViewModels
             db = new DatabaseHelper();
             Players = db.GetPlayers();
             Games = db.GetGames();
-            OnPropertyChanged(nameof(Games));
         }
 
 

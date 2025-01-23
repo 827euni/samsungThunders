@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using samsungT.Models;
+using samsungT.ViewModels;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace samsungT.Views
@@ -18,10 +19,30 @@ namespace samsungT.Views
     {
 
         private DatabaseHelper db;
+        private addPlayerStatusViewModel viewModel;
         public addPlayerStatusForm()
         {
             InitializeComponent();
             db = new DatabaseHelper();
+            viewModel = new addPlayerStatusViewModel();
+            GamePick.DataBindings.Add("DataSource", viewModel, "Games", true, DataSourceUpdateMode.OnPropertyChanged);
+            GamePick.DisplayMember = "Text";
+            GamePick.ValueMember = "Value";
+            GamePick.DataBindings.Add("SelectedValue", viewModel, "GameID", true, DataSourceUpdateMode.OnPropertyChanged);
+            PlayerPick.DataBindings.Add("DataSource", viewModel, "Players", true, DataSourceUpdateMode.OnPropertyChanged);
+            PlayerPick.DisplayMember = "PlayerName";
+            PlayerPick.ValueMember = "PlayerID";
+            PlayerPick.DataBindings.Add("SelectedValue", viewModel, "PlayerID", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            Rebound.DataBindings.Add("Text", viewModel, "Rebound", true, DataSourceUpdateMode.OnPropertyChanged);
+            ThreePoint.DataBindings.Add("Text", viewModel, "ThreePoint", true, DataSourceUpdateMode.OnPropertyChanged);
+            ThreePointA.DataBindings.Add("Text", viewModel, "ThreePointA", true, DataSourceUpdateMode.OnPropertyChanged);
+            FreeThrow.DataBindings.Add("Text", viewModel, "FreeThrow", true, DataSourceUpdateMode.OnPropertyChanged);
+            FreeThrowA.DataBindings.Add("Text", viewModel, "FreeThrowA", true, DataSourceUpdateMode.OnPropertyChanged);
+            FieldGoal.DataBindings.Add("Text", viewModel, "FieldGoal", true, DataSourceUpdateMode.OnPropertyChanged);
+            FieldGoalA.DataBindings.Add("Text", viewModel, "FieldGoalA", true, DataSourceUpdateMode.OnPropertyChanged);
+            Assist.DataBindings.Add("Text", viewModel, "Assist", true, DataSourceUpdateMode.OnPropertyChanged);
+            Score.DataBindings.Add("Text", viewModel, "Score", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void addPlayerStatusForm_Load(object sender, EventArgs e)

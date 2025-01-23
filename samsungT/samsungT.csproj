@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\GameDTO.cs" />
+    <Compile Include="ViewModels\addGameViewModel.cs" />
     <Compile Include="ViewModels\addPlayerViewModel.cs" />
     <Compile Include="ViewModels\addTeamViewModel.cs" />
     <Compile Include="ViewModels\thundersChartViewModel.cs" />

@@ -151,7 +151,6 @@
             this.Controls.Add(this.label1);
             this.Name = "addGameForm";
             this.Text = "addGame";
-            this.Load += new System.EventHandler(this.addGame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,11 @@ namespace samsungT
             awayScore.DataBindings.Add("Text", viewModel, "AwayScore", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
+        private void addGame_Load(object sender, EventArgs e)
+        {
+            LoadPick();
+        }
+
         private void LoadPick()
         {
             List<Team> teams = db.GetTeams();
@@ -40,7 +45,7 @@ namespace samsungT
             HomePick.DisplayMember = "Text";
             HomePick.ValueMember = "Value";
 
-            updateAwayPick(teams, homeID: null);
+            updateAwayPick(teams, null);
 
             HomePick.SelectedIndexChanged += (sender, e) =>
             {
@@ -136,10 +141,6 @@ namespace samsungT
             }
         }
 
-        private void addGame_Load(object sender, EventArgs e)
-        {
-            LoadPick();
-        }
     }
 }
 

@@ -14,5 +14,20 @@ namespace samsungT.Models
         public int AwayTeamID { get; set; }
         public int HomeScore { get; set; }
         public int AwayScore { get; set; }
+
+        public static explicit operator Game(List<object> v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string DisplayText
+        {
+            get
+            {
+                var db = new DatabaseHelper();
+                string teamName = db.GetTeamName(HomeTeamID) != "삼성 썬더스" ? db.GetTeamName(HomeTeamID) : db.GetTeamName(AwayTeamID);
+                return $"{Date:yyyy년 M월 d일} {teamName}전";
+            }
+        }
     }
 }

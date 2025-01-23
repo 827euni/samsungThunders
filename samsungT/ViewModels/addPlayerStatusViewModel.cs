@@ -29,13 +29,13 @@ namespace samsungT.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void addPlayerStatus()
+        public addPlayerStatusViewModel()
         {
             db = new DatabaseHelper();
             Players = db.GetPlayers();
             Games = db.GetGames();
+            OnPropertyChanged(nameof(Games));
         }
-
 
 
         public int GameID

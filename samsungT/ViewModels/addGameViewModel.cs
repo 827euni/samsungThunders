@@ -24,8 +24,36 @@ namespace samsungT.ViewModels
         public addGameViewModel()
         {
             db = new DatabaseHelper();
+            Teams = db.GetTeams();
         }
 
+        private void UpdateAwayTeam()
+        {
+            var listAwayTeam = new List<Team>();
+
+            if (HomeTeamID == 1)
+            {
+                foreach (var team in Teams)
+                {
+                    if (team.TeamID != HomeTeamID)
+                    {
+                        listAwayTeam.Add(team);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var team in Teams)
+                {
+                    if (team.TeamID == 1)
+                    {
+                        listAwayTeam.Add(team);
+                    }
+                }
+            }
+            AwayLoad = listAwayTeam;
+            OnPropertyChanged(nameof(AwayLoad));
+        }
         public DateTime Date
         {
             get { return date; }
@@ -42,6 +70,7 @@ namespace samsungT.ViewModels
             set
             {
                 homeTeamID = value;
+                UpdateAwayTeam();
                 OnPropertyChanged("HomeTeamID");
             } 
         }
@@ -84,6 +113,12 @@ namespace samsungT.ViewModels
                 teams = value;
                 OnPropertyChanged("Teams");
             }
+        }
+
+        public List<Team> AwayLoad
+        {
+            get;
+            set;
         }
 
         public void ResisterGame()

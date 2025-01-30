@@ -148,7 +148,7 @@
             this.Controls.Add(this.Button_Score);
             this.Controls.Add(this.Chart_Players);
             this.Name = "playerChart";
-            this.Text = "playerChart";
+            this.Text = "선수 기록";
             ((System.ComponentModel.ISupportInitialize)(this.Chart_Players)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

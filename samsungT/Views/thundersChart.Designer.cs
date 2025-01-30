@@ -147,7 +147,7 @@
             this.Controls.Add(this.Button_Score);
             this.Controls.Add(this.Chart_Thunders);
             this.Name = "thundersChart";
-            this.Text = "thundersChart";
+            this.Text = "썬더스 기록";
             ((System.ComponentModel.ISupportInitialize)(this.Chart_Thunders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

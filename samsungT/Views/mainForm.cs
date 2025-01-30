@@ -492,7 +492,7 @@ namespace samsungT
             }
         }
 
-        // 승률 버튼
+// 승률 버튼
         private void setButtonColor(System.Windows.Forms.Button button)
         {
             DBButton.BackColor = SystemColors.ButtonHighlight;

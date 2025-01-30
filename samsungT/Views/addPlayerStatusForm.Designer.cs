@@ -270,7 +270,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GamePick);
             this.Name = "addPlayerStatusForm";
-            this.Text = "addPlayerStatusForm";
+            this.Text = "선수 기록 등록";
             this.Load += new System.EventHandler(this.addPlayerStatusForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

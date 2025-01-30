@@ -105,6 +105,7 @@ namespace samsungT
             }
         }
 
+        //이벤트와 연결하여 선수를 클릭했을 때 해당 선수 기록 차트가 나오는 함수 호출
         private void ClickListPlayer(object sender, EventArgs e)
         {
             if (listPlayers.SelectedItems.Count > 0)
@@ -117,13 +118,14 @@ namespace samsungT
             }
         }
 
-
+        //선수 기록 차트가 나오는 함수
         private void ShowPlayerChart(int playerId, string playerName)
         {
             playerChart playerChart = new playerChart(playerId, playerName);
             playerChart.ShowDialog();
         }
 
+        //특정 날짜를 클릭하였을 때 해당 날짜의 경기 기록으로 변경하는 함수
         private void changePlayers(Game searchGame)
         {
             listPlayers.Items.Clear();
@@ -310,6 +312,7 @@ namespace samsungT
             }
         }
 
+        //스테이터스 화면 기본 출력 함수
         private void loadStatus()
         {
             var games = db.GetGames();
@@ -354,6 +357,7 @@ namespace samsungT
 
         }
 
+        // 달력 클릭시 해당 날짜의 경기 내역으로 출력하는 함수
         private void changeStatus(Game searchGame)
         {
             var playerStatus = db.GetPlayersStatus();
@@ -423,6 +427,7 @@ namespace samsungT
             }
         }
 
+        //달력에서 년월일 데이터를 받아와 스테이터스와 플레이어리스트의 데이터를 변경하는 함수
         private void thundersSelectDate(int year, int month, int day)
         {
 
@@ -436,6 +441,8 @@ namespace samsungT
             }
         
         }
+
+        //달력을 클릭하였을 때, 해당 날짜를 받아와 해당 경기를 가져오게끔 하는 함수
         private ThundersCalender.GameDTO getGame(DateTime date)
         {
             Game searchGame = db.GetSearchGame(date);
@@ -455,6 +462,7 @@ namespace samsungT
             return null;
         }
 
+        //선수 등록 버튼 연결
         private void resisterPlayer_Click(object sender, EventArgs e)
         {
             addPlayerForm addPlayer = new addPlayerForm();
@@ -464,6 +472,7 @@ namespace samsungT
             }
         }
 
+        //팀 등록 버튼 연결
         private void resisterTeam_Click(object sender, EventArgs e)
         {
             addTeamForm addTeam = new addTeamForm();
@@ -473,6 +482,7 @@ namespace samsungT
             }
         }
 
+        //게임 등록 버튼 연결
         private void resisterGame_Click(object sender, EventArgs e)
         {
             addGameForm addGame = new addGameForm();
@@ -483,6 +493,7 @@ namespace samsungT
 
         }
 
+        //게임 당 선수 기록 등록 버튼 연결
         private void resisterGamePlayer_Click(object sender, EventArgs e)
         {
             addPlayerStatusForm addPlayerStatus = new addPlayerStatusForm();
@@ -492,7 +503,16 @@ namespace samsungT
             }
         }
 
+        // GameResult창을 클릭하였을 때 썬더스 전체 차트가 보이게 됨. 
+        private void splitContainer1_Panel2_Click(object sender, EventArgs e)
+        {
+            thundersChart _Chart_ThundersChart = new thundersChart();
+            _Chart_ThundersChart.Show();
+        }
+
 // 승률 버튼
+
+        //버튼 배경색 기본 색상 확립 및 선택 버튼 배경 색 지정 함수
         private void setButtonColor(System.Windows.Forms.Button button)
         {
             DBButton.BackColor = SystemColors.ButtonHighlight;
@@ -505,13 +525,14 @@ namespace samsungT
             KOGASButton.BackColor = SystemColors.ButtonHighlight;
             MOBISButton.BackColor = SystemColors.ButtonHighlight;
 
-
+            
             if (button != null)
             {
                 button.BackColor = Color.AliceBlue;
             }
         }
 
+        //두번 클릭하였을 때 버튼 컬러를 기본값으로 리셋하는 함수
         private void ResetButtonColor(Button button)
         {
 
@@ -520,7 +541,8 @@ namespace samsungT
                 button.BackColor = SystemColors.ButtonHighlight;
             }
         }
-
+       
+        //두번 클릭했을 때 삼성썬더스의 기본 승률로 돌아오고, 해당 버튼의 배경색을 기본값으로 변경하는 함수
         private void oneMoreClickButton(Button clickButton, int KBLNum)
         {
             if (lastButton == clickButton)
@@ -542,7 +564,7 @@ namespace samsungT
             }
         }
 
-
+    // 버튼 별 구단 매칭함수들
         private void DBButton_Click(object sender, EventArgs e)
         {
             oneMoreClickButton(DBButton, 2);
@@ -593,11 +615,7 @@ namespace samsungT
             refresh();
         }
 
-        private void splitContainer1_Panel2_Click(object sender, EventArgs e)
-        {
-            thundersChart _Chart_ThundersChart = new thundersChart();
-            _Chart_ThundersChart.Show();
-        }
+
 
     }
 }

@@ -21,6 +21,8 @@ namespace samsungT
         {
             InitializeComponent();
             viewModel = new addGameViewModel();
+
+            //데이터 바인딩
             dateGame.DataBindings.Add("Value", viewModel, "Date", true, DataSourceUpdateMode.OnPropertyChanged);
             HomePick.DataBindings.Add("SelectedValue", viewModel, "HomeTeamID", true, DataSourceUpdateMode.OnPropertyChanged);
             HomePick.DataSource = viewModel.Teams; // 데이터 콤보박스에 데이터 추가 하기 위해서 작성
@@ -33,6 +35,8 @@ namespace samsungT
             homeScore.DataBindings.Add("Text", viewModel, "HomeScore", true, DataSourceUpdateMode.OnPropertyChanged);
             awayScore.DataBindings.Add("Text", viewModel, "AwayScore", true, DataSourceUpdateMode.OnPropertyChanged);
         }
+
+        //등록 버튼 클릭시 초기화 및 뷰모델과 연결하여 저장
         private void resister_Click(object sender, EventArgs e)
         {
             try

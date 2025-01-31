@@ -29,7 +29,7 @@ namespace samsungT.Views
         }
 
 
-
+// 버튼 클릭시 보이는 데이터 변경
         private void Button_Score_Click(object sender, EventArgs e)
         {
             viewModel.MakeScoreChart();

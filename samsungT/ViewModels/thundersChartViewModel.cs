@@ -54,7 +54,7 @@ namespace samsungT.ViewModels
             }
         }
 
-
+        //점수를 사용하여 그래프를 그리고 해당 그래프로 변경
         public void MakeDefaultScoreChart()
         {
             thundersChart.Points.Clear();
@@ -66,6 +66,7 @@ namespace samsungT.ViewModels
             }
         }
 
+        //3점슛 확률을 사용하여 그래프를 그리고 해당 그래프로 변경
         public void Make3PointChart()
         {
             thundersChart.Points.Clear();
@@ -113,7 +114,7 @@ namespace samsungT.ViewModels
             }
         }
 
-
+        //야투 확률을 사용하여 그래프를 그리고 해당 그래프로 변경
         public void MakeFieldGoalChart()
         {
             thundersChart.Points.Clear();
@@ -156,6 +157,7 @@ namespace samsungT.ViewModels
         }
 
 
+        //자유투 확률을 사용하여 그래프를 그리고 해당 그래프로 변경
         public void MakeFreeThrowChart()
         {
             thundersChart.Points.Clear();
@@ -197,7 +199,7 @@ namespace samsungT.ViewModels
             }
         }
 
-
+        //리바운드를 사용하여 그래프를 그리고 해당 그래프로 변경
         public void MakeReboundChart()
         {
             thundersChart.Points.Clear();
@@ -233,7 +235,7 @@ namespace samsungT.ViewModels
             }
         }
 
-
+        //어시스트를 사용하여 그래프를 그리고 해당 그래프로 변경
         public void MakeAssistChart()
         {
             thundersChart.Points.Clear();
@@ -269,7 +271,7 @@ namespace samsungT.ViewModels
             }
         }
 
-
+        //뷰모델 변경시 뷰에 알림
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

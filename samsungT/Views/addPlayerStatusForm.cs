@@ -25,6 +25,8 @@ namespace samsungT.Views
             InitializeComponent();
             db = new DatabaseHelper();
             viewModel = new addPlayerStatusViewModel();
+
+            //데이터 바인딩
             GamePick.DataBindings.Add("DataSource", viewModel, "Games", true, DataSourceUpdateMode.OnPropertyChanged);
             GamePick.DisplayMember = "DisplayText";
             GamePick.ValueMember = "GameID";
@@ -45,6 +47,7 @@ namespace samsungT.Views
             Score.DataBindings.Add("Text", viewModel, "Score", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
+        //등록 버튼 클릭시 초기화 및 뷰모델과 연결하여 저장
         private void resisterPlayerStatus_Click(object sender, EventArgs e)
         {
 
@@ -74,6 +77,7 @@ namespace samsungT.Views
 
         }
 
+        //기본으로 값이 첫번째 인덱스로 지정
         private void addPlayerStatusForm_Load(object sender, EventArgs e)
         {
             GamePick.SelectedIndex = 0;

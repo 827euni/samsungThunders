@@ -179,6 +179,7 @@ namespace samsungT.ViewModels
             }
         }
 
+        //선수 기록 저장함수
         public void RegisterPlayerStatus()
         {
             if (string.IsNullOrEmpty(GameID.ToString()) ||
@@ -223,6 +224,7 @@ namespace samsungT.ViewModels
             
         }
 
+        //뷰모델 변경시 뷰에 알림
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

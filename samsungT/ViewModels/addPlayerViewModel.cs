@@ -76,6 +76,7 @@ namespace samsungT.ViewModels
             db = new DatabaseHelper();
         }
 
+        //선수 등록 함수
         public void RegisterPlayer()
         {
             if (string.IsNullOrWhiteSpace(PlayerName) ||
@@ -105,6 +106,7 @@ namespace samsungT.ViewModels
             }
         }
 
+        //뷰모델 변경시 뷰에 알림
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

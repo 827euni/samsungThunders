@@ -48,6 +48,7 @@ namespace samsungT.ViewModels
             }
         }
 
+        //팀 등록 함수
         public void ResisterTeam()
         {
             if (string.IsNullOrWhiteSpace(TeamName) ||
@@ -73,6 +74,7 @@ namespace samsungT.ViewModels
             }
         }
 
+        //뷰모델 변경시 뷰에 알림
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

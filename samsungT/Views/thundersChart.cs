@@ -25,6 +25,8 @@ namespace samsungT.Views
             viewModel = new thundersChartViewModel(Chart_Thunders.Series[0]);
             db = new DatabaseHelper();
         }
+
+// 버튼 클릭 시 보이는 데이터 변경
         private void Button_Score_Click(object sender, EventArgs e)
         {
             viewModel.MakeDefaultScoreChart();

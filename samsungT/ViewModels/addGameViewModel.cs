@@ -121,6 +121,7 @@ namespace samsungT.ViewModels
             set;
         }
 
+        //게임 내용 저장
         public void ResisterGame()
         {
             if (string.IsNullOrEmpty(HomeTeamID.ToString())
@@ -172,6 +173,8 @@ namespace samsungT.ViewModels
             }
 
         }
+
+        //뷰모델 변경시 뷰에 알림
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

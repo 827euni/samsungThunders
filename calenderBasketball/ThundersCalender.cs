@@ -17,6 +17,7 @@ namespace calenderBasketball
         public DateTime today;
         public event Action<int, int, int> selectDate;
 
+        // 해당 내용 메인 폼에서 받을 수 있도록 DTO 설정
         public class GameDTO
         {
             public int GameID { get; set; }
@@ -37,6 +38,7 @@ namespace calenderBasketball
             makeCalender(year, month);
         }
 
+        //달력을 만드는 함수
         public void makeCalender(int year, int month)
         {
             foreach (Control control in calender.Controls)
@@ -77,6 +79,8 @@ namespace calenderBasketball
                         buttons[index].Tag = day;
                         buttons[index].Click += Day_Click;
                         buttons[index].Visible = true;
+
+                        //썬더스가 이긴다면 백그라운드를 파랑, 진다면 빨강으로 가시적으로 작성
                         if (searchGame != null)
                         {
                             if (searchGame.HomeTeamID == 1)
@@ -103,6 +107,7 @@ namespace calenderBasketball
             }
         }
 
+        // 해당 버튼 클릭시 메인 폼의 thundersSelectDate를 실행하는 함수. 클릭된 버튼에 배정되어있는 날짜를 전달함.
         private void Day_Click(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -115,17 +120,21 @@ namespace calenderBasketball
             }
         }
 
+        //다음 달로 이동하는 버튼
         private void nextButton_Click(object sender, EventArgs e)
         {
             today = today.AddMonths(1);
             makeCalender(today.Year, today.Month);
         }
 
+        //이전 달로 이동하는 버튼
         private void prevButton_Click(object sender, EventArgs e)
         {
             today = today.AddMonths(-1);
             makeCalender(today.Year, today.Month);
         }
+
+        //오늘이 있는 달로 이동하는 버튼
 
         private void todayButton_Click(object sender, EventArgs e)
         {
